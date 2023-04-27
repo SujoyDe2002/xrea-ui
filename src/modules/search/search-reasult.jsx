@@ -7,7 +7,7 @@ import GeneralStat from './search-result-grid/grid-general-stat';
 import UseCaseTable from './search-result-grid/grid-use-case-table';
 import { TableHeading } from './search-result-grid/table-heading';
 import MarketSegmentRow from './search-result-grid/grid-market-segment';
-
+import { searchResultSection } from 'app';
 
 const SearchReasult = ({ searchReasultProps }) => {
 
