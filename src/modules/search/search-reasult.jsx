@@ -7,7 +7,8 @@ import GeneralStat from './search-result-grid/grid-general-stat';
 import UseCaseTable from './search-result-grid/grid-use-case-table';
 import { TableHeading } from './search-result-grid/table-heading';
 import MarketSegmentRow from './search-result-grid/grid-market-segment';
-import { searchResultSection, tablesContainter } from 'app';
+import { blankTab, lastTab, searchResultSection, tabRight, tabStyle, tablesContainter } from 'app';
+
 
 const SearchReasult = ({ searchReasultProps }) => {
 
@@ -20,7 +21,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     fontWeight: 700,
     fontSize: "1.125rem",
     lineHeight: "107.5%"
-    /* or 19px */
+    / or 19px /
   }
   const resultTableRef = useRef();
   const downLoadReport = (e) => {
