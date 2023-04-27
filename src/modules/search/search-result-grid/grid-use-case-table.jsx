@@ -44,8 +44,8 @@ export default function UseCaseTable({ rows }) {
                     <>
                       <Box sx={{ borderRadius: "15px", height: "85px",width: "180px",bgcolor: use_case_color, opacity: "0.1" }}> </Box>
                       <Typography sx={maxValuStyle}>
-                    {row[use_case_group]}
-                  </Typography>
+                        {row[use_case_group]}
+                      </Typography>
                     </>
                     :
                     <Typography sx={othesValueStyle}>
