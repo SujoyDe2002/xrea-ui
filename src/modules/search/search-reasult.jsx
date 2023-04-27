@@ -21,7 +21,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     fontWeight: 700,
     fontSize: "1.125rem",
     lineHeight: "107.5%"
-    /* or 19px */
+    / or 19px /
   }
   const resultTableRef = useRef();
   const downLoadReport = (e) => {
