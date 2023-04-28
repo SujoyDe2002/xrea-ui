@@ -32,7 +32,7 @@ export const OnlyResponsible = ({ children }) => {
               <Grid item xs={3}>
 
                   <img
-                      src="/playground_assets/image6149-pvk-200h.png"
+                      src="/playground_assets/3d.svg"
                       alt="image5144"
                       className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right "
                   />

@@ -72,7 +72,7 @@ export const InfoCard = ({ children }) => {
           <Grid item xs={3}>
 
             <img
-              src="/playground_assets/image3124-yhsb-300h.png"
+              src="/playground_assets/search.svg"
               alt="image3124"
               className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right"
             />

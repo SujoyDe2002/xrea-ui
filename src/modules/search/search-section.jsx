@@ -2,24 +2,13 @@ import { Button, Grid, Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import { React, useState, useEffect } from 'react'
 import { AutoCompleteSelect } from 'shared/utils'
-import { AppStyle, clearLinkStyle, searchButtonContainer, searchButtonStyle, searchContainter } from 'app'
+import { AppStyle, clearLinkStyle, searchButtonContainer, searchButtonStyle, searchContainter ,searchSectionButton} from 'app'
 import { getCityList } from 'server/api/get-citylist'
 import { getUseCaseList } from 'server/api/get-usecase-list'
 
 
 
 const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, selectedUseCaseList, selectedCityList, searchFunction, handleClear, setSelectedCityList, setSelectedUseCaseList }) => {
-
-  const searchSectionButton = {
-    color: "#fff",
-    textTransform: "capitalize",
-    fontWeight: 700,
-    bgcolor: AppStyle.palette.primary.main,
-    "&:hover": {
-      bgcolor: AppStyle.palette.primary.main
-
-    }
-  }
 
   const [useCaseList, setUseCaseList] = useState([]);
   const [city, setCity] = useState();

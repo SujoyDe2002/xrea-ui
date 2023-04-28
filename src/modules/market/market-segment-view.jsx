@@ -1,37 +1,9 @@
 import { Box, Grid, Stack, Typography } from '@mui/material'
-import { boxContainer, searchResultSection } from 'app'
+import { boxContainer, searchResultSection,headerstyle,iconboxstyle, iconValue, marketsegmenttypography, } from 'app'
 import React from 'react'
 import { SectionSearchCard } from 'shared/utils'
-const headerstyle = {
-    fontfamily: "IBM Plex Sans",
-    fontstyle: "normal",
-    fontweight: "700",
-    lineheight: "107.5%",
-    padding: "0px 10px 0px 10px"
-}
-const iconboxstyle = {
-    position: "relative",
-    width: "fit-content",
-    mx: "auto"
-}
-const iconValue = {
-    position: "absolute",
-    color: "#fff",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    fontSize:"26px"
 
-}
-const typography = {
-    fontfamily: "IBM Plex Sans",
-    fontsize: "20px",
-    fontweight: "400",
-    lineheight: "22px",
-    letterspacing: "0px",
-    textalign: "left"
 
-}
 export const MarketSegmentView = ({ props }) => {
     const { marketSegmentData, setMarketSegmentData } = props;
     const { cityName, tenYearPopGrowthRate, medianIncome, homePToIncome } = marketSegmentData
@@ -91,7 +63,7 @@ export const MarketSegmentView = ({ props }) => {
             <br></br>
             <Stack>
                 <Grid >
-                    <Typography sx={typography}>
+                    <Typography sx={marketsegmenttypography}>
                         tdustry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </Typography>

@@ -5,7 +5,7 @@ import { Box, Stack, Typography } from '@mui/material';
 
 
 
-export default function GeneralStat({ rows }) {
+export function GeneralStat({ rows }) {
     const { data, label } = rows;
     return (
 

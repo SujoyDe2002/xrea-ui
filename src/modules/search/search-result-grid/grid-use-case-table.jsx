@@ -1,15 +1,11 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableRow from '@mui/material/TableRow';
 import { blankTableCell, itemTableDataCellStyle, itemTableDataCellStyleBold, tableCell, tableHeader, tableRow } from 'app';
 import { Box, Stack, Typography } from '@mui/material';
 
 
 
 
-export default function UseCaseTable({ rows }) {
+export function UseCaseTable({ rows }) {
   const { data, label } = rows;
   console.log("label", label);
 

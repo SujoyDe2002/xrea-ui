@@ -12,7 +12,7 @@ export const InsightCard = ({ children }) => {
               <Grid item xs={3}>
 
                   <img
-                      src="/playground_assets/image5144-lpgn-200h.png"
+                      src="/playground_assets/piechart.svg"
                       alt="image5144"
                       className="frame-homepagewiththesearchbarandthetotallistofclu-image3"
                   />

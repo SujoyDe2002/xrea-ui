@@ -99,6 +99,34 @@ export const smallFont = {
 
 // home view 
 
+export const xreaMethodologyStyle = {
+  fontStyle: "normal",
+  fontWeight: 700,
+  fontSize:"40px"
+}
+export const xreaBgStyle = {
+  padding: "1.25rem 1.8rem",
+  boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)",
+  bgcolor: "#E8F3FD"
+}
+export const iconContainer = {
+  position: "absolute",
+  top: "-1.195rem",
+  transform: "translateX(50%)",
+  right: "50%"
+}
+export const smallTextStyle = {
+  fontSize:".6rem",
+  color: "#fff",
+  textAlign: "center"
+}
+export const barImgContainer = {
+  width: "80%",
+  position: "relative"
+}
+
+//home view end
+
 // Auto complete start
 export const ListTypographyStyle = {
   whiteSpace: "nowrap",
@@ -251,10 +279,31 @@ export const cityContainer = {
   fontWeight: "bold"
 
 }
-
+// export const secondarybtn = {
+//   textTransform: "none",
+//   bgcolor: theme.palette.secondary.main,
+//   fontWeight: 700,
+//   fontSize: "1.125rem",
+//   lineHeight: "107.5%"
+//   /* or 19px */
+// }
 export const searchResultSection = {
   lineHeight: "2.68rem",
   fontSize: "2.5rem"
+}
+export const boxStyle = {
+  width: "61px",
+  height: "61px",
+  background: "#D9D9D9",
+  margin: "auto",
+  cursor: "pointer"
+}
+export const marketSegmentHeading = {
+  fontStyle: "italic",
+  fontWeight: 700,
+  fontSize: "20px",
+  lineHeight: "107.5%",
+  mt: 1
 }
 // Search reasult section end
 
@@ -291,7 +340,16 @@ export const searchButtonStyle = {
   top: "27px",
   mt: "22px"
 }
+export const searchSectionButton = {
+  color: "#fff",
+  textTransform: "capitalize",
+  fontWeight: 700,
+  bgcolor: AppStyle.palette.primary.main,
+  "&:hover": {
+    bgcolor: AppStyle.palette.primary.main
 
+  }
+}
 
 // Search reasult section end
 
@@ -390,5 +448,34 @@ export const buttonStyle = {
 // Table style end
 
 // market segmnent start
- 
+export const headerstyle = {
+  fontfamily: "IBM Plex Sans",
+  fontstyle: "normal",
+  fontweight: "700",
+  lineheight: "107.5%",
+  padding: "0px 10px 0px 10px"
+}
+export const iconboxstyle = {
+  position: "relative",
+  width: "fit-content",
+  mx: "auto"
+}
+export const iconValue = {
+  position: "absolute",
+  color: "#fff",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  fontSize:"26px"
+
+}
+export const marketsegmenttypography = {
+  fontfamily: "IBM Plex Sans",
+  fontsize: "20px",
+  fontweight: "400",
+  lineheight: "22px",
+  letterspacing: "0px",
+  textalign: "left"
+
+}
 // market segmnent end 

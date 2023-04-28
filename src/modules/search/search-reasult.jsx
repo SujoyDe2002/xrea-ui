@@ -2,11 +2,8 @@ import { React, useRef } from 'react'
 import { SectionSearchCard } from 'shared/utils'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import jsPDF from 'jspdf'
-import GeneralStat from './search-result-grid/grid-general-stat';
-import UseCaseTable from './search-result-grid/grid-use-case-table';
-import { TableHeading } from './search-result-grid/table-heading';
-import MarketSegmentRow from './search-result-grid/grid-market-segment';
+import jsPDF from 'jspdf';
+import {GeneralStat,UseCaseTable,MarketSegmentRow,TableHeading} from './search-result-grid';
 import { blankTab, lastTab, searchResultSection, tabRight, tabStyle, tablesContainter } from 'app';
 
 
