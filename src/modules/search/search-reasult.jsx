@@ -45,7 +45,9 @@ const SearchReasult = ({ searchReasultProps }) => {
     <SectionSearchCard>
       <Stack mt={5} flexDirection={"row"} justifyContent={"space-between"} width={"100%"} p={".5rem 1rem"}>
         <Typography variant='h2' sx={searchResultSection}>Search results</Typography>
-        <Button variant='contained' sx={secondarybtn} onClick={(e) => downLoadReport(e)}>Save this XREA Search</Button>
+        <Button variant='contained'  sx={secondarybtn} >Save this XREA Search</Button>
+        {/* <Button variant='contained' disabled sx={secondarybtn} onClick={(e) => downLoadReport(e)}>Save this XREA Search</Button> */}
+
       </Stack>
       <Box ref={resultTableRef} sx={tablesContainter}>
 
