@@ -4,32 +4,28 @@
 // import SectionCard from './SectionCard'
 // import { Link } from 'react-router-dom'
 
-import { Grid } from "@mui/material"
+import { Box, Grid, Stack, Typography } from "@mui/material"
 import { SectionCard } from "."
 import { Link } from "react-router-dom"
+import { InfoSearch, cardImageContainer, homeCardDes, homeCardHeading1, imageBox, infoCardImageGrid, savedSeacrhCriteria } from "app"
 
 export const InfoCard = ({ children }) => {
   return (
     <SectionCard >
       <>
-        <Grid container spacing={0} p={"1.2rem"}>
-          <Grid item xs={9}>
+        <Grid container spacing={0}>
+          <Grid item xs={12} md={9}>
             <div >
-              <div className="frame-homepagewiththesearchbarandthetotallistofclu-text14">
-                <span >
-                  <span >
-                    Instantly Characterize Markets using XREA’s breakthrough algorithms, knowledge base and
-                  </span>
-                  <br></br>
-                  <span> AI technology.</span>
-                </span>
-              </div>
-              <span className="frame-homepagewiththesearchbarandthetotallistofclu-text06" >
-                <span>Try some sample searches:</span>
-              </span>
+              <Typography sx={homeCardHeading1}>
+                Instantly Characterize Markets using XREA’s breakthrough algorithms, knowledge base and AI technology.
+              </Typography>
+              <Typography sx={InfoSearch}>
+                Try some sample searches:
+              </Typography>
+
               <div >
                 <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                  <span className="frame-homepagewiththesearchbarandthetotallistofclu-text08">
+                <Typography sx={savedSeacrhCriteria} >
                     <span>
 
                       <Link to={{
@@ -42,19 +38,19 @@ export const InfoCard = ({ children }) => {
                         Peoria, IL
                       </Link>
                     </span>
-                  </span>
+                  </Typography>
                   {/* </div>
                 <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom"> */}
-                  <span className="frame-homepagewiththesearchbarandthetotallistofclu-text08">
+                  <Typography sx={savedSeacrhCriteria} >
                     <Link to={{
                       pathname: "/search", state: { id: 2 }
                     }}>
                       <span>All Uses for Peoria, IL</span>
                     </Link>
-                  </span>
+                  </Typography>
                 </div>
                 <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                  <span className="frame-homepagewiththesearchbarandthetotallistofclu-text08">
+                <Typography sx={savedSeacrhCriteria} >
                     <span>
                       <Link to={{
                         pathname: "/search", state: { id: 3 }
@@ -63,19 +59,24 @@ export const InfoCard = ({ children }) => {
                         multiple locations
                       </Link>
                     </span>
-                  </span>
+                  </Typography>
                 </div>
               </div>
             </div>
 
           </Grid>
-          <Grid item xs={3}>
+          <Grid sx={infoCardImageGrid} item md={3}>
 
-            <img
-              src="/playground_assets/search.svg"
-              alt="image3124"
-              className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right"
-            />
+            <Stack sx={cardImageContainer}>
+              <Box sx={imageBox}>
+
+                <img
+                                  src="/playground_assets/search.svg"
+                  alt="image3124"
+                  className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right"
+                />
+              </Box>
+            </Stack>
           </Grid>
 
 

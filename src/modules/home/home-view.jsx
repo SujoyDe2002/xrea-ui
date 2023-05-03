@@ -3,7 +3,7 @@ import { Link, Switch, Route, useHistory } from 'react-router-dom'
 import { Stack, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { Helmet } from 'react-helmet'
-import { cardsContainer, headerItemsContainer, layoutContainer, loginFont, pageHeader, smallFont } from 'app'
+import { cardsContainer, headerItemsContainer, headerRightContiner, layoutContainer, loginFont, pageHeader, smallFont } from 'app'
 import { HomeDetails } from './homeDetails'
 import { SearchView } from 'modules/search'
 
@@ -36,16 +36,19 @@ export const HomeView = () => {
                     alt="Rectangle4I120"
                     className='logo'
                   />
+                  <Box>
+
+                  </Box>
                   <img
                     src="/playground_assets/austintacosi120-xuvc.svg"
                     alt="AustinTacosI120"
                     className="frame-homepagewiththesearchbarandthetotallistofclu-austin-tacos"
-                  />
+                    />
                 </div>
               </Link>
 
             </div>
-            <Stack flexDirection={"row"}>
+            <Stack sx={headerRightContiner}>
               <Box mr={1}>
                 <img
                   src="/playground_assets/image2i120-7k5g-200h.png"

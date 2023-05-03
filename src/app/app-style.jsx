@@ -52,19 +52,24 @@ export const AppStyle = createTheme({
 export const cardsContainer = {
   position: "absolute",
   top: "5%",
-  width: "80%",
+  width: {xs: "90%", md:"80%"},
   height: "93%",
-  transform: "translateX(10%)"
+  left: "50%",
+  transform: "translate(-50%, 0)"
 };
 // header start
 export const pageHeader = {
   background: "linear-gradient(90deg, rgba(49, 116, 208, 1) 0%, rgba(17, 46, 86, 1) 100%)",
-  height: "19vh"
+  height:{xs:"27.25vw", md: "10.25vw"}
 }
 export const headerItemsContainer = {
   flexDirection: "row",
   justifyContent: "space-between",
   marginBottom: "10px"
+}
+export const headerRightContiner = {
+  flexDirection: "row",
+  alignItems: "center"
 }
 // header end
 // container start
@@ -86,28 +91,68 @@ export const headerFont = {
 
 export const loginFont = {
   ...headerFont,
-  fontSize: "1rem",
+  fontSize: {xs:"2vw", md: "1.2vw"}
 };
 
 export const smallFont = {
   ...headerFont,
-  fontSize: "10px",
+  fontSize: {xs: "1.5vw", md:".9vw"},
   lineHeight: " 107.50000476837158%"
 };
 
 // tablecell
 
-// home view 
+// home page start
 
-export const xreaMethodologyStyle = {
-  fontStyle: "normal",
-  fontWeight: 700,
-  fontSize:"40px"
+export const homeCardHeading1 = {
+  fontWeight: 400,
+  lineHeight: {xs:"1.34rem", md:"2.375rem"},
+  fontSize: {xs:"1.25rem", lg: "2.25rem"},
+  fontStyle: "italic",
+  marginBottom: "0.5em"
 }
-export const xreaBgStyle = {
-  padding: "1.25rem 1.8rem",
-  boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)",
-  bgcolor: "#E8F3FD"
+export const homeCardDes = {
+  fontSize: {xs:"0.6875rem", lg:"1.25rem"},
+  fontWeight: "300",
+  marginBottom: "12px"
+}
+export const InfoSearch = {
+  fontSize: {xs:"0.6875rem", lg:"1.125rem"},
+  fontWeight: "300",
+  marginBottom: "12px"
+}
+export const cardImageContainer = {
+  justifyContent: "center",
+  height:"100%"
+}
+export const imageBox = {
+  height: {xs:"35.5vw", md:"14.5vw"}
+}
+export const savedSeacrhCriteria = {
+
+    color: "rgba(168, 168, 168, 1)",
+    height: "auto",
+    fontSize: {xs:"0.6875rem", lg:"1.125rem"},
+    alignSelf: "auto",
+    fontStyle: "Bold",
+    textAlign: "center",
+    fontFamily: "IBM Plex Sans",
+    fontWeight: "700",
+    /* line-height: 107.50000476837158%; */
+    fontStretch: "normal",
+    marginRight:" 0",
+    marginBottom: "0",
+    textDecoration: "none",
+    backgroundColor: "rgba(249, 249, 249, 1)",
+    margin: "0 8px 8px 0",
+    padding: "10px 15px 10px 15px",
+    borderRadius: "4px",
+}
+
+export const smallTextStyle = {
+    fontSize: ".5rem",
+    color: "#fff",
+    textAlign: "center"
 }
 export const iconContainer = {
   position: "absolute",
@@ -115,17 +160,7 @@ export const iconContainer = {
   transform: "translateX(50%)",
   right: "50%"
 }
-export const smallTextStyle = {
-  fontSize:".6rem",
-  color: "#fff",
-  textAlign: "center"
-}
-export const barImgContainer = {
-  width: "80%",
-  position: "relative"
-}
-
-//home view end
+// home page end 
 
 // Auto complete start
 export const ListTypographyStyle = {
@@ -279,31 +314,10 @@ export const cityContainer = {
   fontWeight: "bold"
 
 }
-// export const secondarybtn = {
-//   textTransform: "none",
-//   bgcolor: theme.palette.secondary.main,
-//   fontWeight: 700,
-//   fontSize: "1.125rem",
-//   lineHeight: "107.5%"
-//   /* or 19px */
-// }
+
 export const searchResultSection = {
   lineHeight: "2.68rem",
   fontSize: "2.5rem"
-}
-export const boxStyle = {
-  width: "61px",
-  height: "61px",
-  background: "#D9D9D9",
-  margin: "auto",
-  cursor: "pointer"
-}
-export const marketSegmentHeading = {
-  fontStyle: "italic",
-  fontWeight: 700,
-  fontSize: "20px",
-  lineHeight: "107.5%",
-  mt: 1
 }
 // Search reasult section end
 
@@ -340,25 +354,19 @@ export const searchButtonStyle = {
   top: "27px",
   mt: "22px"
 }
-export const searchSectionButton = {
-  color: "#fff",
-  textTransform: "capitalize",
-  fontWeight: 700,
-  bgcolor: AppStyle.palette.primary.main,
-  "&:hover": {
-    bgcolor: AppStyle.palette.primary.main
 
-  }
-}
 
 // Search reasult section end
 
 // Card Style start
 export const cardstyle = {
-  padding: "1.25rem 1.8rem",
+  // padding: "1.25rem 1.8rem",
+  padding: {xs: "8.6%", md: "2.8%"},
+  borderRadius: "10px",
   boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)"
 
 }
+
 // Card Style end
 
 // Table style start
@@ -440,12 +448,51 @@ export const itemTableDataCellStyleBold = {
 }
 
 export const buttonStyle = {
+  fontSize: "1.125rem",
+  padding:"5px 10px 5px 10px",
   bgcolor: "#00447b",
+  width: {xs: "100%", md: "fit-content" },
   "&:hover":{
     bgcolor: "#00284a"
   }
 }
 // Table style end
+
+// Info card start
+
+export const infoCardImageGrid = {
+  display: {xs:"none", md: "block"}
+
+}
+
+// Info card end
+
+// xrea section start
+
+export const xreaBgStyle = {
+    ...cardstyle,
+    bgcolor: "#E8F3FD"
+}
+export const xreaTitleStyle = {
+  color: "#000",
+  fontStyle: "normal",
+  fontWeight: 700,
+  fontSize: {xs:"2.25rem"}
+}
+export const xreaButtonContainer ={
+  flexDirection:"row",
+  mt:1,
+  justifyContent:{xs:"center", md: "left"},
+}
+export const xreDes = {
+  fontSize: {xs: "1.25rem"}
+}
+
+export const barImgContainer = {
+    width: "80%",
+    position: "relative"
+}
+// xrea section end
 
 // market segmnent start
 export const headerstyle = {

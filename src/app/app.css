@@ -136,8 +136,10 @@
 }
 
 .logo {
-  width: auto;
-  height: 2.1vw;
+  /* width: auto;
+  height: 2.1vw; */
+  width: 11.78vw;
+  height: auto;
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-empty-header {
@@ -275,8 +277,11 @@
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-austin-tacos {
-  width: 71px;
-  height: 1vw
+  /* width: 71px;
+  height: 1vw */
+  width: 8.25vw;
+  height: auto;
+  margin-left: .5rem;
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-group20 {
@@ -302,11 +307,13 @@
 .frame-homepagewiththesearchbarandthetotallistofclu-image2 {
   top: 0px;
   left: 0px;
-  width: 30px;
+  /* width: 30px; */
+  width: 5.9vw;
   height: auto;
   position: relative;
   border-color: transparent;
 }
+
 
 .frame-homepagewiththesearchbarandthetotallistofclu-text {
   top: 8px;
@@ -406,12 +413,11 @@
 .frame-homepagewiththesearchbarandthetotallistofclu-image3 {
   /* top: 32px; */
   /* left: 1154px; */
-  width: 50%;
-  height: auto;
-  /* margin-left: auto; */
+  width: auto;
+  height: 100%;
+  margin: auto;
   /* position: relative;
-    border-color: transparent;
-    margin-left: "auto" */
+    border-color: transparent; */
 }
 
 .img-width {
@@ -488,39 +494,26 @@
   background-color: rgba(249, 249, 249, 1);
 }
 
-.frame-homepagewiththesearchbarandthetotallistofclu-text08 {
-  /* color: rgba(168, 168, 168, 1);
-    height: auto;
-    font-size: 18px;
-  
-    align-self: auto;
-    font-style: Bold;
-    text-align: center;
-    font-family: IBM Plex Sans;
-    font-weight: 700;
-    line-height: 107.50000476837158%;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none; */
+/* .frame-homepagewiththesearchbarandthetotallistofclu-text08 {
+
   color: rgba(168, 168, 168, 1);
   height: auto;
-  font-size: 12px;
+  font-size: 18px;
   align-self: auto;
   font-style: Bold;
   text-align: center;
   font-family: IBM Plex Sans;
   font-weight: 700;
-  /* line-height: 107.50000476837158%; */
   font-stretch: normal;
   margin-right: 0;
   margin-bottom: 0;
   text-decoration: none;
   background-color: rgba(249, 249, 249, 1);
-  margin:0 8px 8px 0;
-  padding: 7px;
+  margin: 0 8px 8px 0;
+  padding: 10px 15px 10px 15px;
   border-radius: 4px;
-}
+
+} */
 
 .frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion1 {
   top: -23.4091796875px;
@@ -601,7 +594,7 @@
   width: 100%;
   height: auto;
   position: relative;
-  font-size: 20px;
+  font-size: 17px;
   align-self: auto;
   font-style: italic;
   text-align: left;
@@ -1169,4 +1162,29 @@
 .icon {
   width: 116px;
   height: 116px;
+}
+
+/* screen size greater than 900 px */
+@media screen and (min-width: 900px) {
+  .logo {
+    /* width: auto;
+    height: 2.1vw; */
+    width: 6.5vw;
+    height: auto;
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-image2 {
+    width: 2.9vw;
+
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-text14 {
+    font-size: "20px";
+  }
+
+  .frame-homepagewiththesearchbarandthetotallistofclu-image3 {
+    margin-right: auto;
+
+  }
+
 }
