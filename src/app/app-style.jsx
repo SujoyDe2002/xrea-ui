@@ -57,6 +57,12 @@ export const cardsContainer = {
   left: "50%",
   transform: "translate(-50%, 0)"
 };
+// disble style 
+export const disable = {
+  color:"rgba(0, 0, 0, 0.26)",
+  cursor: "rext"
+}
+// disble style 
 // header start
 export const pageHeader = {
   background: "linear-gradient(90deg, rgba(49, 116, 208, 1) 0%, rgba(17, 46, 86, 1) 100%)",
@@ -382,7 +388,6 @@ export const searchSectionButton = {
   textTransform: "capitalize",
   height:"100%",
   fontWeight: 700,
-  bgcolor: AppStyle.palette.primary.main,
   "&:hover": {
     bgcolor: AppStyle.palette.primary.main
 

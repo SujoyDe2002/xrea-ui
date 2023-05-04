@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import { React, useState, useEffect } from 'react'
 import { AutoCompleteSelect } from 'shared/utils'
-import { AppStyle, clearLinkStyle, searchButtonContainer, searchButtonStyle, searchContainter, searchSectionButton } from 'app'
+import { AppStyle, clearLinkStyle, disable, searchButtonContainer, searchButtonStyle, searchContainter, searchSectionButton } from 'app'
 import { getCityList } from 'server/api/get-citylist'
 import { getUseCaseList } from 'server/api/get-usecase-list'
 
@@ -11,9 +11,8 @@ import { getUseCaseList } from 'server/api/get-usecase-list'
 const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, selectedUseCaseList, selectedCityList, searchFunction, handleClear, setSelectedCityList, setSelectedUseCaseList }) => {
 
   const [useCaseList, setUseCaseList] = useState([]);
-  const [city, setCity] = useState();
-
-
+  const [city, setCity] = useState(); 
+  let disabled = searchCriteria !== undefined ? true : false;
   useEffect(() => {
     (async () => {
 
@@ -31,6 +30,7 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
       if (searchCriteria?.useCase) {
         setSelectedUseCaseList(searchCriteria?.useCase);
       }
+
       return () => {
         if (searchCriteria?.city) {
           delete searchContainter.opacity;
@@ -55,7 +55,6 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
         const { data } = await getCityList(value);
         console.log("cityList", data);
         setCityList(data)
-        // setCity(e.currentTarget.value)
       }
     } else {
 
@@ -63,8 +62,6 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
 
     }
 
-    // console.log("city ", city);
-    // console.log("e.target.value", e.currentTarget.value);
   }
 
   let autoCompleteSelectPropsCity = {
@@ -75,6 +72,7 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
     selectedList: selectedCityList,
     list: true,
     handleChange: handleChangeCity,
+    disabled
   }
   let autoCompleteSelectPropsUseCase = {
     headerName: "Use case",
@@ -82,9 +80,9 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
     multiSelectInputList: useCaseList,
     setSelectedList: setSelectedUseCaseList,
     list: false,
-    selectedList: selectedUseCaseList
+    selectedList: selectedUseCaseList,
+    disabled
   }
-
   return (
     <Box sx={searchContainter}>
 
@@ -100,7 +98,7 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
           <Stack sx={searchButtonContainer}>
             <Box sx={searchButtonStyle}>
 
-              <Button sx={searchSectionButton} onClick={searchFunction}>
+              <Button sx={{ ...searchSectionButton, bgcolor: disabled ? "#cccccc" : AppStyle.palette.primary.main }} onClick={searchFunction} disabled={disabled}>
 
                 <Typography variant='h2' fontSize={"1.125rem"}>Search</Typography>
                 <Box sx={{ width: "20px", ml: 1 }}>
@@ -109,7 +107,10 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
                 </Box>
 
               </Button>
-            {tableActive ? <Box variant='contained' sx={clearLinkStyle} onClick={handleClear} >Clear search</Box> : null}
+              {disabled ? <Box variant='contained' sx={{...clearLinkStyle, ...disable}}>Clear search</Box> :
+                (tableActive ? <Box variant='contained' sx={clearLinkStyle} onClick={handleClear}>Clear search</Box> : null)
+              }
+
             </Box>
 
           </Stack>

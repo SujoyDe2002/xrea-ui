@@ -4,15 +4,20 @@ import { SearchDetails } from './search-details'
 import { MarketSegmentView } from 'modules/market'
 import { Box } from '@mui/material'
 import { searchViewcontainer } from 'app'
+import { useEffect } from 'react'
 
-export const SearchView = () => {
+export const SearchView = ({setDisbled}) => {
 
   const location = useLocation()
   const { id } = location?.state || {}
   const SearchCriteria = {
     searchId: id
   }
-
+  useEffect(() => {
+    setDisbled(id !==undefined? true : false)
+  
+  }, [])
+  
   const [marketSegmentData, setMarketSegmentData] = useState(null);
 
 

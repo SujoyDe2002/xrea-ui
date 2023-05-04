@@ -16,7 +16,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     const [cityList, setCityList] = useState([]);
     const [activeSearch, setActiveSearch] = useState(true);
     const [marketSegmentData, setMarketSegmentData] = useState(null);
-    let searchCriteria = {};
+    let searchCriteria;
     console.log("children", children);
     if (children?.searchId) {
         if (children?.searchId === 1) {
@@ -119,6 +119,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         marketSegmentData,
         setMarketSegmentData
     }
+    console.log("searchCriteria", searchCriteria);
     return (
         <DetailSection>
             <SectionCard >

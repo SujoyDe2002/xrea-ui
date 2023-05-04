@@ -94,7 +94,7 @@ const AutoCompleteTabList = ({ getOptionProps, groupedOptions, fromIndex, toInde
   )
 }
 export const AutoCompleteSelect = ({ props }) => {
-  let { headerName, multiSelectInputList, handleChange, setSelectedList, selectedValue, tableActive, selectedList, list } = props;
+  let { headerName, multiSelectInputList, handleChange, setSelectedList, selectedList, list, disabled } = props;
   let {
     getRootProps,
     getInputLabelProps,
@@ -144,10 +144,10 @@ export const AutoCompleteSelect = ({ props }) => {
             <StyledTag color={option?.color} label={option?.name} {...getTagProps({ index })} />
           ))}
 
-          <input onClick={handleCityInputClick} onKeyUp={handleChange}  {...getInputProps()} />
+          <input onClick={handleCityInputClick} onKeyUp={handleChange}  {...getInputProps()} readOnly={disabled}/>
         </InputWrapper>
       </div>
-      {groupedOptions.length > 0 ? (
+      {groupedOptions.length && !disabled > 0 ? (
         list ?
           (selectedList.length <= 4 ?
             <Listbox {...getListboxProps()}>

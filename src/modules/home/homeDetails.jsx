@@ -1,6 +1,7 @@
 import { DetailSection } from 'shared/utils'
 import React from 'react'
 import { InfoCard, InsightCard, OnlyResponsible, Methodology } from 'shared/components/'
+import { useEffect } from 'react'
 
 // import DetailSection from './DetailSection'
 // import InfoCard from './InfoCard'
@@ -9,7 +10,13 @@ import { InfoCard, InsightCard, OnlyResponsible, Methodology } from 'shared/comp
 // import XreaMethodology from './XreaMethodology'
 
 
-export const HomeDetails = () => {
+export const HomeDetails = ({setDisbled}) => {
+
+    useEffect(() => {
+        setDisbled(false)
+      
+      }, [])
+    
     return (
         <DetailSection >
             <div >

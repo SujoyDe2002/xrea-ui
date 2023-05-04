@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link, Switch, Route, useHistory } from 'react-router-dom'
+import { Link, Switch, Route, useHistory, useLocation } from 'react-router-dom'
 import { Stack, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { Helmet } from 'react-helmet'
 import { cardsContainer, headerItemsContainer, headerRightContiner, layoutContainer, loginFont, pageHeader, smallFont } from 'app'
 import { HomeDetails } from './homeDetails'
 import { SearchView } from 'modules/search'
+import { useEffect } from 'react'
 
 
 export const HomeView = () => {
@@ -15,7 +16,14 @@ export const HomeView = () => {
     setUser(true);
     history.push("/search")
   }
-
+  const [disbled, setDisbled] = useState(false);
+//   const location = useLocation()
+// console.log("location", location);
+// useEffect(()=>{
+//   if (location.pathname !== "/search") {
+//     setDisbled(false)
+//   }
+// },[])
   return (
     <Box sx={layoutContainer}>
 
@@ -43,7 +51,7 @@ export const HomeView = () => {
                     src="/playground_assets/austintacosi120-xuvc.svg"
                     alt="AustinTacosI120"
                     className="frame-homepagewiththesearchbarandthetotallistofclu-austin-tacos"
-                    />
+                  />
                 </div>
               </Link>
 
@@ -58,9 +66,17 @@ export const HomeView = () => {
               </Box>
               <Box >
                 <Typography sx={loginFont} component={'div'}>
-                  <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
-                    {user ? "Elogix Software Pvt. Ltd." : "Log In / Sign Up"}
-                  </Box>
+                  {disbled ?
+
+                    <Box sx={{ cursor: "text" }}>
+                      {"Log In / Sign Up"}
+                    </Box> :
+
+                    <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
+                      {user ? "Elogix Software Pvt. Ltd." : "Log In / Sign Up"}
+                    </Box>
+                  }
+
                 </Typography>
                 <Typography sx={smallFont} component={'div'}>{user ? "PRADIP CHANDA" : "To unlock full access"}</Typography>
               </Box>
@@ -68,10 +84,10 @@ export const HomeView = () => {
           </Stack>
           <Switch>
             <Route exact path="/">
-              <HomeDetails />
+              <HomeDetails setDisbled={setDisbled}  />
             </Route>
             <Route exact path="/search">
-              <SearchView />
+              <SearchView setDisbled={setDisbled} />
             </Route>
           </Switch>
         </Box>
