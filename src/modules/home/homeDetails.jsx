@@ -28,8 +28,7 @@ export const HomeDetails = () => {
                 <Methodology />
                 <br/>
                 <br/>
-                <br />
-                <br />
+              
             </div>
         </DetailSection>
     )

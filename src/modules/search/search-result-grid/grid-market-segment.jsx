@@ -1,21 +1,23 @@
 import * as React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { useHistory } from 'react-router-dom';
-import { blankTableCell, tableCell, tableHeader, tableRow,boxStyle ,marketSegmentHeading} from 'app';
+import { tableCell, tableHeader, tableRow, boxStyle, marketSegmentHeading } from 'app';
 
 
-// const itemTableCellStyle = {
-//     fontWeight: 600,
-//     fontSize: 14
-// }
-// const itemTableHeaderCellStyle = {
-//     fontWeight: 700,
-//     fontSize: "24px",
-//     width: "25%",
-//     textAlign: "right"
-// }
+const itemTableCellStyle = {
+    fontWeight: 600,
+    fontSize: 14
+}
+const itemTableHeaderCellStyle = {
+    fontWeight: 700,
+    fontSize: "24px",
+    width: "25%",
+    textAlign: "right"
+    //     font-size: 24px;
+    // line-height: 107.5%;
+}
 
-export function MarketSegmentRow({ marketSegmentProps }) {
+export const  MarketSegmentRow=({ marketSegmentProps })=> {
     const { setMarketSegmentData, rowLength, getCityIndex } = marketSegmentProps;
     const history = useHistory();
 
@@ -37,7 +39,7 @@ export function MarketSegmentRow({ marketSegmentProps }) {
                     </Box>
                 )
             })}
-            <Box sx={blankTableCell}></Box>
+        
         </Stack>
         // <Table sx={{ minWidth: 650 }} aria-label="simple table">
 

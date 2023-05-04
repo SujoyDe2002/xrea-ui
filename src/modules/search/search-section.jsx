@@ -2,7 +2,7 @@ import { Button, Grid, Typography } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import { React, useState, useEffect } from 'react'
 import { AutoCompleteSelect } from 'shared/utils'
-import { AppStyle, clearLinkStyle, searchButtonContainer, searchButtonStyle, searchContainter ,searchSectionButton} from 'app'
+import { AppStyle, clearLinkStyle, searchButtonContainer, searchButtonStyle, searchContainter, searchSectionButton } from 'app'
 import { getCityList } from 'server/api/get-citylist'
 import { getUseCaseList } from 'server/api/get-usecase-list'
 
@@ -89,29 +89,29 @@ const SearchSection = ({ searchCriteria, tableActive, setCityList, cityList, sel
     <Box sx={searchContainter}>
 
       <Grid container spacing={1}>
-        <Grid item xs={5}>
+        <Grid item xs={5.25}>
           <AutoCompleteSelect props={autoCompleteSelectPropsCity} />
 
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={5.25}>
           <AutoCompleteSelect props={autoCompleteSelectPropsUseCase} />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1.5}>
           <Stack sx={searchButtonContainer}>
             <Box sx={searchButtonStyle}>
 
               <Button sx={searchSectionButton} onClick={searchFunction}>
 
-                <Typography variant='h2' fontSize={"1rem"}>Search</Typography>
+                <Typography variant='h2' fontSize={"1.125rem"}>Search</Typography>
                 <Box sx={{ width: "20px", ml: 1 }}>
 
                   <img className='image' src='/playground_assets/logo_icon.png' />
                 </Box>
 
               </Button>
+            {tableActive ? <Box variant='contained' sx={clearLinkStyle} onClick={handleClear} >Clear search</Box> : null}
             </Box>
 
-            {tableActive ? <Box variant='contained' sx={clearLinkStyle} onClick={handleClear} >Clear search</Box> : null}
           </Stack>
 
         </Grid>

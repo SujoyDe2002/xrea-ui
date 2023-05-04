@@ -19,7 +19,6 @@ export const MarketSegmentView = ({ props }) => {
                 <Box onClick={handleClick}><Typography sx={{...headerstyle, cursor: "pointer"}}>  {"< Back to Search"} </Typography></Box>
                 <Stack mt={5} flexDirection={"row"} justifyContent={"space-between"} width={"100%"}>
                     <Typography variant='h2' sx={searchResultSection}>Market Segment in {cityName}</Typography>
-                    <Typography sx={headerstyle} fontWeight={"bold"} color={"#A9A9A9"} fontSize={"36px"}  textAlign={"right"}>90</Typography>
                 </Stack>
             </Box>
     

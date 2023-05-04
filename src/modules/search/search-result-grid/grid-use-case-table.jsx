@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { blankTableCell, itemTableDataCellStyle, itemTableDataCellStyleBold, tableCell, tableHeader, tableRow } from 'app';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+import { AppStyle, blankTableCell, centerAbsoluteItem, itemTableDataCellStyle, itemTableDataCellStyleBold, maxIndexValue, tableCell, tableCellValue, tableHeader, tableRow } from 'app';
 import { Box, Stack, Typography } from '@mui/material';
 
 
 
 
-export function UseCaseTable({ rows }) {
+export const UseCaseTable=({ rows })=> {
   const { data, label } = rows;
   console.log("label", label);
 
@@ -19,41 +23,41 @@ export function UseCaseTable({ rows }) {
               {use_case_group_desc}
             </Box>
             {data.map((row, index) => {
+             tableCellValue.color = use_case_color;
               const maxValuStyle = {
                 ...itemTableDataCellStyleBold,
-                color: use_case_color,
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                position: "absolute",
-                zIndex: 3,
-                opacity: 1
+                ...tableCellValue,
               }
               const othesValueStyle = {
                 ...itemTableDataCellStyle,
-                color: use_case_color
+                ...tableCellValue
+              }
+              let valueStyle;
+              let bgcolor =  AppStyle.palette.common.white;
+              if (use_case_group === row.max ) {
+                valueStyle = maxValuStyle;
+                bgcolor = use_case_color;
+
+              }else{
+                valueStyle = othesValueStyle;
               }
               return (
 
                 <Box key={index} sx={tableCell}>
-                  {use_case_group === row.max ?
+                 
                     <>
-                      <Box sx={{ borderRadius: "15px", height: "85px",width: "180px",bgcolor: use_case_color, opacity: "0.1" }}> </Box>
-                      <Typography sx={maxValuStyle}>
+                      <Box sx={{...maxIndexValue, bgcolor}}></Box>
+                      <Typography sx={valueStyle}>
                         {row[use_case_group]}
                       </Typography>
                     </>
-                    :
-                    <Typography sx={othesValueStyle}>
-                      {row[use_case_group]}
-                    </Typography>}
-
-
-                </Box>
+                              
+               </Box>
+        
               )
             })}
-            <Box sx={blankTableCell}></Box>
           </Stack>
+          
         )
       })}
 

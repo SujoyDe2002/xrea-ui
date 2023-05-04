@@ -5,7 +5,7 @@ import { Box, Stack, Typography } from '@mui/material';
 
 
 
-export function GeneralStat({ rows }) {
+export  const GeneralStat=({ rows })=> {
     const { data, label } = rows;
     return (
 
@@ -24,7 +24,6 @@ export function GeneralStat({ rows }) {
                         </Box>
                     )
                 })}
-                <Box sx={blankTableCell}></Box>
 
             </Stack>
             <Stack sx={tableRow}>
@@ -41,7 +40,7 @@ export function GeneralStat({ rows }) {
                         </Box>
                     )
                 })}
-                <Box sx={blankTableCell}></Box>
+    
 
             </Stack>
             <Stack sx={tableRow}>
@@ -58,7 +57,6 @@ export function GeneralStat({ rows }) {
                         </Box>
                     )
                 })}
-                <Box sx={blankTableCell}></Box>
 
 
             </Stack>

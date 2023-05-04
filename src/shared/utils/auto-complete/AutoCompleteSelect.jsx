@@ -1,24 +1,30 @@
-import  {React, useEffect} from 'react';
+import { React, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useAutocomplete from '@mui/base/useAutocomplete';
 import CloseIcon from '@mui/icons-material/Close';
 import 'app/icon.css';
 import { Box, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { InputWrapper, Label, ListTypographyStyle , Listbox, UseCaseHeading, autoCompleteSection } from 'app';
+import { AppStyle, InputWrapper, Label, ListTypographyStyle, Listbox, UseCaseHeading, autoCompleList, autoCompleteSection } from 'app';
 
 function Tag(props) {
 
-  const { label, onDelete, ...other } = props;
+  let { label, onDelete, color, ...other } = props;
+  color = color ? color : "#4591F0"
+  const tagStyle = {
+    bgcolor: color,
+    border: `1px solid ${color}`
+  }
   return (
-    <div  {...other}>
-     
+    <Box sx={tagStyle}  {...other}>
+
       <span>{label}</span>
-      <CloseIcon  onClick={onDelete} />
-    </div>
+      <CloseIcon onClick={onDelete} />
+    </Box>
   );
 }
 // Customizing tag style
+// background-color: ${theme.palette.mode} === 'dark' ? 'rgba(255,255,255,0.08)' : '#1565c0';
 const StyledTag = styled(Tag)(
   ({ theme }) => `
   display: flex;
@@ -26,14 +32,10 @@ const StyledTag = styled(Tag)(
   height: 24px;
   margin: 2px;
   line-height: 22px;
-  background-color: ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.08)' : '#1565c0'
-      };
-    
-  border: 1px solid #1565c0;
   border-radius: 4px;
   color: #fff;
   box-sizing: content-box;
-  padding: 0 4px 0 10px;
+  padding: 6px 10px 6px 10px;
   outline: 0;
   overflow: hidden;
 
@@ -49,7 +51,7 @@ const StyledTag = styled(Tag)(
   }
 
   & svg {
-    font-size: 12px;
+    font-size: 2.25rem;
     cursor: pointer;
     padding: 4px;
   }
@@ -60,10 +62,39 @@ const StyledTag = styled(Tag)(
 Tag.propTypes = {
   label: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired
 };
 
-export const AutoCompleteSelect = ({ props })=> {
-  let {headerName, multiSelectInputList, handleChange, setSelectedList,selectedValue, tableActive, selectedList, list } =  props;
+
+const AutoCompleteTabList = ({ getOptionProps, groupedOptions, fromIndex, toIndex, selectedList }) => {
+  return (
+    <Stack sx={{ lineHeight: 1.6, flexDirection: "row" }}>
+
+      {groupedOptions.slice(fromIndex, toIndex).map((option, index) => {
+
+        index = index + fromIndex;
+        let bgcolor = AppStyle.palette.primary.light;
+        let fontColor = AppStyle.palette.common.black;
+        selectedList.map(({ color, id }) => {
+          if (id === option.id) {
+            bgcolor = color;
+            fontColor = AppStyle.palette.common.white;
+
+          }
+        })
+        return (
+          <>
+
+            <Typography {...getOptionProps({ option, index })} sx={{ ...ListTypographyStyle, bgcolor, color: fontColor }}>{option?.name}</Typography>
+          </>
+        )
+      })}
+
+    </Stack>
+  )
+}
+export const AutoCompleteSelect = ({ props }) => {
+  let { headerName, multiSelectInputList, handleChange, setSelectedList, selectedValue, tableActive, selectedList, list } = props;
   let {
     getRootProps,
     getInputLabelProps,
@@ -78,85 +109,69 @@ export const AutoCompleteSelect = ({ props })=> {
   } = useAutocomplete({
     id: 'customized-hook-demo',
     multiple: true,
-    handleValue:{handleChange},
+    handleValue: { handleChange },
     options: multiSelectInputList && multiSelectInputList,
     getOptionLabel: (option) => option?.name,
   });
 
- console.log("multiSelectInputList", multiSelectInputList);
+  console.log("multiSelectInputList", multiSelectInputList);
 
-useEffect(() => {
+  useEffect(() => {
 
-  setSelectedList(value);
+    setSelectedList(value);
 
-}, [value])
+  }, [value])
 
-const handleClick = ()=>{
-  console.log("test");
-  return false
-}
-
-const handleCityInputClick = ()=>{
-  console.log("selectedList", selectedList);
-  if (selectedList.length >= 5) {
-    groupedOptions  = []
+  const handleClick = () => {
+    console.log("test");
+    return false
   }
-}
+
+  const handleCityInputClick = () => {
+    console.log("selectedList", selectedList);
+    if (selectedList.length >= 5) {
+      groupedOptions = []
+    }
+  }
+  console.log("selectedList", selectedList);
 
   return (
     <Box sx={autoCompleteSection}>
-      <div   className="tag" {...getRootProps()}>
+      <div className="tag autocompleteInput" {...getRootProps()}>
         <Label   {...getInputLabelProps()}>{headerName}</Label>
-        <InputWrapper onClick={handleClick}  ref={setAnchorEl} className={focused ? 'focused' : ''}>
+        <InputWrapper onClick={handleClick} ref={setAnchorEl} className={focused ? 'focused' : ''}>
           {selectedList.map((option, index) => (
-            <StyledTag label={option?.name} {...getTagProps({ index })} />
+            <StyledTag color={option?.color} label={option?.name} {...getTagProps({ index })} />
           ))}
 
           <input onClick={handleCityInputClick} onKeyUp={handleChange}  {...getInputProps()} />
         </InputWrapper>
       </div>
-      {groupedOptions.length > 0  ? (
-        list  ?
-        (selectedList.length <= 4?
-        <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
-              <span>{option?.name}</span>
-              
-            </li>
-          ))}
-        </Listbox>:null):
-        <Listbox  {...getListboxProps()}>
-          <Stack>
+      {groupedOptions.length > 0 ? (
+        list ?
+          (selectedList.length <= 4 ?
+            <Listbox {...getListboxProps()}>
+              {groupedOptions.map((option, index) => (
+                <li {...getOptionProps({ option, index })}>
+                  <Typography sx={autoCompleList}>{option?.name}</Typography>
 
-          {groupedOptions?.slice(0 ,1)?.map((option, index)=>{
-  
-    return (
-      <>
-  
-         <Typography {...getOptionProps({ option, index })} component={"span"} sx={ListTypographyStyle }>{option?.name}</Typography>
-      </>
-       )
-          })}
-            <Typography sx={UseCaseHeading}>MULTI-FAMILY</Typography>
-          <Stack flexDirection={"row"} >
-          <Typography sx={{lineHeight: 1.6}}>
+                </li>
+              ))}
+            </Listbox> : null) :
+          <Listbox  {...getListboxProps()}>
 
-                {groupedOptions.slice(1, ).map((option, index) => {
-                 
-                 console.log();
-                 index = index +1;
-                return (
-               <>
-                  {index === 5? <br /> : null}
-                  <Typography {...getOptionProps({ option, index })} component={"span"} sx={ListTypographyStyle }>{option?.name}</Typography>
-               </>
-                )
-                })}
-          </Typography>
+            <Stack>
+              <AutoCompleteTabList selectedList={selectedList} getOptionProps={getOptionProps} groupedOptions={groupedOptions} fromIndex={0} toIndex={1} />
+
+              <Typography sx={UseCaseHeading}>MULTI-FAMILY</Typography>
+              <Stack  >
+
+                <AutoCompleteTabList selectedList={selectedList} getOptionProps={getOptionProps} groupedOptions={groupedOptions} fromIndex={1} toIndex={5} />
+                <AutoCompleteTabList selectedList={selectedList} getOptionProps={getOptionProps} groupedOptions={groupedOptions} fromIndex={5} toIndex={7} />
+
+              </Stack>
             </Stack>
-          </Stack>      
-      </Listbox>
+          </Listbox>
       ) : null}
     </Box>
   );

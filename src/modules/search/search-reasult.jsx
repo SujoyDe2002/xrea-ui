@@ -2,9 +2,9 @@ import { React, useRef } from 'react'
 import { SectionSearchCard } from 'shared/utils'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import jsPDF from 'jspdf';
+import jsPDF from 'jspdf'
 import {GeneralStat,UseCaseTable,MarketSegmentRow,TableHeading} from './search-result-grid';
-import { blankTab, lastTab, searchResultSection, tabRight, tabStyle, tablesContainter } from 'app';
+import { searchResultSection, tabRight, tabStyle, tablesContainter } from 'app';
 
 
 const SearchReasult = ({ searchReasultProps }) => {
@@ -18,7 +18,6 @@ const SearchReasult = ({ searchReasultProps }) => {
     fontWeight: 700,
     fontSize: "1.125rem",
     lineHeight: "107.5%"
- 
   }
   const resultTableRef = useRef();
   const downLoadReport = (e) => {
@@ -45,9 +44,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     <SectionSearchCard>
       <Stack mt={5} flexDirection={"row"} justifyContent={"space-between"} width={"100%"} p={".5rem 1rem"}>
         <Typography variant='h2' sx={searchResultSection}>Search results</Typography>
-        <Button variant='contained'  sx={secondarybtn} >Save this XREA Search</Button>
-        {/* <Button variant='contained' disabled sx={secondarybtn} onClick={(e) => downLoadReport(e)}>Save this XREA Search</Button> */}
-
+        <Button variant='contained' sx={secondarybtn} onClick={(e) => downLoadReport(e)}>Save this XREA Search</Button>
       </Stack>
       <Box ref={resultTableRef} sx={tablesContainter}>
 
@@ -62,9 +59,6 @@ const SearchReasult = ({ searchReasultProps }) => {
               </Box>
             )
           }))}
-          <Box sx={lastTab}>
-            {"Add a city..."}
-          </Box>
 
         </Stack>
 

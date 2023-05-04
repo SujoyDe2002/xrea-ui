@@ -50,14 +50,17 @@
   background-color: var(--dl-color-gray-white);
 }
 
-.input {
-  color: var(--dl-color-gray-black);
-  cursor: auto;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-gray-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
+.autocompleteInput .css-w6fb6m input {
+  height: 54px;
+ 
+}
+.autocompleteInput> div> div {
+  font-size: 1.125rem;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+.autocompleteInput> div {
+  align-items: center;
 }
 
 .textarea {
@@ -494,26 +497,39 @@
   background-color: rgba(249, 249, 249, 1);
 }
 
-/* .frame-homepagewiththesearchbarandthetotallistofclu-text08 {
-
+.frame-homepagewiththesearchbarandthetotallistofclu-text08 {
+  /* color: rgba(168, 168, 168, 1);
+    height: auto;
+    font-size: 18px;
+  
+    align-self: auto;
+    font-style: Bold;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-weight: 700;
+    line-height: 107.50000476837158%;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none; */
   color: rgba(168, 168, 168, 1);
   height: auto;
-  font-size: 18px;
+  font-size: 12px;
   align-self: auto;
   font-style: Bold;
   text-align: center;
   font-family: IBM Plex Sans;
   font-weight: 700;
+  /* line-height: 107.50000476837158%; */
   font-stretch: normal;
   margin-right: 0;
   margin-bottom: 0;
   text-decoration: none;
   background-color: rgba(249, 249, 249, 1);
   margin: 0 8px 8px 0;
-  padding: 10px 15px 10px 15px;
+  padding: 7px;
   border-radius: 4px;
-
-} */
+}
 
 .frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion1 {
   top: -23.4091796875px;

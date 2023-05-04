@@ -9,9 +9,11 @@ export const TableHeading = ({ heading }) => {
     const theme = useTheme();
     const headingStyle = {
         bgcolor: theme.palette.tableHeader.main,
-        fontWeight: "bold",
+        fontWeight: 700,
         p: 1,
-        color: "#fff"
+        color: "#fff",
+        fontSize: "1.5rem",
+        fontFamily: theme.typography.secondaryFont
     }
 
     return (

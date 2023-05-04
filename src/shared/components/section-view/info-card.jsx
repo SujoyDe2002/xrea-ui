@@ -71,7 +71,7 @@ export const InfoCard = ({ children }) => {
               <Box sx={imageBox}>
 
                 <img
-                                  src="/playground_assets/search.svg"
+                 src="/playground_assets/search.svg"
                   alt="image3124"
                   className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right"
                 />

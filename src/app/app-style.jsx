@@ -14,22 +14,14 @@ export const AppStyle = createTheme({
     },
     tableHeader: {
       main: "#7BBFBA",
-    },
+    }
 
   },
   typography: {
     fontFamily: [
-      'IBM Plex Sans',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+      'IBM Plex Sans'   
+    ],
+    secondaryFont: 'IBM Plex Mono',
     h2: {
       fontWeight: 700
     },
@@ -49,10 +41,18 @@ export const AppStyle = createTheme({
 
 });
 
+// horizontal and vertical centering
+export const centerAbsoluteItem = {
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  position: "absolute"
+}
+// horizontal and vertical centering
 export const cardsContainer = {
   position: "absolute",
   top: "5%",
-  width: {xs: "90%", md:"80%"},
+  width: {xs: "90%", md:"83.34%"},
   height: "93%",
   left: "50%",
   transform: "translate(-50%, 0)"
@@ -114,12 +114,12 @@ export const homeCardHeading1 = {
 export const homeCardDes = {
   fontSize: {xs:"0.6875rem", lg:"1.25rem"},
   fontWeight: "300",
-  marginBottom: "12px"
+  marginBottom: "8px"
 }
 export const InfoSearch = {
-  fontSize: {xs:"0.6875rem", lg:"1.125rem"},
-  fontWeight: "300",
-  marginBottom: "12px"
+    fontSize: { xs: "0.6875rem", lg: "1.125rem" },
+    fontWeight: "300",
+    marginBottom: "12px"
 }
 export const cardImageContainer = {
   justifyContent: "center",
@@ -132,7 +132,7 @@ export const savedSeacrhCriteria = {
 
     color: "rgba(168, 168, 168, 1)",
     height: "auto",
-    fontSize: {xs:"0.6875rem", lg:"1.125rem"},
+    fontSize: { xs: "0.6875rem", lg: "1.125rem" },
     alignSelf: "auto",
     fontStyle: "Bold",
     textAlign: "center",
@@ -140,7 +140,7 @@ export const savedSeacrhCriteria = {
     fontWeight: "700",
     /* line-height: 107.50000476837158%; */
     fontStretch: "normal",
-    marginRight:" 0",
+    marginRight: " 0",
     marginBottom: "0",
     textDecoration: "none",
     backgroundColor: "rgba(249, 249, 249, 1)",
@@ -155,35 +155,41 @@ export const smallTextStyle = {
     textAlign: "center"
 }
 export const iconContainer = {
-  position: "absolute",
-  top: "-1.195rem",
-  transform: "translateX(50%)",
-  right: "50%"
+    position: "absolute",
+    top: "-1.195rem",
+    transform: "translateX(50%)",
+    right: "50%"
 }
 // home page end 
 
 // Auto complete start
+const autoCompleteFontSize = "1.125rem"
 export const ListTypographyStyle = {
   whiteSpace: "nowrap",
-  fontSize: 11,
   fontWeight: 800,
   textAlign: "center",
-  p: .5,
-  ml: .5,
-  mt: 1,
+  p: "8px 10px",
+  mx: "5px",
+  mt: "5px",
+  fontSize: autoCompleteFontSize,
+  borderRadius: "5px",
   disPlay: "inline-block",
   cursor: "pointer",
-  bgcolor: AppStyle.palette.primary.light,
   width: "fit-content"
+}
+export const autoCompleList = {
+  fontSize: autoCompleteFontSize,
+  fontWeight: 400
 }
 export const UseCaseHeading = {
   fontWeight: 600,
-  fontSize: ".7rem",
+  fontSize: ".9rem",
   lineHeight: "107.5%",
   m: .5,
   color: "#BFBFBF"
 
 }
+
 
 export const Root = styled('div')(
   ({ AppStyle }) => `
@@ -197,6 +203,7 @@ export const Label = styled('label')`
     padding: 0 0 4px;
     line-height: 1.5;
     display: block;
+    font-size: 1rem;
   `;
 
 export const InputWrapper = styled('div')(
@@ -237,17 +244,17 @@ export const InputWrapper = styled('div')(
 
 export const Listbox = styled('ul')(
   ({ theme }) => `
-    width: 40%;
+    width: 41%;
     margin: 2px 0 0;
     padding: 5px;
-    
     position: absolute;
     list-style: none;
     background-color: ${theme.palette.mode === 'dark' ? '#141414' : '#fff'};
     overflow: auto;
     max-height: 250px;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px -1px 7px 2px rgba(0, 0, 0, 0.05), inset 0px 0px 5px rgba(0, 0, 0, 0.05);
     z-index: 1;
   
     & li {
@@ -295,8 +302,11 @@ export const searchViewcontainer = {
   left: "50%",
   height: "93%",
   transform: "translateX(-50%)",
-  marginBottom: "10px"
+  marginBottom: "10px",
+
 }
+
+
 // Search view start
 
 
@@ -319,6 +329,14 @@ export const searchResultSection = {
   lineHeight: "2.68rem",
   fontSize: "2.5rem"
 }
+
+export const maxIndexValue = {
+  borderRadius: "15px", 
+  height: "4.9vw", 
+  minWidth: "100px", 
+  width: "56%", 
+  opacity: "0.1"
+}
 // Search reasult section end
 
 
@@ -326,12 +344,12 @@ export const searchResultSection = {
 
 export let searchContainter = {
   width: "100%",
-  padding: 2,
   boxShadow: "none"
 }
 export const searchButtonContainer = {
   alignItems: "center",
   justifyContent: "end",
+  width: "100%",
   height: "100%",
   position: "relative"
 
@@ -346,13 +364,29 @@ export const clearLinkStyle = {
   mt: 1,
   cursor: "pointer",
   textDecorationLine: "underline",
-
   color: "#000000"
 }
 export const searchButtonStyle = {
   padding: 0,
+  position: "absolute",
   top: "27px",
-  mt: "22px"
+  width: "100%",
+  height:"55px"
+ 
+}
+
+export const searchSectionButton = {
+  color: "#fff",
+  width: "100%",
+  justifyContent: "space-between",
+  textTransform: "capitalize",
+  height:"100%",
+  fontWeight: 700,
+  bgcolor: AppStyle.palette.primary.main,
+  "&:hover": {
+    bgcolor: AppStyle.palette.primary.main
+
+  }
 }
 
 
@@ -362,7 +396,7 @@ export const searchButtonStyle = {
 export const cardstyle = {
   // padding: "1.25rem 1.8rem",
   padding: {xs: "8.6%", md: "2.8%"},
-  borderRadius: "10px",
+  bordeRadius: "10px",
   boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)"
 
 }
@@ -375,7 +409,7 @@ const cellSize = {
   width: "306px"
 }
 const headerCellSize = {
-  width : "355px"
+  width : "320px"
 }
 export const blankTableCell = {
   ...headerCellSize,
@@ -394,14 +428,16 @@ export const tableHeader = {
   ...headerCellSize,
   p: 2,
   justifyContent: "end",
-  fontSize: "24px",
+  fontSize: "1.25rem",
   textAlign: "right",
+  fontFamily: AppStyle.typography.fontFamily[0]
 }
+
 const trBorder = "1px solid #E6E6E6"
 export const tableRow = {
   flexDirection: "row",
   borderTop: trBorder,
-  borderBottom: trBorder,
+  height: "127px"
 
 }
 export const tableCell = {
@@ -420,7 +456,9 @@ export const tabRight = {
 }
 export const tabStyle = {
   ...blankTab,
-  boxShadow: "-1px -3px 10px -4px rgba(0, 0, 0, 0.15)",
+  // boxShadow: "0px -3px 17px -3px rgba(0, 0, 0, 0.1)",
+  boxShadow: "0px -3px 17px -3px rgba(0, 0, 0, 0.1)",
+  borderRadius: "10px 10px 0px 0px",
   fontWeight: 700,
   fontSize: "25px",
   lineHeight: "107.5%",
@@ -435,10 +473,10 @@ export const lastTab = {
   fontStyle: "italic"
 }
 export const itemTableDataCellStyle = {
-  fontFamily: 'IBM Plex Sans',
+  fontFamily: AppStyle.typography.secondaryFont,
   lineHeight: "107.5%",
   fontWeight: "700",
-  fontSize: "40px",
+  fontSize: "2rem",
   textAlign: "right"
 }
 export const itemTableDataCellStyleBold = {
@@ -448,13 +486,16 @@ export const itemTableDataCellStyleBold = {
 }
 
 export const buttonStyle = {
-  fontSize: "1.125rem",
-  padding:"5px 10px 5px 10px",
   bgcolor: "#00447b",
   width: {xs: "100%", md: "fit-content" },
   "&:hover":{
     bgcolor: "#00284a"
   }
+}
+export  const tableCellValue = {
+  ...centerAbsoluteItem,
+  zIndex: 3,
+
 }
 // Table style end
 
@@ -492,37 +533,54 @@ export const barImgContainer = {
     width: "80%",
     position: "relative"
 }
+
 // xrea section end
 
 // market segmnent start
 export const headerstyle = {
-  fontfamily: "IBM Plex Sans",
-  fontstyle: "normal",
-  fontweight: "700",
-  lineheight: "107.5%",
-  padding: "0px 10px 0px 10px"
+    fontfamily: "IBM Plex Sans",
+    fontstyle: "normal",
+    fontweight: "700",
+    lineheight: "107.5%",
+    padding: "0px 10px 0px 10px"
 }
 export const iconboxstyle = {
-  position: "relative",
-  width: "fit-content",
-  mx: "auto"
+    position: "relative",
+    width: "fit-content",
+    mx: "auto"
 }
 export const iconValue = {
-  position: "absolute",
-  color: "#fff",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  fontSize:"26px"
+    position: "absolute",
+    color: "#fff",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    fontSize: "26px"
 
 }
 export const marketsegmenttypography = {
-  fontfamily: "IBM Plex Sans",
-  fontsize: "20px",
-  fontweight: "400",
-  lineheight: "22px",
-  letterspacing: "0px",
-  textalign: "left"
+    fontfamily: "IBM Plex Sans",
+    fontsize: "20px",
+    fontweight: "400",
+    lineheight: "22px",
+    letterspacing: "0px",
+    textalign: "left"
 
 }
+export const boxStyle = {
+  width: "61px",
+  height: "61px",
+  background: "#D9D9D9",
+  margin: "auto",
+  cursor: "pointer"
+}
+export const marketSegmentHeading = {
+  fontStyle: "italic",
+  fontWeight: 700,
+  fontSize: "20px",
+  lineHeight: "107.5%",
+  mt: 1
+}
+
+ 
 // market segmnent end 

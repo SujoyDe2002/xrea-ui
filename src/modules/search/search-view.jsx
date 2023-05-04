@@ -39,7 +39,7 @@ export const SearchView = () => {
         <MarketSegmentView  setMarketSegmentData={setMarketSegmentData} />
         
       </Box> */}
-      <Box sx={{ display: marketSegmentData ? "none" : "block" }}>
+      <Box sx={{ display: marketSegmentData ? "none" : "block", paddingBottom: "2rem"}}>
         <SearchDetails searchDetailsProps={searchDetailsProps}>
           {SearchCriteria}
         </SearchDetails>

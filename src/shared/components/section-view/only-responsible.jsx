@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material"
 import { SectionCard } from "."
-import { buttonStyle, cardImageContainer, homeCardDes, homeCardHeading1 } from "app"
+import { buttonStyle, cardImageContainer, homeCardDes, homeCardHeading1, imageBox } from "app"
 
 export const OnlyResponsible = ({ children }) => {
     return (
@@ -31,9 +31,10 @@ export const OnlyResponsible = ({ children }) => {
                     </Grid>
                     <Grid item md={3} xs={12} order={{ xs: 1, md: 2 }}>
                         <Stack sx={cardImageContainer}>
-                            <Box>
+                        <Box sx={imageBox}>
                                 <img
-                                    src="/playground_assets/image6149-pvk-200h.png"
+                                    // src="/playground_assets/image6149-pvk-200h.png"
+                                    src="/playground_assets/3d.svg"
                                     alt="image5144"
                                     className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right "
                                 />
