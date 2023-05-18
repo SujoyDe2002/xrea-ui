@@ -1,13 +1,14 @@
-import { Box } from "@mui/material";
-import { imageBoxcard2, xreaMaretStudy } from "app";
+import { Box, Stack } from "@mui/material";
+import { imageBoxStackContainers, imageBoxcard2, xreaMaretStudy } from "app";
 import { React, useContext, useState } from "react";
 import { SectionCard2 } from "shared/components/section-view/section-card-2";
 import { LoadingContext } from "store2/loading-context-provider";
 import { postMarketStudyMailSent } from "server/api/market-study-mail-sent";
 import { orderMailConfig } from "user-config";
+import { OpenLink } from "shared/utils";
 
 const redirect = () => {
-  window.location = "https://xrea.global/market-study/";
+  OpenLink("https://xrea.global/market-study");
 };
 export const OrderXrea = (props) => {
   const {
@@ -55,7 +56,7 @@ export const OrderXrea = (props) => {
     description:
       "If you’ve landed on a use and/or city for your next project, the Market Study is the next step to finalizing the highest & best use decision.",
     imageSection: (
-      <>
+      <Stack sx={imageBoxStackContainers}>
         <Box sx={imageBoxcard2}>
           <img
             src="/playground_assets/blueprint.svg"
@@ -63,7 +64,7 @@ export const OrderXrea = (props) => {
             className="frame-homepagewiththesearchbarandthetotallistofclu-image3"
           />
         </Box>
-      </>
+      </Stack>
     ),
     bgStyle: xreaMaretStudy,
     button: {

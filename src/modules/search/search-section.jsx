@@ -1,7 +1,11 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { React, useState, useEffect } from "react";
-import { AutoCompleteSelect } from "shared/utils";
+import {
+  AutoCompleteSelect,
+  getLocalStorageItem,
+  setLocalStorageItem,
+} from "shared/utils";
 import {
   AppStyle,
   clearLinkStyle,
@@ -27,9 +31,10 @@ const SearchSection = ({
   setSelectedUseCaseList,
 }) => {
   const [useCaseList, setUseCaseList] = useState([]);
-  let disabled = searchCriteria !== undefined ? true : false;
+  const [disabled, setDisabled] = useState(false);
+  console.log("searchCriteria11111111", searchCriteria);
   useEffect(() => {
-    let isMounted = true; 
+    let isMounted = true;
     (async () => {
       const { data } = await getUseCaseList();
       if (isMounted) setUseCaseList(data);
@@ -40,14 +45,20 @@ const SearchSection = ({
         }
       }
     })();
-    return () => {isMounted = false };
+    return () => {
+      isMounted = false;
+    };
   }, [searchCriteria]);
 
   useEffect(() => {
-    console.log("selectedCityList", selectedCityList);
-    if (searchCriteria?.city && selectedCityList?.length> 0) {
+    //  console.log("selectedCityList", selectedCityList);
+
+    const xreaData = getLocalStorageItem("xrea")?.data;
+    if (searchCriteria?.city && selectedCityList?.length > 0) {
+      setLocalStorageItem("xrea", { ...xreaData, isdisabled: true });
+      setDisabled(true);
       searchFunction();
-    
+
       console.log("inside search");
     }
   }, [selectedCityList, selectedUseCaseList]);
@@ -64,7 +75,6 @@ const SearchSection = ({
       setCityList([]);
     }
   };
-
   let autoCompleteSelectPropsCity = {
     headerName: "Location (city, state)",
     tableActive,

@@ -36,7 +36,7 @@ const SearchReasult = ({ searchReasultProps }) => {
   const { user } = userGetterSetter;
   const [showDialog, setShowDialog] = useState(false);
   const [searchName, setSearchName] = useState();
-  const [userId, setUserId] = useState(3);
+  const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(false);
   const [noOfsearch, setNoOfsearch] = useState(
     getLocalStorageItem("xrea")?.data?.noOfsearch
@@ -51,12 +51,14 @@ const SearchReasult = ({ searchReasultProps }) => {
   );
 
   useEffect(() => {
-    const maxSavedLength = getLocalStorageItem("xrea")?.data?.maxSavedLength;
-    const userId = getLocalStorageItem("xrea")?.data?.loginData.userId;
+    const logdata = getLocalStorageItem("xrea")?.data;
+    const maxSavedLength = logdata?.maxSavedLength;
+    const userId = logdata?.loginData?.userId;
+    const isdisabled = logdata?.isdisabled;
     setUserId(userId);
     // console.log("maxSavedLength", maxSavedLength);
     // console.log("noOfsearch before", noOfsearch);
-    if (userId) {
+    if (userId && !isdisabled) {
       if (noOfsearch >= maxSavedLength) {
         // console.log("noOfsearch if", noOfsearch);
         // } else {

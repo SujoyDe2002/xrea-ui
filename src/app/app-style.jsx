@@ -341,7 +341,7 @@ export const imageBox = {
   height: { xs: "35.5vw", md: "14.5vw" },
 };
 export const imageBoxcard2 = {
-  height: { xs: "35.5vw", md: "14.5vw" },
+  height: { xs: "35.5vw", md: "100%" },
 };
 export const savedSeacrhCriteria = {
   color: "rgba(168, 168, 168, 1)",
@@ -769,10 +769,14 @@ export const xreaBgStyle = {
 
 export const barImgContainer = {
   width: "80%",
-  // height: "100%",
+  // height: "80%",
   position: "relative",
 };
-
+export const barImgContainer1 = {
+  width: "80%",
+  height: "100%",
+  position: "relative",
+};
 // xrea section end
 
 // xrea market study start
@@ -829,3 +833,14 @@ export const marketSegmentHeading = {
 };
 
 // market segmnent end
+export const centeralignment = {
+  alignItems: "center",
+  justifyContent: "center",
+  height: "100%",
+};
+export const imageBoxStackContainers = {
+  flexDirection: "row",
+  alignItems: "end",
+  height: "194px",
+  justifyContent: "end",
+};

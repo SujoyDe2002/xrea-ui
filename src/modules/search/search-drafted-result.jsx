@@ -8,6 +8,7 @@ import {
   button3,
   buttonContainer,
   smallMessageBox,
+  centeralignment,
 } from "app";
 import { React, useEffect, useState, useContext } from "react";
 import { SearchSectionHeading } from "./search-section-heading";
@@ -126,9 +127,11 @@ const SearchDraftedResult = ({ setSaveSearchId }) => {
                         </Button>
                       </Grid>
                       <Grid item xs={4}>
-                        <Typography sx={{ ...text2, textAlign: "center" }}>
-                          {DateFilter(created_on)}
-                        </Typography>
+                        <Stack sx={centeralignment}>
+                          <Typography sx={{ ...text2, textAlign: "center" }}>
+                            {DateFilter(created_on)}
+                          </Typography>
+                        </Stack>
                       </Grid>
                       <Grid item xs={4}>
                         <Stack alignItems={"end"}>

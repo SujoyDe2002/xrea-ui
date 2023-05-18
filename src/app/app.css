@@ -423,8 +423,10 @@
     border-color: transparent; */
 }
 
-.img-width {
-  width: 80%;
+
+.img-bar{
+  height: 100%;
+  width: 64%;
   margin: auto;
 }
 .overlay-image {

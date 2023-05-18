@@ -1,7 +1,11 @@
 import { React, useState, useContext, useEffect } from "react";
 import SearchSection from "./search-section";
 import SearchReasult from "./search-reasult";
-import { DetailSection, getLocalStorageItem } from "shared/utils";
+import {
+  DetailSection,
+  getLocalStorageItem,
+  setLocalStorageItem,
+} from "shared/utils";
 import { SectionCard } from "shared/components";
 import { getSearchedResult } from "server/api/city-search";
 import { MarketSegmentView } from "modules/market";
@@ -114,6 +118,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     setIsDataSearched(false);
     reinitializeSearcheSection();
     console.log("handleClear");
+    const xreaData = getLocalStorageItem("xrea")?.data;
+    setLocalStorageItem("xrea", { ...xreaData, isdisabled: false });
   };
   // console.log("selectedUseCaseList", selectedUseCaseList);
   // console.log("selectedCityList", selectedCityList);
