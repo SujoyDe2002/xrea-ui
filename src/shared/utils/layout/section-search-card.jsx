@@ -1,11 +1,13 @@
+import { Box } from '@mui/material'
+import { card3Style } from 'app'
 import React from 'react'
 
  
 export const SectionSearchCard = ({ children }) => {
     return (
-        <div className="frame-homepagewiththesearchbarandthetotallistofclu-groupNew">
+        <Box sx={card3Style}>
             {children}
-        </div>
+        </Box>
     )
 }
 

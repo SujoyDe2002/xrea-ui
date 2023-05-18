@@ -7,7 +7,7 @@
 import { Box, Grid, Stack, Typography } from "@mui/material"
 import { SectionCard } from "."
 import { Link } from "react-router-dom"
-import { InfoSearch, cardImageContainer, homeCardDes, homeCardHeading1, imageBox, infoCardImageGrid, savedSeacrhCriteria } from "app"
+import { InfoSearch, cardImageContainer, homeCardDes, homeCardHeading1, imageBox, infoCardImageGrid, infoDes, savedSeacrhCriteria } from "app"
 
 export const InfoCard = ({ children }) => {
   return (
@@ -15,54 +15,65 @@ export const InfoCard = ({ children }) => {
       <>
         <Grid container spacing={0}>
           <Grid item xs={12} md={9}>
-            <div >
+            <Box >
               <Typography sx={homeCardHeading1}>
                 Instantly Characterize Markets using XREA’s breakthrough algorithms, knowledge base and AI technology.
               </Typography>
-              <Typography sx={InfoSearch}>
-                Try some sample searches:
-              </Typography>
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
 
-              <div >
-                <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                <Typography sx={savedSeacrhCriteria} >
-                    <span>
+                <Typography sx={InfoSearch}>
+                  Try some sample searches:
+                </Typography>
 
-                      <Link to={{
-                        pathname: "/search", state: {
-                          id: 1
+                <div >
+                  <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
+                    <Typography sx={savedSeacrhCriteria} >
+                      <span>
 
-                        }
-                      }}>
-                        Young Professionals and Couples with Young Kids analysis for
-                        Peoria, IL
-                      </Link>
-                    </span>
-                  </Typography>
-                  {/* </div>
+                        <Link to={{
+                          pathname: "/search", state: {
+                            id: 1
+
+                          }
+                        }}>
+                          Young Professionals and Couples with Young Kids analysis for
+                          Peoria, IL
+                        </Link>
+                      </span>
+                    </Typography>
+                    {/* </div>
                 <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom"> */}
-                  <Typography sx={savedSeacrhCriteria} >
-                    <Link to={{
-                      pathname: "/search", state: { id: 2 }
-                    }}>
-                      <span>All Uses for Peoria, IL</span>
-                    </Link>
-                  </Typography>
-                </div>
-                <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                <Typography sx={savedSeacrhCriteria} >
-                    <span>
+                    <Typography sx={savedSeacrhCriteria} >
                       <Link to={{
-                        pathname: "/search", state: { id: 3 }
+                        pathname: "/search", state: { id: 2 }
                       }}>
-                        Young Professionals and Couples with Young Kids analysis in
-                        multiple locations
+                        <span>All Uses for Peoria, IL</span>
                       </Link>
-                    </span>
-                  </Typography>
+                    </Typography>
+                  </div>
+                  <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
+                    <Typography sx={savedSeacrhCriteria} >
+                      <span>
+                        <Link to={{
+                          pathname: "/search", state: { id: 3 }
+                        }}>
+                          Young Professionals and Couples with Young Kids analysis in
+                          multiple locations
+                        </Link>
+                      </span>
+                    </Typography>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Box>
+              <Box sx={{ display: { xs: "block", md: "none" } }}>
+                <Typography sx={infoDes}>
+                  We take pertinent demand and supply data, and apply econometric techniques and real estate expertise to deliver decision-ready insights.
+                </Typography>
+                <Typography sx={infoDes}>
+                  We’ve aggregated the highest quality data and applied our algorithms on nearly every city and zip-code in the United States.
+                </Typography>
+              </Box>
+            </Box>
 
           </Grid>
           <Grid sx={infoCardImageGrid} item md={3}>
@@ -71,7 +82,7 @@ export const InfoCard = ({ children }) => {
               <Box sx={imageBox}>
 
                 <img
-                 src="/playground_assets/search.svg"
+                  src="/playground_assets/search.svg"
                   alt="image3124"
                   className="frame-homepagewiththesearchbarandthetotallistofclu-image3 align_right"
                 />

@@ -237,6 +237,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-rectangle4 {
@@ -396,7 +397,6 @@
   width: 100%;
   height: fit-content;
   display: flex;
-
   padding: 0;
   align-self: auto;
   box-sizing: border-box;
@@ -427,7 +427,9 @@
   width: 80%;
   margin: auto;
 }
-
+.overlay-image {
+  width:42.5%;
+}
 .align_right {
   margin-left: auto;
 

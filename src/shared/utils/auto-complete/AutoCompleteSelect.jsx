@@ -62,7 +62,7 @@ const StyledTag = styled(Tag)(
 Tag.propTypes = {
   label: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
-  color: PropTypes.string.isRequired
+  color: PropTypes.string
 };
 
 
@@ -71,20 +71,17 @@ const AutoCompleteTabList = ({ getOptionProps, groupedOptions, fromIndex, toInde
     <Stack sx={{ lineHeight: 1.6, flexDirection: "row" }}>
 
       {groupedOptions.slice(fromIndex, toIndex).map((option, index) => {
-
         index = index + fromIndex;
         let bgcolor = AppStyle.palette.primary.light;
         let fontColor = AppStyle.palette.common.black;
-        selectedList.map(({ color, id }) => {
-          if (id === option.id) {
+        selectedList.map(({ color, code }) => {
+          if (code === option.code) {
             bgcolor = color;
             fontColor = AppStyle.palette.common.white;
-
           }
         })
         return (
           <>
-
             <Typography {...getOptionProps({ option, index })} sx={{ ...ListTypographyStyle, bgcolor, color: fontColor }}>{option?.name}</Typography>
           </>
         )
@@ -114,26 +111,25 @@ export const AutoCompleteSelect = ({ props }) => {
     getOptionLabel: (option) => option?.name,
   });
 
-  console.log("multiSelectInputList", multiSelectInputList);
+  // console.log("multiSelectInputList", multiSelectInputList);
 
   useEffect(() => {
-
     setSelectedList(value);
-
+    console.log("value", value);
   }, [value])
 
   const handleClick = () => {
-    console.log("test");
+    //console.log("test");
     return false
   }
 
   const handleCityInputClick = () => {
-    console.log("selectedList", selectedList);
+    //console.log("selectedList", selectedList);
     if (selectedList.length >= 5) {
       groupedOptions = []
     }
   }
-  console.log("selectedList", selectedList);
+  //console.log("selectedList", selectedList);
 
   return (
     <Box sx={autoCompleteSection}>
