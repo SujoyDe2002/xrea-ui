@@ -1,8 +1,13 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material"
 import { SectionCard } from "."
 import { buttonStyle, cardImageContainer, homeCardDes, homeCardHeading1, imageBox } from "app"
+import { useHistory } from "react-router-dom";
 
 export const OnlyResponsible = ({ children }) => {
+    let history = useHistory();
+    const goToPricing = () => {
+      history.push("/pricing");
+    }
     return (
         <SectionCard >
             <>
@@ -25,7 +30,7 @@ export const OnlyResponsible = ({ children }) => {
 
                         </div>
                         <Stack mt={1} flexDirection={"row"} justifyContent={"right"}>
-                            <Button sx={buttonStyle} variant='contained'> Learn More</Button>
+                            <Button sx={buttonStyle} variant='contained' onClick={goToPricing}> Learn More</Button>
                         </Stack>
 
                     </Grid>

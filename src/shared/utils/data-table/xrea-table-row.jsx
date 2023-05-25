@@ -1,6 +1,6 @@
 import { Box, Stack, TableCell, TableRow, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { boxStyle, itemTableDataCellStyle, marketSegmentHeading, stickyHeaderCell, tableHeader } from "app";
+import { AppStyle, boxStyle, itemTableDataCellStyle, marketSegmentHeading, stickyHeaderCell, tableHeader } from "app";
 import { TableHeading } from "modules/search";
 import { SegmentUsecaseTableRow } from "./segment-usecase-table-row";
 import { GetAttribute } from "..";
@@ -38,6 +38,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
             p: 0
         }
     }
+    console.log("noOfCol", noOfCol);
     const test = "The United States Home Price to Income Ratio for 2021 is Roughly 3.54"
     return (
         <>
@@ -86,13 +87,22 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                 )}
             {rowData && rowData.type === 3 &&
                 (
-                    <TableRow key={rowData.type} sx={headingRow} className={classes.tabcol3}>
+                    <TableRow key={rowData.type} sx={{...headingRow, backgroundColor: AppStyle.palette.tableHeader.main}} className={classes.tabcol3}>
                         <TableCell
                             component="th"
                             scope="row"
-                            colSpan={noOfCol}
+                            colSpan={1}
+                            className={classes.sticky}
                         >
                             <TableHeading heading={rowData.cols[0]} />
+
+                        </TableCell>
+                        <TableCell
+                            component="th"
+                            scope="row"
+                            colSpan={noOfCol-1}
+                        >
+                            {/* <TableHeading heading={rowData.cols[0]} /> */}
 
                         </TableCell>
                     </TableRow>
@@ -153,13 +163,22 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                 )}
             {rowData && rowData.type === 5 &&
                 (
-                    <TableRow key={rowData.type} sx={headingRow} className={classes.tabcol3}>
+                    <TableRow key={rowData.type} sx={{...headingRow,  backgroundColor: AppStyle.palette.tableHeader.main}} className={classes.tabcol3} >
                         <TableCell
                             component="th"
                             scope="row"
-                            colSpan={noOfCol}
+                            colSpan={1}
+                            className={classes.sticky}
                         >
                             <TableHeading heading={rowData.cols[0]} />
+
+                        </TableCell>
+                        <TableCell
+                            component="th"
+                            scope="row"
+                            colSpan={noOfCol - 1}
+                        >
+                            {/* <TableHeading heading={rowData.cols[0]} /> */}
 
                         </TableCell>
                     </TableRow>

@@ -28,6 +28,7 @@ const SearchSection = ({
   handleClear,
   setSelectedCityList,
   setSelectedUseCaseList,
+  curentSearchTitle
 }) => {
   const [useCaseList, setUseCaseList] = useState([]);
   const [disabled, setDisabled] = useState(false);
@@ -54,7 +55,13 @@ const SearchSection = ({
 
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
-      setDisabled(true);
+      if (!curentSearchTitle) {
+
+        setDisabled(true);
+      } else {
+        setDisabled(false);
+
+      }
       searchFunction();
       console.log("inside search");
     }

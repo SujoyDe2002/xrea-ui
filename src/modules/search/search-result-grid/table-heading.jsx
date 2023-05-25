@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 export const TableHeading = ({ heading }) => {
   const theme = useTheme();
   const headingStyle = {
-    bgcolor: theme.palette.tableHeader.main,
+    // bgcolor: theme.palette.tableHeader.main,
     fontWeight: 700,
     p: 1,
     color: "#fff",

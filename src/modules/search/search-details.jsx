@@ -182,6 +182,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         {activeSearch ? (
           <SearchSection
             searchCriteria={searchCriteria}
+            curentSearchTitle = {curentSearchTitle}
             cityList={cityList}
             setCityList={setCityList}
             selectedCityList={selectedCityList}

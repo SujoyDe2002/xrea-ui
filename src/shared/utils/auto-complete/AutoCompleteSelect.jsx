@@ -136,8 +136,19 @@ export const AutoCompleteSelect = ({ props }) => {
   // console.log("multiSelectInputList", multiSelectInputList);
 
   useEffect(() => {
+    // selectedList.map(({id})=>{
+    //   console.log("selectedList" );
+    //   value.map((value)=>{
+    //     if (id !== value.id) {
+    //       setSelectedList([...selectedList, ...value]);
+    //     }
+    //   })
+    // })
     setSelectedList(value);
+    
     console.log("value", value);
+    console.log("selectedList", selectedList);
+
   }, [value]);
 
   const handleClick = () => {
