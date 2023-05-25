@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { useEffect } from "react";
 import { timeout } from "shared/constants/attachment-extention";
 import CircularIndeterminate from "shared/utils/loader/circularIndeterminate";
 import ResponseMessage from "shared/utils/response-message/response-message";

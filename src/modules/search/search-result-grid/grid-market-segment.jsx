@@ -9,20 +9,21 @@ import {
 } from "app";
 
 export const MarketSegmentRow = ({ marketSegmentProps }) => {
-  const { marketSegmentData, rowLength, getCityIndex } = marketSegmentProps;
-  const { data } = marketSegmentData;
+  // const { marketSegmentData, rowLength, getCityIndex } = marketSegmentProps;
+  // const { data } = marketSegmentData;
 
   //console.log("rowLengthff", rowLength);
   return (
     <Stack sx={tableRow}>
-      <Box sx={tableHeader}>{"Market Segment"}</Box>
+      {/* <Box sx={tableHeader}>{"Market Segment"}</Box> */}
       {data.map((row, index) => {
         return (
           <Box key={index} sx={tableCell}>
             <Box>
-              <Box sx={boxStyle} indexid={index} onClick={getCityIndex}></Box>
+              {/* <Box sx={boxStyle} indexid={index} onClick={getCityIndex}></Box> */}
+              <Box sx={boxStyle} indexid={index} ></Box>
               <Typography sx={marketSegmentHeading}>
-                {row.clusterName}
+                {"Market"}
               </Typography>
             </Box>
           </Box>

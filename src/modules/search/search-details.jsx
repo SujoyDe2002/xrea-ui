@@ -2,9 +2,10 @@ import { React, useState, useContext, useEffect } from "react";
 import SearchSection from "./search-section";
 import SearchReasult from "./search-reasult";
 import {
+  ArrangeSearchData,
   DetailSection,
   getLocalStorageItem,
-  setLocalStorageItem,
+  updateLocalStorage,
 } from "shared/utils";
 import { SectionCard } from "shared/components";
 import { getSearchedResult } from "server/api/city-search";
@@ -12,6 +13,7 @@ import { MarketSegmentView } from "modules/market";
 import { LoadingContext } from "store2/loading-context-provider";
 import { getSpecificSearch } from "server/api/get-specific-search";
 import SearchDraftedResult from "./search-drafted-result";
+import { XreaTable } from "shared/utils/data-table/xrea-table";
 
 export const SearchDetails = ({ children, searchDetailsProps }) => {
   const { setCityNameList, setUsecaseList, setIsDataSearched } =
@@ -31,6 +33,9 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const [searchCriteria, setSearchCriteria] = useState();
   const [userId, setUserId] = useState();
   const [savesearchId, setSaveSearchId] = useState();
+  const [curentSearchTitle, setCurentSearchTitle] = useState();
+  let [xreaTableRows, setXreaTableRows] = useState([])
+
   const handleSpecificSearchResponse = async (searchId, searchtype) => {
     //console.log("searchId111", searchId);
     if (searchId) {
@@ -97,8 +102,21 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       setUsecaseList(usecaseNameList.join(" / "));
       setIsDataSearched(true);
       setSearchedReasult(data);
+      const { general_stat, usecase, marketSegment } = data;
+
+      console.log("setSearchedReasult", data)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
+
+      const searchResultRowData = ArrangeSearchData({
+        CityData: [selectedCityList],
+        GeneralStat: [general_stat],
+        UseCases: [usecase],
+        MarketSegmentData: [marketSegment.data]
+      })
+      console.log("searchResultRowData", searchResultRowData);
+      console.log("usecase", usecase);
+      setXreaTableRows(searchResultRowData)
       setTableActive(true);
     }
   };
@@ -118,8 +136,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     setIsDataSearched(false);
     reinitializeSearcheSection();
     console.log("handleClear");
-    const xreaData = getLocalStorageItem("xrea")?.data;
-    setLocalStorageItem("xrea", { ...xreaData, isdisabled: false });
+    updateLocalStorage("xrea", { isdisabled: false })
   };
   // console.log("selectedUseCaseList", selectedUseCaseList);
   // console.log("selectedCityList", selectedCityList);
@@ -128,7 +145,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   };
   const getCityIndex = (e) => {
     const indexValue = getAttributeValue(e, "indexid");
-    //console.log("searchedReasult", searchedReasult);
     const selectedResultRow = searchedReasult.general_stat.data[indexValue];
     const selectedMarketSegmentRow =
       searchedReasult.marketSegment.data[indexValue];
@@ -142,18 +158,22 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       medianIncome,
       homePToIncome,
       clusterName,
-      cluster_desc,
+      cluster_desc
     });
   };
   const searchReasultProps = {
     cityNameResultList,
     searchedReasult,
     searchDetailsProps,
-    getCityIndex,
+    selectedUseCaseList,
+    curentSearchTitle,
+    xreaTableRows,
+    setCurentSearchTitle,
+    getCityIndex
   };
   const marketSegmentProps = {
     marketSegmentData,
-    setMarketSegmentData,
+    setMarketSegmentData
   };
 
   return (
@@ -175,7 +195,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         ) : null}
       </SectionCard>
       {receivedSearchResult && userId && (
-        <SearchDraftedResult setSaveSearchId={setSaveSearchId} />
+        <SearchDraftedResult setCurentSearchTitle={setCurentSearchTitle} setSaveSearchId={setSaveSearchId} />
       )}
 
       {tableActive && !receivedSearchResult ? (
@@ -185,6 +205,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
           <SearchReasult searchReasultProps={searchReasultProps} />
         )
       ) : null}
+      {/* <SearchReasult searchReasultProps={searchReasultProps} /> */}
     </DetailSection>
   );
 };

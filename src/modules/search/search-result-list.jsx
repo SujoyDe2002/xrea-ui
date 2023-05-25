@@ -12,7 +12,7 @@ export const ResultList = ({ searchReasultProps }) => {
 
 
     const { searchedReasult, cityNameResultList, setMarketSegmentData } = searchReasultProps
-    const { general_stat, usecase } = searchedReasult;
+    const { generalStat, usecase } = searchedReasult;
     const theme = useTheme();
     const secondarybtn = {
         textTransform: "none",
@@ -38,7 +38,7 @@ export const ResultList = ({ searchReasultProps }) => {
 
     const marketSegmentProps = {
 
-        rowLength: general_stat.data.length,
+        rowLength: generalStat.data.length,
 
 
     }
@@ -92,9 +92,9 @@ export const ResultList = ({ searchReasultProps }) => {
 
                 <MarketSegmentRow marketSegmentProps={marketSegmentProps} />
 
-                {/* <GeneralStat rows={general_stat} /> */}
+                {/* <GeneralStat rows={generalStat} /> */}
                 <TableHeading heading={"GENERAL STATISTICS"} />
-                <GeneralStat rows={general_stat} />
+                <GeneralStat rows={generalStat} />
                 <TableHeading heading={"USE CASE SCORE"} />
                 <UseCaseTable rows={usecase} />
             </Box>

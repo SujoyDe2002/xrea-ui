@@ -14,13 +14,17 @@ import {
   imageBoxStackContainers,
 } from "app";
 import { SectionCard2 } from "./section-card-2";
-
+import { useHistory } from 'react-router-dom';
 export const Methodology = ({ children }) => {
   const theme = useTheme();
   const iconStyle = {
     color: theme.palette.primary.main,
     fontSize: "3rem",
   };
+  let history = useHistory();
+  const goToPricing = () => {
+    history.push("/pricing");
+  }
   const sectionCard2Props = {
     title: "XREA methodology",
     description: "Newest data, sharpest insights,",
@@ -74,6 +78,7 @@ export const Methodology = ({ children }) => {
     bgStyle: xreaBgStyle,
     button: {
       buttonLable: "Learn More",
+      handleClick: goToPricing
     },
   };
   return <SectionCard2 props={sectionCard2Props} />;

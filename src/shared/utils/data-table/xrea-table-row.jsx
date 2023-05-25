@@ -1,7 +1,10 @@
-import { Box, TableCell, TableRow, Typography } from "@mui/material";
+import { Box, Stack, TableCell, TableRow, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { boxStyle, marketSegmentHeading, tabStyle, tableCell } from "app";
+import { boxStyle, itemTableDataCellStyle, marketSegmentHeading, stickyHeaderCell, tableHeader } from "app";
 import { TableHeading } from "modules/search";
+import { SegmentUsecaseTableRow } from "./segment-usecase-table-row";
+import { GetAttribute } from "..";
+import TooltipHelp from "../tooltip/tooltip-help";
 
 
 const useStyles = makeStyles({
@@ -13,9 +16,11 @@ const useStyles = makeStyles({
         left: 0
     },
     tabcol: {
-        borderRadius: "5px 5px 0px 0px",
-        boxShadow: "2px 0px 10px 0px #eeeeee",
-        margin: "0px 5px 0px 5px"
+        padding: "16px",
+        border: "5px solid #fff",
+        borderRadius: "10px 10px 0px 0px",
+        boxShadow: "0px -3px 17px -3px rgba(0, 0, 0, 0.1) inset",
+        fontWeight: 700
     },
     tabcol1: {
         borderRadius: "5px 5px 0px 0px",
@@ -25,95 +30,143 @@ const useStyles = makeStyles({
         backgroundColor: "#1ca2aa"
     }
 });
-
-export const XreaTableRow = ({ rowData }) => {
+export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
     const classes = useStyles();
-    return (<>
-        {rowData.type === 1 &&
-            (
-                <TableRow key={rowData.name}>
-                    <TableCell
-                        className={classes.sticky}
-                        component="th"
-                        scope="row"
-                    >
-                        {rowData.catg_name}
-                    </TableCell>
-                    <TableCell align="center">
-                        <Box sx={tabStyle}>
-                            {/* {rowData.catg_value1} */}
-                        </Box>
-                    </TableCell>
-                    <TableCell align="center">
-                        <Box sx={tabStyle}>
-                            {/* {rowData.catg_value1} */}
-                        </Box></TableCell>
-                    {/* <TableCell align="center" className={classes.tabcol}>{rowData.catg_value2}</TableCell>
-                    <TableCell align="center" className={classes.tabcol}>{rowData.type}</TableCell> */}
-                </TableRow>
-            )}
-        {rowData.type === 2 &&
-            (
-                <TableRow key={rowData.name} >
-                    <TableCell
-                        className={classes.sticky}
-                        component="th"
-                        scope="row"
-                        align="right"
-                    >
-                        {rowData.catg_name}
-                    </TableCell>
-                    <TableCell align="center">
-                        <Box sx={tableCell}>
-                            <Box>
-                                <Box sx={boxStyle}></Box>
-                                <Typography sx={marketSegmentHeading}>{rowData.catg_value1}</Typography>
-                            </Box>
-                        </Box>
-                    </TableCell>
-                    <TableCell align="center">
-                        <Box sx={tableCell}>
-                            <Box>
-                                <Box sx={boxStyle}></Box>
-                                <Typography sx={marketSegmentHeading}>{rowData.catg_value1}</Typography>
-                            </Box>
-                        </Box>
-                    </TableCell>
-                    {/* <TableCell align="right">{rowData.catg_value2}</TableCell>
-                    <TableCell align="right">{rowData.type}</TableCell> */}
-                </TableRow>
-            )}
-        {rowData.type === 3 &&
-            (
-                <TableRow key={rowData.name} className={classes.tabcol3}>
-                    <TableCell
-                        className={classes.sticky}
-                        component="th"
-                        scope="row"
-                        colSpan={5}
-                    >
-                        <TableHeading heading={rowData.catg_name} />
+    let colRow = new Array(noOfCol).fill(null);
+    const headingRow = {
+        "& th": {
+            p: 0
+        }
+    }
+    const test = "The United States Home Price to Income Ratio for 2021 is Roughly 3.54"
+    return (
+        <>
+            {rowData && rowData.type === 1 &&
+                (
+                    <TableRow key={rowData.type}>
+                        {
+                            rowData.cols.map((v, i) => {
+                                console.log("vasfasdf", v);
+                                return (
+                                    <TableCell
+                                        align="center" className={i === 0 ?
+                                            classes.sticky : classes.tabcol}
+                                        style={{ width: '350px', paddingLeft: 0, backgroundColor: "#fff" }}
+                                    >
+                                        <Typography sx={marketSegmentHeading}>{v}</Typography>
+                                    </TableCell>
+                                )
+                            })
+                        }
 
-                    </TableCell>
+                    </TableRow>
+                )}
+            {rowData && rowData.type === 2 &&
+                (
+                    <TableRow className={classes.sticky} sx={stickyHeaderCell} key={rowData.type} >
+                        {
+                            colRow.map((v, i) => {
+                                return (
 
-                </TableRow>
-            )}
-        {rowData.type === 4 &&
-            (
-                <TableRow key={rowData.name}>
-                    <TableCell
-                        className={classes.sticky}
-                        component="th"
-                        scope="row"
-                        align="right"
-                    >
-                        {rowData.catg_name}
-                    </TableCell>
-                    <TableCell align="right">{rowData.catg_value}</TableCell>
-                    <TableCell align="right">{rowData.catg_value1}</TableCell>
-                    {/* <TableCell align="right">{rowData.catg_value2}</TableCell>
-                    <TableCell align="right">{rowData.type}</TableCell> */}
-                </TableRow>
-            )}
-    </>);
+                                    <TableCell
+                                        align="center"
+                                        className={i === 0 && classes.sticky}
+                                        style={{ width: '350px', paddingLeft: 0, backgroundColor: "#fff" }}
+                                    >
+                                        {i > 0 && <Box sx={boxStyle} indexid={i - 1} onClick={getCityIndex}></Box>}
+                                        <Typography sx={marketSegmentHeading}>
+                                            {rowData.cols[i]}
+                                        </Typography>
+                                    </TableCell>
+                                )
+                            })
+
+                        }
+                    </TableRow>
+                )}
+            {rowData && rowData.type === 3 &&
+                (
+                    <TableRow key={rowData.type} sx={headingRow} className={classes.tabcol3}>
+                        <TableCell
+                            component="th"
+                            scope="row"
+                            colSpan={noOfCol}
+                        >
+                            <TableHeading heading={rowData.cols[0]} />
+
+                        </TableCell>
+                    </TableRow>
+                )}
+            {rowData && rowData.type === 4 &&
+                (
+                    rowData.cols && rowData.cols.map(({ tableHeaderTitle, toolTip, groupData }, index) => {
+                        return (
+
+                            <TableRow key={index} >
+                                <TableCell
+                                    align="center"
+                                    className={classes.sticky}
+                                    style={{ paddingLeft: 0, backgroundColor: "#fff" }}
+                                >
+                                    <Stack alignItems={"center"} sx={{width: "320px"}} ml={1} flexDirection={"row"}>
+                                        <Typography sx={tableHeader}>
+                                            {tableHeaderTitle}
+                                        </Typography>
+
+                                        <TooltipHelp
+                                            title={toolTip}
+
+                                        />
+                                    </Stack>
+                                </TableCell>
+                                {
+
+                                    groupData.map((v, i) => {
+
+                                        return (
+
+                                            <TableCell
+                                                align="center"
+                                                style={{ paddingLeft: 0, backgroundColor: "#fff" }}
+                                            >
+
+                                                <Typography sx={itemTableDataCellStyle}>
+                                                    {v}
+                                                </Typography>
+
+
+
+                                                {/* <Typography sx={i === 0 ? tableHeader : itemTableDataCellStyle}>
+                                        {rowData.cols[i]}
+                                    </Typography> */}
+                                                {/* <Typography sx={i === 0 ? tableHeader : itemTableDataCellStyle}>
+                                        {rowData.cols[i]}
+                                    </Typography> */}
+                                            </TableCell>
+                                        )
+                                    })
+
+                                }
+                            </TableRow>
+                        )
+                    })
+                )}
+            {rowData && rowData.type === 5 &&
+                (
+                    <TableRow key={rowData.type} sx={headingRow} className={classes.tabcol3}>
+                        <TableCell
+                            component="th"
+                            scope="row"
+                            colSpan={noOfCol}
+                        >
+                            <TableHeading heading={rowData.cols[0]} />
+
+                        </TableCell>
+                    </TableRow>
+                )}
+            {rowData && rowData.type === 6 &&
+                (
+                    <SegmentUsecaseTableRow rowData={rowData.cols} />
+                )}
+        </>);
 }

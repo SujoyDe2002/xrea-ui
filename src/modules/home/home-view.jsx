@@ -18,6 +18,8 @@ import { createTheme } from "@mui/material/styles";
 import { LoadingContext } from "store2/loading-context-provider";
 import { getLocalStorageItem, setLocalStorageItem } from "shared/utils";
 import { userInfo } from "user-config";
+import { PricingContent } from "modules/pricing";
+
 
 export const HomeView = () => {
   const { userGetterSetter, searchGetterSetter } = useContext(LoadingContext);
@@ -140,6 +142,9 @@ export const HomeView = () => {
             </Route>
             <Route exact path="/search">
               <SearchView setDisbled={setDisbled} />
+            </Route>
+            <Route exact path="/pricing">
+              <PricingContent />
             </Route>
           </Switch>
         </Box>

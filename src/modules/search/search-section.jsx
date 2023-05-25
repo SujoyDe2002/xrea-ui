@@ -3,8 +3,7 @@ import { Box, Stack } from "@mui/system";
 import { React, useState, useEffect } from "react";
 import {
   AutoCompleteSelect,
-  getLocalStorageItem,
-  setLocalStorageItem,
+  updateLocalStorage,
 } from "shared/utils";
 import {
   AppStyle,
@@ -53,12 +52,10 @@ const SearchSection = ({
   useEffect(() => {
     //  console.log("selectedCityList", selectedCityList);
 
-    const xreaData = getLocalStorageItem("xrea")?.data;
     if (searchCriteria?.city && selectedCityList?.length > 0) {
-      setLocalStorageItem("xrea", { ...xreaData, isdisabled: true });
+      updateLocalStorage("xrea", { isdisabled: true })
       setDisabled(true);
       searchFunction();
-
       console.log("inside search");
     }
   }, [selectedCityList, selectedUseCaseList]);

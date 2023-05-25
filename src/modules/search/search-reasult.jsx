@@ -1,23 +1,16 @@
-import { React, useRef, useContext, useEffect } from "react";
+import { React, useRef, useContext, useEffect, useCallback } from "react";
+import ScrollContainer from 'react-indiana-drag-scroll';
 import {
-  ArrayObjectValues,
+  ArrangeSearchData,
   SectionSearchCard,
   getLocalStorageItem,
   setLocalStorageItem,
 } from "shared/utils";
-import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import {
-  GeneralStat,
-  UseCaseTable,
-  MarketSegmentRow,
-  TableHeading,
-} from "./search-result-grid";
 import {
   input,
   searchResultSection,
-  tabRight,
-  tabStyle,
   tablesContainter,
 } from "app";
 import { SearchSectionHeading } from "./search-section-heading";
@@ -28,50 +21,56 @@ import Button2 from "shared/utils/button/button2";
 import { postSearchDetails } from "server/api/save-search";
 import { LoadingContext } from "store2/loading-context-provider";
 import BrightTooltip from "shared/utils/tooltip/bright-tooltiip";
+import { XreaTable } from "shared/utils/data-table/xrea-table";
 
 const SearchReasult = ({ searchReasultProps }) => {
   const { loaderFunction, handleResponseMessage, userGetterSetter } =
     useContext(LoadingContext);
   const { startLoader, stopLoader } = loaderFunction;
-  const { user } = userGetterSetter;
   const [showDialog, setShowDialog] = useState(false);
   const [searchName, setSearchName] = useState();
   const [userId, setUserId] = useState();
-  const [loading, setLoading] = useState(false);
   const [noOfsearch, setNoOfsearch] = useState(
     getLocalStorageItem("xrea")?.data?.noOfsearch
   );
   const [xreSearchDisable, setXreSearchDisable] = useState(false);
-  const { searchedReasult, cityNameResultList, getCityIndex } =
-    searchReasultProps;
+  const { searchedReasult, cityNameResultList, getCityIndex, curentSearchTitle, setCurentSearchTitle, xreaTableRows } = searchReasultProps;
   const { general_stat, usecase, marketSegment } = searchedReasult;
   const theme = useTheme();
   const [xreaSeachButtonTitle, setXreSearchButtonTitle] = useState(
     "Save this XREA Search"
   );
-
+  // let [xreaTableRows, setXreaTableRows] = useState([])
   useEffect(() => {
     const logdata = getLocalStorageItem("xrea")?.data;
     const maxSavedLength = logdata?.maxSavedLength;
     const userId = logdata?.loginData?.userId;
     const isdisabled = logdata?.isdisabled;
     setUserId(userId);
-    // console.log("maxSavedLength", maxSavedLength);
-    // console.log("noOfsearch before", noOfsearch);
     if (userId && !isdisabled) {
       if (noOfsearch >= maxSavedLength) {
-        // console.log("noOfsearch if", noOfsearch);
-        // } else {
         setXreSearchButtonTitle("Saved searches limit exceeded");
         setXreSearchDisable(true);
-        // console.log("noOfsearch else", noOfsearch);
       }
     } else {
       setXreSearchButtonTitle("Save this XREA Search");
       setXreSearchDisable(true);
     }
-    // console.log("noOfsearch after", noOfsearch);
+    return () => {
+      setCurentSearchTitle()
+    }
   }, [noOfsearch]);
+  // useEffect(() => {
+  //   console.log("cityNameResultList", cityNameResultList);
+  //   const searchResultRowData = ArrangeSearchData({
+  //     CityData: [cityNameResultList],
+  //     GeneralStat: [general_stat],
+  //     UseCases: [usecase],
+  //     MarketSegmentData: [marketSegment.data]
+  //   })
+  //   console.log("usecase", usecase);
+  //   setXreaTableRows(searchResultRowData)
+  // }, [searchedReasult])
 
   const secondarybtn = {
     textTransform: "none",
@@ -80,12 +79,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     fontSize: "1.125rem",
     lineHeight: "107.5%",
   };
-  const resultTableRef = useRef();
-  const marketSegmentProps = {
-    rowLength: general_stat.data?.length,
-    getCityIndex,
-    marketSegmentData: marketSegment,
-  };
+
   const openDialog = () => {
     setShowDialog(true);
   };
@@ -95,10 +89,8 @@ const SearchReasult = ({ searchReasultProps }) => {
   const openSaveSearch = () => {
     openDialog();
   };
-  // console.log("cityNameResultList", cityNameResultList);
-  // console.log("usecase", usecase);
   const saveSearch = async () => {
-    const xreaData = getLocalStorageItem("xrea").data;
+    const xreaData = getLocalStorageItem("xrea")?.data;
     const { userId } = xreaData.loginData;
     const citits = cityNameResultList.map(({ name, id }) => {
       return {
@@ -126,7 +118,6 @@ const SearchReasult = ({ searchReasultProps }) => {
     const { data } = await postSearchDetails(payLoad);
     stopLoader();
 
-    // console.log("statusCode", statusCode);
     const { statuscode, noOfSavedSearch } = data;
     if (statuscode === 200) {
       handleResponseMessage("Search saved successfully!");
@@ -156,24 +147,22 @@ const SearchReasult = ({ searchReasultProps }) => {
         onChange={(e) => setSearchName(e.target.value)}
         value={searchName}
         InputLabelProps={{
-          shrink: true,
+          shrink: true
         }}
       />
     ),
     dialogAction: {
       button1: <Button2 props={button2Props} />,
-      button2: <Button1 props={button1Props} />,
-    },
+      button2: <Button1 props={button1Props} />
+    }
   };
-  const data = ArrayObjectValues(general_stat.data);
   const xreaTooltipTitle =
     "You have exceeded the limit of saved searches. Please delete older searches before saving new ones.";
-  // console.log("data", data);
   return (
     <SectionSearchCard>
       <SearchSectionHeading>
         <Typography variant="h2" sx={searchResultSection}>
-          Search results
+          {curentSearchTitle ? curentSearchTitle : "Search results"}
         </Typography>
         {xreSearchDisable && userId ? (
           <BrightTooltip title={xreaTooltipTitle} placement="bottom" arrow>
@@ -199,24 +188,14 @@ const SearchReasult = ({ searchReasultProps }) => {
           </Button>
         )}
       </SearchSectionHeading>
-      <Box ref={resultTableRef} sx={tablesContainter}>
-        <Stack direction={"row"} justifyContent={"start"} spacing={2}>
-          <Box sx={tabRight}></Box>
-          {cityNameResultList.map((city) => {
-            return (
-              <Box key={city.name} sx={tabStyle}>
-                {city.name}
-              </Box>
-            );
-          })}
-        </Stack>
-        <MarketSegmentRow marketSegmentProps={marketSegmentProps} />
-        <TableHeading heading={"GENERAL STATISTICS"} />
-        <GeneralStat rows={general_stat} />
-        <TableHeading heading={"USE CASE SCORE"} />
-        <UseCaseTable rows={usecase} />
+      <Box sx={tablesContainter}>
+        {/* <Box onClick={getCityIndex}>ss</Box> */}
+        <ScrollContainer >
+          <XreaTable rows={xreaTableRows} getCityIndex={getCityIndex} />
+        </ScrollContainer>
       </Box>
       {showDialog && <AlertDialog props={AlertDialogProps} />}
+
     </SectionSearchCard>
   );
 };

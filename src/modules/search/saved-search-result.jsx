@@ -8,16 +8,16 @@ import {
   button3,
   buttonContainer,
   smallMessageBox,
-  centeralignment,
 } from "app";
 import { React, useEffect, useState, useContext } from "react";
 import { SearchSectionHeading } from "./search-section-heading";
 import {
   SectionSearchCard,
-  dateFilter,
+  DateFilter,
   getLocalStorageItem,
+  setLocalStorageItem,
   GetAttribute,
-  updateLocalStorage
+  updateLocalStorage,
 } from "shared/utils";
 import { getSavedSearch } from "server/api/saved-search";
 import { message_nodata } from "shared/constants/attachment-extention";
@@ -26,7 +26,7 @@ import ConfirmationBox from "shared/utils/confirmation-box/confirmation-box";
 import { deleteSearch } from "server/api/delete-search";
 import { Link } from "react-router-dom";
 
-const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
+const SavedSearchResult = ({ setSaveSearchId }) => {
   const [searchList, setSearchList] = useState(null);
   const [userId, setUserId] = useState(
     getLocalStorageItem("xrea")?.data?.loginData?.userId
@@ -43,7 +43,9 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
 
     setSearchList(savedList);
     const noOfsearch = savedList.length;
-    updateLocalStorage("xrea", { maxSavedLength, noOfsearch })
+    // const xreaData = getLocalStorageItem("xrea")?.data;
+    // setLocalStorageItem("xrea", { ...xreaData, maxSavedLength, noOfsearch });
+    // updateLocalStorage("xrea", { maxSavedLength, noOfsearch })
   };
   useEffect(() => {
     setSearchedData();
@@ -77,7 +79,7 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
       searchName,
     };
     await deleteSearch(payLoad);
-    await setSearchedData();
+    setSearchedData();
   };
   const handleClose = (element) => {
     const updatedSearchList = searchList.map((item) => {
@@ -87,14 +89,9 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
     setSearchList(updatedSearchList);
   };
   const handleSearch = (element) => {
-    const searchId = GetAttribute(element, "searchid");
-    const searchTitle = GetAttribute(element, "searchTitle");
-    setCurentSearchTitle(searchTitle);
+    const searchId = GetAttribute(element, "searchId");
+
     setSaveSearchId(searchId);
-  };
-  const draftrowtextstyle = {
-    ...text1,
-    whiteSpace: "nowrap",
   };
   return (
     <SectionSearchCard>
@@ -117,22 +114,33 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
                 <Box key={index}>
                   <Stack sx={{ ...searchSavedList, position: "relative" }}>
                     <Grid container spacing={1}>
-                      <Grid item xs={4}>
+                      <Grid
+                        item
+                        xs={4}
+                        // searchId={save_search_id}
+                        //onRowClick={handleSearch}
+                      >
+                        {/* <Link
+                          to={{
+                            pathname: "/search",
+                            state: {
+                              id: { save_search_id },
+                            },
+                          }}
+                        > */}
                         <Button
-                          searchid={save_search_id}
-                          searchTitle = {save_search_title}
+                          searchId={save_search_id}
                           onClick={handleSearch}
-                          sx={draftrowtextstyle}
+                          sx={text1}
                         >
                           {save_search_title}
+                          {/* </Link> */}k{" "}
                         </Button>
                       </Grid>
                       <Grid item xs={4}>
-                        <Stack sx={centeralignment}>
-                          <Typography sx={{ ...text2, textAlign: "center" }}>
-                            {dateFilter(created_on)}
-                          </Typography>
-                        </Stack>
+                        <Typography sx={{ ...text2, textAlign: "center" }}>
+                          {DateFilter(created_on)}
+                        </Typography>
                       </Grid>
                       <Grid item xs={4}>
                         <Stack alignItems={"end"}>
@@ -196,4 +204,4 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
   );
 };
 
-export default SearchDraftedResult;
+export default SavedSearchResult;

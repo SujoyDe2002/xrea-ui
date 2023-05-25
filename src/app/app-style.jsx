@@ -405,10 +405,9 @@ export const UseCaseHeading = {
 
 export const Root = styled("div")(
   ({ AppStyle }) => `
-    color: ${
-      AppStyle.palette.mode === "dark"
-        ? "rgba(255,255,255,0.65)"
-        : "rgba(0,0,0,.85)"
+    color: ${AppStyle.palette.mode === "dark"
+      ? "rgba(255,255,255,0.65)"
+      : "rgba(0,0,0,.85)"
     };
     font-size: 14px;
   `
@@ -442,9 +441,8 @@ export const InputWrapper = styled("div")(
   
     & input {
       background-color: ${theme.palette.mode === "dark" ? "#141414" : "#fff"};
-      color: ${
-        theme.palette.mode === "dark" ? "rgba(255,255,255,0.65)" : "#000"
-      };
+      color: ${theme.palette.mode === "dark" ? "rgba(255,255,255,0.65)" : "#000"
+    };
       height: 30px;
       box-sizing: border-box;
       padding: 4px 6px;
@@ -487,9 +485,8 @@ export const Listbox = styled("ul")(
     }
   
     & li[aria-selected='true'] {
-      background-color: ${
-        theme.palette.mode === "dark" ? "#2b2b2b" : "#fafafa"
-      };
+      background-color: ${theme.palette.mode === "dark" ? "#2b2b2b" : "#fafafa"
+    };
       font-weight: 600;
   
       & svg {
@@ -498,9 +495,8 @@ export const Listbox = styled("ul")(
     }
   
     & li.${autocompleteClasses.focused} {
-      background-color: ${
-        theme.palette.mode === "dark" ? "#003b57" : "#e6f7ff"
-      };
+      background-color: ${theme.palette.mode === "dark" ? "#003b57" : "#e6f7ff"
+    };
       cursor: pointer;
   
       & svg {
@@ -547,14 +543,14 @@ export const confirmationBoxContainter = {
 export const confirmationBoxposition = {
   position: "absolute",
   right: "15px",
-  top: "-103px",
+  top: "-103px"
 };
 // save search end
 
 // Search reasult section start
 
 export const tablesContainter = {
-  width: "100%",
+  width: "100%"
 };
 export const cityContainer = {
   padding: ".8rem 1.6rem",
@@ -562,12 +558,12 @@ export const cityContainer = {
   textAlign: "center",
   background: "#FFFFFF",
   boxShadow: " 0px -3px 17px -3px rgba(0, 0, 0, 0.1)",
-  fontWeight: "bold",
+  fontWeight: "bold"
 };
 
 export const searchResultSection = {
   lineHeight: "2.68rem",
-  fontSize: "2.5rem",
+  fontSize: "2.5rem"
 };
 
 export const maxIndexValue = {
@@ -575,7 +571,7 @@ export const maxIndexValue = {
   height: "4.9vw",
   minWidth: "100px",
   width: "56%",
-  opacity: "0.1",
+  opacity: "0.1"
 };
 // Search reasult section end
 
@@ -583,14 +579,14 @@ export const maxIndexValue = {
 
 export let searchContainter = {
   width: "100%",
-  boxShadow: "none",
+  boxShadow: "none"
 };
 export const searchButtonContainer = {
   alignItems: "center",
   justifyContent: "end",
   width: "100%",
   height: "100%",
-  position: "relative",
+  position: "relative"
 };
 
 export const clearLinkStyle = {
@@ -602,14 +598,14 @@ export const clearLinkStyle = {
   mt: 1,
   cursor: "pointer",
   textDecorationLine: "underline",
-  color: "#000000",
+  color: "#000000"
 };
 export const searchButtonStyle = {
   padding: 0,
   position: "absolute",
   top: "27px",
   width: "100%",
-  height: "55px",
+  height: "55px"
 };
 
 // Search reasult section end
@@ -618,23 +614,23 @@ export const searchButtonStyle = {
 const cardPadding = { xs: "8.6%", md: "2.8%" };
 const cardCommonStyle = {
   padding: cardPadding,
-  boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)",
+  boxShadow: "0px -4px 17px -3px rgba(0, 0, 0, 0.15)"
 };
 export const card1style = {
   ...cardCommonStyle,
-  borderRadius: "10px",
+  borderRadius: "10px"
 };
 const cardBgStyle = {
   height: "100%",
   width: "100%",
   position: "absolute",
   top: 0,
-  left: 0,
+  left: 0
 };
 export const card2style = {
   ...cardCommonStyle,
   borderRadius: "20px",
-  position: "relative",
+  position: "relative"
   // height: "27.6vh",
 };
 export const card2BuronContainer = {
@@ -653,7 +649,7 @@ export const card3Style = {
   borderColor: "transparent",
   flexDirection: "column",
   justifyContent: "flex-start",
-  backgroundColor: "rgba(255, 255, 255, 1)",
+  backgroundColor: "rgba(255, 255, 255, 1)"
   // backgroundColor: "#000"
 };
 // Card Style end
@@ -661,23 +657,28 @@ export const card3Style = {
 // Table style start
 
 const cellSize = {
-  width: "306px",
+  width: { xs: "150px", md: "320px" }
 };
 const headerCellSize = {
-  width: "320px",
+  ...cellSize
 };
 export const blankTableCell = {
   ...headerCellSize,
-  p: 2,
+  p: 2
 };
 const tablecellCommon = {
   ...blankTableCell,
   fontWeight: 700,
-  display: "flex",
+  //display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  width:"350px"
 };
 
+export const stickyHeaderCell = {
+  backgroundColor: AppStyle.palette.common.white,
+  zIndex: 1
+}
 export const tableHeader = {
   ...tablecellCommon,
   ...headerCellSize,
@@ -686,13 +687,20 @@ export const tableHeader = {
   fontSize: "1.25rem",
   textAlign: "right",
   fontFamily: AppStyle.typography.fontFamily[0],
+  bgcolor: AppStyle.palette.common.white
 };
 
 const trBorder = "1px solid #E6E6E6";
 export const tableRow = {
   flexDirection: "row",
-  borderTop: trBorder,
+  height: "127px"
+};
+export const tableHeaderCell = {
+  flexDirection: "row",
   height: "127px",
+  bgcolor: AppStyle.palette.common.white,
+  ...cellSize
+
 };
 export const tableCell = {
   ...tablecellCommon,
@@ -719,6 +727,7 @@ export const tabStyle = {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
+  wordWrap: "break-word"
 };
 export const lastTab = {
   ...tabStyle,
@@ -730,7 +739,7 @@ export const itemTableDataCellStyle = {
   lineHeight: "107.5%",
   fontWeight: "700",
   fontSize: "2rem",
-  textAlign: "right",
+  textAlign: "center",
 };
 export const itemTableDataCellStyleBold = {
   fontSize: "40px",
@@ -824,12 +833,13 @@ export const boxStyle = {
   cursor: "pointer",
 };
 export const marketSegmentHeading = {
-  fontStyle: "italic",
+  // fontStyle: "italic",
   fontWeight: 700,
   fontSize: "20px",
   lineHeight: "107.5%",
   mt: 1,
   textAlign: "center",
+  bgcolor: AppStyle.palette.common.white
 };
 
 // market segmnent end
