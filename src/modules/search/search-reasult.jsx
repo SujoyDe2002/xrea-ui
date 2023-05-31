@@ -92,42 +92,43 @@ const SearchReasult = ({ searchReasultProps }) => {
     openDialog();
   };
   const saveSearch = async () => {
-
-    const xreaData = getLocalStorageItem("xrea")?.data;
-    const { userId } = xreaData.loginData;
-    const citits = cityNameResultList.map(({ name, id }) => {
-      return {
-        geographic_area_name: name,
-        geoId: id,
-      };
-    });
-    const usecases = usecase.label.map(
-      ({ use_case_group, use_case_group_desc, use_case_color }) => {
+    if (searchName) {
+      const xreaData = getLocalStorageItem("xrea")?.data;
+      const { userId } = xreaData.loginData;
+      const citits = cityNameResultList.map(({ name, id }) => {
         return {
-          code: use_case_group,
-          name: use_case_group_desc,
-          color: use_case_color,
+          geographic_area_name: name,
+          geoId: id,
         };
+      });
+      const usecases = usecase.label.map(
+        ({ use_case_group, use_case_group_desc, use_case_color }) => {
+          return {
+            code: use_case_group,
+            name: use_case_group_desc,
+            color: use_case_color,
+          };
+        }
+      );
+      const payLoad = {
+        name: searchName,
+        user_id: userId,
+        city: citits,
+        usecase: usecases,
+      };
+      closeDialog();
+      startLoader();
+      const { status, data } = await postSearchDetails(payLoad);
+      stopLoader();
+      console.log("Status : " + status);
+      //const { statuscode, noOfSavedSearch } = data;
+      let noOfSavedSearch = data.saveSearchCount;
+      if (status === 200) {
+        handleResponseMessage("Search saved successfully!");
+        const noOfSearch = Number(noOfSavedSearch);
+        setLocalStorageItem("xrea", { ...xreaData, noOfsearch });
+        setNoOfsearch(noOfSearch);
       }
-    );
-    const payLoad = {
-      name: searchName,
-      user_id: userId,
-      city: citits,
-      usecase: usecases,
-    };
-    closeDialog();
-    startLoader();
-    const { status, data } = await postSearchDetails(payLoad);
-    stopLoader();
-    console.log("Status : " + status);
-    //const { statuscode, noOfSavedSearch } = data;
-    let noOfSavedSearch = data.saveSearchCount;
-    if (status === 200) {
-      handleResponseMessage("Search saved successfully!");
-      const noOfSearch = Number(noOfSavedSearch);
-      setLocalStorageItem("xrea", { ...xreaData, noOfsearch });
-      setNoOfsearch(noOfSearch);
     }
   };
   const button1Props = {
