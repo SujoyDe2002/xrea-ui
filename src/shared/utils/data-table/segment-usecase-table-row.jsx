@@ -56,7 +56,7 @@ export const SegmentUsecaseTableRow = ({ rowData }) => {
                                             sx={{
                                                 ...itemTableDataCellStyleBold,
                                                 color: use_case_color,
-                                                width: "200px",
+                                                // width: "200px",
                                                 padding: "10px 50px",
                                                 borderRadius: "25px",
                                                 backgroundColor: bgcolor

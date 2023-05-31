@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import useAutocomplete from "@mui/base/useAutocomplete";
 import CloseIcon from "@mui/icons-material/Close";
@@ -15,18 +15,27 @@ import {
   autoCompleList,
   autoCompleteSection,
 } from "app";
+import { GetAttribute } from "..";
 
 function Tag(props) {
-  let { label, onDelete, color, ...other } = props;
+  let { label, onDelete,onChange, color, id, setSavedList, savedList, ...other } = props;
   color = color ? color : "#4591F0";
   const tagStyle = {
     bgcolor: color,
     border: `1px solid ${color}`,
   };
+  console.log("id", id);
+  const handleDelete = (e) => {
+    const geoId = GetAttribute(e, "geoId")
+    console.log("geoId", geoId);
+    console.log("");
+    const kuku = onDelete()
+    console.log("huku", kuku);
+  }
   return (
     <Box sx={tagStyle} {...other}>
       <span>{label}</span>
-      <CloseIcon onClick={onDelete} />
+      <CloseIcon geoId={id} onClick={handleDelete} />
     </Box>
   );
 }
@@ -68,7 +77,11 @@ const StyledTag = styled(Tag)(
 Tag.propTypes = {
   label: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   color: PropTypes.string,
+  id: PropTypes.string,
+  savedList: PropTypes.array,
+  setSavedList: PropTypes.func,
 };
 
 const AutoCompleteTabList = ({
@@ -112,7 +125,8 @@ export const AutoCompleteSelect = ({ props }) => {
     setSelectedList,
     selectedList,
     list,
-    disabled,
+    savedList,
+    setSavedList
   } = props;
   let {
     getRootProps,
@@ -123,45 +137,55 @@ export const AutoCompleteSelect = ({ props }) => {
     getOptionProps,
     groupedOptions,
     value,
+    //defaultValue,
     focused,
     setAnchorEl,
   } = useAutocomplete({
     id: "customized-hook-demo",
     multiple: true,
-    handleValue: { handleChange },
+    // handleValue: { handleChange },
+    onChange:(e, option, reason)=>{
+      // console.log('huku reason',reason)
+      // console.log('huku e',e)
+      console.log('huku option',option)
+      setSelectedList(option)
+    },
     options: multiSelectInputList && multiSelectInputList,
-    getOptionLabel: (option) => option?.name,
+    value:selectedList||[],
+    //defaultValue:selectedList||[],
+    getOptionLabel: ({ name }) => name
   });
-
+  const [valueLength, setValueLength] = useState(0)
   // console.log("multiSelectInputList", multiSelectInputList);
+  console.log("setAnchorEl", setAnchorEl);
 
   useEffect(() => {
-    // selectedList.map(({id})=>{
-    //   console.log("selectedList" );
-    //   value.map((value)=>{
-    //     if (id !== value.id) {
-    //       setSelectedList([...selectedList, ...value]);
-    //     }
-    //   })
-    // })
-    setSelectedList(value);
-    
-    console.log("value", value);
-    console.log("selectedList", selectedList);
+    // if (savedList.length >= 1) {
+    //   setSelectedList([...savedList, ...value]);
+    // } else {
+    //   setSelectedList(value);
 
+    // }
+    // selectedList.length > 0 && selectedList.map(()=>{
+
+    // }, value)
+    // // setSelectedList(value);
+
+    // console.log("value 1", value);
+    // // console.log("value 2", selectedList);
+    // console.log("multiSelectInputList", multiSelectInputList);
+    // setValueLength(value.length);
+    // console.log("value Length" ,valueLength);
+    // console.log("value3" ,value);
   }, [value]);
 
   const handleClick = () => {
     //console.log("test");
+    console.log("delete");
     return false;
   };
 
-  const handleCityInputClick = () => {
-    //console.log("selectedList", selectedList);
-    if (selectedList.length >= 5) {
-      groupedOptions = [];
-    }
-  };
+
   //console.log("selectedList", selectedList);
 
   return (
@@ -169,37 +193,38 @@ export const AutoCompleteSelect = ({ props }) => {
       <div className="tag autocompleteInput" {...getRootProps()}>
         <Label {...getInputLabelProps()}>{headerName}</Label>
         <InputWrapper
-          onClick={handleClick}
+          // onClick={handleClick}
           ref={setAnchorEl}
           className={focused ? "focused" : ""}
         >
-          {selectedList.map((option, index) => (
+          {selectedList && selectedList.length > 0 && selectedList.map(({ color, name, id }, index) => (
             <StyledTag
-              color={option?.color}
-              label={option?.name}
+              color={color}
+              label={name}
+              id={id}
+              savedList={savedList}
+              setSavedList={setSavedList}
               {...getTagProps({ index })}
             />
           ))}
-
+          {console.log("getInputProps", getInputProps)}
           <input
-            onClick={handleCityInputClick}
             onKeyUp={handleChange}
             {...getInputProps()}
-            readOnly={disabled}
+          
           />
         </InputWrapper>
-      </div>
-      {groupedOptions.length && !disabled > 0 ? (
+      {groupedOptions && groupedOptions.length> 0 ? (
         list ? (
-          selectedList.length <= 4 ? (
-            <Listbox {...getListboxProps()}>
-              {groupedOptions.map((option, index) => (
-                <li {...getOptionProps({ option, index })}>
-                  <Typography sx={autoCompleList}>{option?.name}</Typography>
-                </li>
-              ))}
-            </Listbox>
-          ) : null
+          <Listbox {...getListboxProps()}>
+            {console.log("getListboxProps", getListboxProps)}
+            {groupedOptions.map((option, index) => (
+              <li {...getOptionProps({ option, index })}>
+                <Typography sx={autoCompleList}>{option?.name}</Typography>
+              </li>
+            ))}
+          </Listbox>
+
         ) : (
           <Listbox {...getListboxProps()}>
             <Stack>
@@ -232,6 +257,7 @@ export const AutoCompleteSelect = ({ props }) => {
           </Listbox>
         )
       ) : null}
+      </div>
     </Box>
   );
 };

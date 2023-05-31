@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, Switch, Route, useHistory } from "react-router-dom";
 import { Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
@@ -16,9 +16,10 @@ import { HomeDetails } from "./homeDetails";
 import { SearchView } from "modules/search";
 import { createTheme } from "@mui/material/styles";
 import { LoadingContext } from "store2/loading-context-provider";
-import { getLocalStorageItem, setLocalStorageItem } from "shared/utils";
+import { getLocalStorageItem, removeLocalStorageItems, setLocalStorageItem } from "shared/utils";
 import { userInfo } from "user-config";
 import { PricingContent } from "modules/pricing";
+import ContentWrapper from "shared/utils/layout/content-wrapper";
 
 
 export const HomeView = () => {
@@ -29,10 +30,10 @@ export const HomeView = () => {
   const history = useHistory();
   const handleLogin = () => {
     const userId = userInfo.userId;
-    setUser(userId);
     const loginData = {
-      userId,
+      userId
     };
+    setUser(loginData);
     setLocalStorageItem("xrea", { loginData });
     history.push("/search");
   };
@@ -77,6 +78,15 @@ export const HomeView = () => {
       history.push("/");
     }
   };
+  const handleLogout = ()=>{
+      setUser()
+      removeLocalStorageItems(["xrea"])
+      history.push("/")
+  }
+  //todo for temporary logout
+  useEffect(() => {
+      handleLogout();
+  }, [])
   return (
     <Box sx={layoutContainer}>
       <Box
@@ -93,49 +103,47 @@ export const HomeView = () => {
         </Helmet>
         <Box sx={pageHeader}></Box>
         <Box sx={cardsContainer}>
-          <Stack sx={headerItemsContainer}>
-            <div className="frame-homepagewiththesearchbarandthetotallistofclu-group7">
-              <Box
-                onClick={handleLogoClick}
-                className="frame-homepagewiththesearchbarandthetotallistofclu-group4"
-              >
-                <img
-                  src="/playground_assets/logow.svg"
-                  alt="Rectangle4I120"
-                  className="logo"
-                />
-                <Box></Box>
-                <img
-                  src="/playground_assets/austintacosi120-xuvc.svg"
-                  alt="AustinTacosI120"
-                  className="frame-homepagewiththesearchbarandthetotallistofclu-austin-tacos"
-                />
-              </Box>
-            </div>
-            <Stack sx={headerRightContiner}>
-              <Box mr={1}>
-                <img
-                  src="/playground_assets/image2i120-7k5g-200h.png"
-                  alt="image2I120"
-                  className="frame-homepagewiththesearchbarandthetotallistofclu-image2"
-                />
-              </Box>
-              <Box>
-                <Typography sx={loginFont} component={"div"}>
-                  {disbled ? (
-                    <Box sx={{ cursor: "text" }}>{"Log In / Sign Up"}</Box>
-                  ) : (
-                    <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
-                      {user ? `${userInfo.companyName}` : "Log In / Sign Up"}
-                    </Box>
-                  )}
-                </Typography>
-                <Typography sx={smallFont} component={"div"}>
-                  {user ? `${userInfo.userName}` : "To unlock full access"}
-                </Typography>
-              </Box>
+        <ContentWrapper>
+            <Stack sx={headerItemsContainer}>
+              <div className="frame-homepagewiththesearchbarandthetotallistofclu-group7">
+                <Box
+                  onClick={handleLogoClick}
+                  className="frame-homepagewiththesearchbarandthetotallistofclu-group4"
+                >
+                  <img
+                    src="/playground_assets/logo.svg"
+                    alt="Rectangle4I120"
+                    className="logo"
+                  />
+                  <Box></Box>
+                </Box>
+              </div>
+              <Stack sx={headerRightContiner}>
+                <Box mr={1}>
+                  <img
+                    src="/playground_assets/image2i120-7k5g-200h.png"
+                    alt="image2I120"
+                    className="frame-homepagewiththesearchbarandthetotallistofclu-image2"
+                  />
+                </Box>
+                <Box>
+                  <Typography sx={loginFont} component={"div"}>
+                    {disbled ? (
+                      <Box sx={{ cursor: "text" }}>{"Log In / Sign Up"}</Box>
+                    ) : (
+                      <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
+                        {user ? `${userInfo.companyName}` : "Log In / Sign Up"}
+                      </Box>
+                    )}
+                  </Typography>
+                  <Typography sx={smallFont} component={"div"}>
+                    {user ? `${userInfo.userName}` : "To unlock full access"}
+                  </Typography>
+                </Box>
+              </Stack>
             </Stack>
-          </Stack>
+        </ContentWrapper>
+       
           <Switch>
             <Route exact path="/">
               <HomeDetails setDisbled={setDisbled} />

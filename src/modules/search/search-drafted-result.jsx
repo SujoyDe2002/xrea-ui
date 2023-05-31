@@ -26,15 +26,17 @@ import ConfirmationBox from "shared/utils/confirmation-box/confirmation-box";
 import { deleteSearch } from "server/api/delete-search";
 import { Link } from "react-router-dom";
 
-const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
+const SearchDraftedResult = ({ setSaveSearchId }) => {
+  const { searchTitleGetterSetter, userGetterSetter } = useContext(LoadingContext);
+  const { setSearchTitle } = searchTitleGetterSetter;
+  const { user } = userGetterSetter;
   const [searchList, setSearchList] = useState(null);
   const [userId, setUserId] = useState(
     getLocalStorageItem("xrea")?.data?.loginData?.userId
   );
   const setSearchedData = async () => {
-    const { response } = await getSavedSearch(userId);
-    const { maxSavedLength } = response;
-    let { savedList } = response;
+    const { data } = await getSavedSearch(userId);
+    let { maxSavedLength, savedList } = data.response;
     // todo make another function
     savedList = savedList.map((item) => {
       item.deleteConfirmationOpen = false;
@@ -47,7 +49,7 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
   };
   useEffect(() => {
     setSearchedData();
-  }, []);
+  }, [user]);
 
   const openModel = async (element) => {
     const currentIndex = GetAttribute(element, "index");
@@ -62,19 +64,11 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
       return item;
     }, currentIndex);
     setSearchList(confirmationUpdatedSearchList);
-
-    // const payLoad = {
-    //     userId,
-    //     searchName
-    // }
-    // await deleteSearch(payLoad);
-    // setSearchedData();
   };
   const handleDelete = async (element) => {
-    const searchName = GetAttribute(element, "searchName");
+    const searchId = GetAttribute(element, "searchId");
     const payLoad = {
-      userId,
-      searchName,
+      searchId
     };
     await deleteSearch(payLoad);
     await setSearchedData();
@@ -89,12 +83,15 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
   const handleSearch = (element) => {
     const searchId = GetAttribute(element, "searchid");
     const searchTitle = GetAttribute(element, "searchTitle");
-    setCurentSearchTitle(searchTitle);
+    console.log("searchTitle", searchTitle);
+    setSearchTitle(searchTitle);
     setSaveSearchId(searchId);
   };
   const draftrowtextstyle = {
     ...text1,
-    whiteSpace: "nowrap",
+    whiteSpace: "normal",
+    maxWidth: "500px",
+    overflowWrap: "break-word"
   };
   return (
     <SectionSearchCard>
@@ -114,67 +111,78 @@ const SearchDraftedResult = ({ setSaveSearchId, setCurentSearchTitle }) => {
               index
             ) => {
               return (
-                <Box key={index}>
-                  <Stack sx={{ ...searchSavedList, position: "relative" }}>
-                    <Grid container spacing={1}>
-                      <Grid item xs={4}>
-                        <Button
-                          searchid={save_search_id}
-                          searchTitle = {save_search_title}
-                          onClick={handleSearch}
+
+                <Stack key={index} sx={{ ...searchSavedList, position: "relative" }}>
+                  <Grid
+                    container spacing={1}
+                  >
+                    <Grid
+                      container
+                      spacing={1}
+                      item xs={10}
+                      searchid={save_search_id}
+                      searchTitle={save_search_title}
+                      onClick={handleSearch}
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <Grid item xs={5}>
+                        <Typography
                           sx={draftrowtextstyle}
                         >
                           {save_search_title}
-                        </Button>
+                        </Typography>
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid item xs={5}>
                         <Stack sx={centeralignment}>
                           <Typography sx={{ ...text2, textAlign: "center" }}>
                             {dateFilter(created_on)}
                           </Typography>
                         </Stack>
                       </Grid>
-                      <Grid item xs={4}>
-                        <Stack alignItems={"end"}>
-                          <Button
-                            sx={{
-                              justifyContent: "end",
-                              width: "fit-content",
-                              padding: 0,
-                            }}
-                            index={index}
-                            onClick={openModel}
-                          >
-                            <Typography sx={{ textAlign: "right" }}>
-                              X
-                            </Typography>
-                          </Button>
-                        </Stack>
-                        {/* todo make confrimation box and replace the BOX code */}
-                        {/* <ConfirmationBox /> */}
-                        {deleteConfirmationOpen && (
-                          <Box sx={confirmationBoxposition}>
-                            <Box sx={smallMessageBox}>
-                              Delete this saved search?
-                              <Stack sx={buttonContainer}>
-                                <Button index={index} onClick={handleClose}>
-                                  Cancel
-                                </Button>
-                                <Button
-                                  sx={button3}
-                                  searchName={save_search_title}
-                                  onClick={handleDelete}
-                                >
-                                  Delete
-                                </Button>
-                              </Stack>
-                            </Box>
-                          </Box>
-                        )}
-                      </Grid>
                     </Grid>
-                  </Stack>
-                </Box>
+                    <Grid item xs={2}>
+
+                      <Stack alignItems={"end"} justifyContent={"center"} height={"100%"}>
+                        <Button
+                          sx={{
+                            justifyContent: "end",
+                            width: "fit-content",
+                            padding: 0,
+                          }}
+                          index={index}
+                          onClick={openModel}
+                        >
+                          <Typography sx={{ textAlign: "right" }}>
+                            X
+                          </Typography>
+                        </Button>
+                      </Stack>
+                      {/* todo make confrimation box and replace the BOX code */}
+                      {/* <ConfirmationBox /> */}
+                      {deleteConfirmationOpen && (
+                        <Box sx={confirmationBoxposition}>
+                          <Box sx={smallMessageBox}>
+                            Delete this saved search?
+                            <Stack sx={buttonContainer}>
+                              <Button index={index} onClick={handleClose}>
+                                Cancel
+                              </Button>
+                              <Button
+                                sx={button3}
+                                searchId={save_search_id}
+                                onClick={handleDelete}
+                              >
+                                Delete
+                              </Button>
+                            </Stack>
+                          </Box>
+                        </Box>
+                      )}
+
+                    </Grid>
+                  </Grid>
+                </Stack>
+
               );
             }
           )

@@ -24,8 +24,9 @@ import BrightTooltip from "shared/utils/tooltip/bright-tooltiip";
 import { XreaTable } from "shared/utils/data-table/xrea-table";
 
 const SearchReasult = ({ searchReasultProps }) => {
-  const { loaderFunction, handleResponseMessage, userGetterSetter } =
+  const { loaderFunction, handleResponseMessage, searchTitleGetterSetter } =
     useContext(LoadingContext);
+  const { searchTitle, setSearchTitle } = searchTitleGetterSetter
   const { startLoader, stopLoader } = loaderFunction;
   const [showDialog, setShowDialog] = useState(false);
   const [searchName, setSearchName] = useState();
@@ -33,13 +34,10 @@ const SearchReasult = ({ searchReasultProps }) => {
   const [noOfsearch, setNoOfsearch] = useState(
     getLocalStorageItem("xrea")?.data?.noOfsearch
   );
-  const [xreSearchDisable, setXreSearchDisable] = useState(false);
-  const { searchedReasult, cityNameResultList, getCityIndex, curentSearchTitle, setCurentSearchTitle, xreaTableRows } = searchReasultProps;
+  const { searchedReasult, cityNameResultList, getCityIndex, xreSearchDisable, setXreSearchDisable, xreaTableRows, xreaSeachButtonTitle, setXreSearchButtonTitle, setSearchCriteria } = searchReasultProps;
   const { general_stat, usecase, marketSegment } = searchedReasult;
   const theme = useTheme();
-  const [xreaSeachButtonTitle, setXreSearchButtonTitle] = useState(
-    "Save this XREA Search"
-  );
+  console.log("xreaTableRows", xreaTableRows);
   // let [xreaTableRows, setXreaTableRows] = useState([])
   useEffect(() => {
     const logdata = getLocalStorageItem("xrea")?.data;
@@ -57,9 +55,13 @@ const SearchReasult = ({ searchReasultProps }) => {
       setXreSearchDisable(true);
     }
     return () => {
-      setCurentSearchTitle()
+      setSearchTitle()
     }
   }, [noOfsearch]);
+  useEffect(() => {
+    setSearchCriteria()
+  }, [])
+
   // useEffect(() => {
   //   console.log("cityNameResultList", cityNameResultList);
   //   const searchResultRowData = ArrangeSearchData({
@@ -90,6 +92,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     openDialog();
   };
   const saveSearch = async () => {
+
     const xreaData = getLocalStorageItem("xrea")?.data;
     const { userId } = xreaData.loginData;
     const citits = cityNameResultList.map(({ name, id }) => {
@@ -115,16 +118,16 @@ const SearchReasult = ({ searchReasultProps }) => {
     };
     closeDialog();
     startLoader();
-    const { data } = await postSearchDetails(payLoad);
+    const { status, data } = await postSearchDetails(payLoad);
     stopLoader();
-
-    const { statuscode, noOfSavedSearch } = data;
-    if (statuscode === 200) {
+    console.log("Status : " + status);
+    //const { statuscode, noOfSavedSearch } = data;
+    let noOfSavedSearch = data.saveSearchCount;
+    if (status === 200) {
       handleResponseMessage("Search saved successfully!");
       const noOfSearch = Number(noOfSavedSearch);
       setLocalStorageItem("xrea", { ...xreaData, noOfsearch });
       setNoOfsearch(noOfSearch);
-    } else {
     }
   };
   const button1Props = {
@@ -154,6 +157,9 @@ const SearchReasult = ({ searchReasultProps }) => {
     dialogAction: {
       button1: <Button2 props={button2Props} />,
       button2: <Button1 props={button1Props} />
+    },
+    actionsOnUnMount: function (params) {
+      setSearchName()
     }
   };
   const xreaTooltipTitle =
@@ -161,8 +167,9 @@ const SearchReasult = ({ searchReasultProps }) => {
   return (
     <SectionSearchCard>
       <SearchSectionHeading>
+        {console.log("searchTitle", searchTitle)}
         <Typography variant="h2" sx={searchResultSection}>
-          {curentSearchTitle ? curentSearchTitle : "Search results"}
+          {searchTitle ? searchTitle : "Search results"}
         </Typography>
         {xreSearchDisable && userId ? (
           <BrightTooltip title={xreaTooltipTitle} placement="bottom" arrow>

@@ -110,10 +110,14 @@
 }
 
 .image {
-  width: 76%;
+  width: 62%;
   height: auto;
 }
-
+@media only screen and (min-width: 640) {
+  .image {
+    width: 74%;
+  }
+}
 .frame-homepagewiththesearchbarandthetotallistofclu-container {
   height: 100vh;
   width: 100vw;
@@ -1189,7 +1193,7 @@
   .logo {
     /* width: auto;
     height: 2.1vw; */
-    width: 6.5vw;
+    width: 9.5vw;
     height: auto;
   }
 

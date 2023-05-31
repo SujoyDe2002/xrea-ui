@@ -1,6 +1,7 @@
 export * from './auto-complete/AutoCompleteSelect'
 export * from './layout/detail-section'
 export * from './layout/section-search-card'
+export * from './layout/content-wrapper'
 export * from './tooltip/tooltip-help'
 export * from './dialog/alert-dialog'
 export * from './loader/circularIndeterminate'

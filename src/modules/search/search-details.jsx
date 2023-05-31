@@ -19,7 +19,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const { setCityNameList, setUsecaseList, setIsDataSearched } =
     searchDetailsProps;
 
-  const { searchGetterSetter } = useContext(LoadingContext);
+  const { searchTitleGetterSetter, searchGetterSetter } = useContext(LoadingContext);
+  const { setSearchTitle } = searchTitleGetterSetter;
   const { setReceivedSearchResult, receivedSearchResult } = searchGetterSetter;
 
   const [tableActive, setTableActive] = useState(false);
@@ -35,6 +36,10 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const [savesearchId, setSaveSearchId] = useState();
   const [curentSearchTitle, setCurentSearchTitle] = useState();
   let [xreaTableRows, setXreaTableRows] = useState([])
+  const [xreSearchDisable, setXreSearchDisable] = useState(false);
+  const [xreaSeachButtonTitle, setXreSearchButtonTitle] = useState(
+    "Save this XREA Search"
+  );
 
   const handleSpecificSearchResponse = async (searchId, searchtype) => {
     //console.log("searchId111", searchId);
@@ -60,9 +65,13 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       //console.log("searchId1", savesearchId);
       handleSpecificSearchResponse(savesearchId, "USER");
     }
+    return () => {
+      setSaveSearchId();
+    }
   }, [savesearchId]);
 
   useEffect(() => {
+    console.log("receivedSearchResult", receivedSearchResult);
     if (receivedSearchResult) {
       //console.log("receivedSearchResult", receivedSearchResult);
       handleClear();
@@ -101,10 +110,12 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       setCityNameList(cityNameList.join(" / "));
       setUsecaseList(usecaseNameList.join(" / "));
       setIsDataSearched(true);
+      // setSearchTitle();
       setSearchedReasult(data);
+
       const { general_stat, usecase, marketSegment } = data;
 
-      console.log("setSearchedReasult", data)
+      console.log("searchedReasult", searchedReasult)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
 
@@ -131,6 +142,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     setCityNameResultList([]);
     setSearchedReasult([]);
     setSelectedCityList([]);
+    setSelectedUseCaseList([]);
     setCityList([]);
     setSearchCriteria();
     setIsDataSearched(false);
@@ -143,6 +155,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const getAttributeValue = (e, attributeName) => {
     return e.target.getAttribute(attributeName);
   };
+  console.log("selectedCityList", selectedCityList);
+  console.log("selectedUseCaseList", selectedUseCaseList);
   const getCityIndex = (e) => {
     const indexValue = getAttributeValue(e, "indexid");
     const selectedResultRow = searchedReasult.general_stat.data[indexValue];
@@ -169,7 +183,12 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     curentSearchTitle,
     xreaTableRows,
     setCurentSearchTitle,
-    getCityIndex
+    getCityIndex,
+    xreSearchDisable,
+    setXreSearchDisable,
+    xreaSeachButtonTitle,
+    setXreSearchButtonTitle,
+    setSearchCriteria
   };
   const marketSegmentProps = {
     marketSegmentData,
@@ -182,7 +201,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         {activeSearch ? (
           <SearchSection
             searchCriteria={searchCriteria}
-            curentSearchTitle = {curentSearchTitle}
+            curentSearchTitle={curentSearchTitle}
             cityList={cityList}
             setCityList={setCityList}
             selectedCityList={selectedCityList}
@@ -192,11 +211,15 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
             tableActive={tableActive}
             handleClear={handleClear}
             searchFunction={searchFunction}
+            setXreSearchDisable={setXreSearchDisable}
+            xreaSeachButtonTitle={xreaSeachButtonTitle}
+            
+
           />
         ) : null}
       </SectionCard>
       {receivedSearchResult && userId && (
-        <SearchDraftedResult setCurentSearchTitle={setCurentSearchTitle} setSaveSearchId={setSaveSearchId} />
+        <SearchDraftedResult setSaveSearchId={setSaveSearchId} />
       )}
 
       {tableActive && !receivedSearchResult ? (

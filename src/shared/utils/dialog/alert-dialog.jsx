@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -11,8 +11,16 @@ import Button2 from '../button/button2';
 
 export default function AlertDialog({ props }) {
 
-  const { title, dialogContent, dialogAction } = props;
+  const { title, dialogContent, dialogAction, actionsOnUnMount } = props;
   const { button1, button2 } = dialogAction;
+
+  useEffect(() => {
+     
+    return () => {
+      actionsOnUnMount()
+    }
+  }, [])
+  
   return (
     <div>
       <Dialog

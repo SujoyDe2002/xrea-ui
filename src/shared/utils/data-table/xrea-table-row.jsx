@@ -1,6 +1,6 @@
 import { Box, Stack, TableCell, TableRow, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { AppStyle, boxStyle, itemTableDataCellStyle, marketSegmentHeading, stickyHeaderCell, tableHeader } from "app";
+import { AppStyle, boxStyle, cellSize, itemTableDataCellStyle, marketSegmentHeaderStyle, marketSegmentHeading, stickyHeaderCell, tableHeader } from "app";
 import { TableHeading } from "modules/search";
 import { SegmentUsecaseTableRow } from "./segment-usecase-table-row";
 import { GetAttribute } from "..";
@@ -13,7 +13,8 @@ const useStyles = makeStyles({
     },
     sticky: {
         position: "sticky",
-        left: 0
+        left: 0,
+        //width: "300px"
     },
     tabcol: {
         padding: "16px",
@@ -50,11 +51,17 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                 console.log("vasfasdf", v);
                                 return (
                                     <TableCell
-                                        align="center" className={i === 0 ?
-                                            classes.sticky : classes.tabcol}
-                                        style={{ width: '350px', paddingLeft: 0, backgroundColor: "#fff" }}
+                                        align="center" 
+                                        className={i === 0 ? classes.sticky : classes.tabcol}
+                                        //width={{xs:"250px",md:"350px"}}
+                                        style={{
+                                            paddingLeft: 0, 
+                                            backgroundColor: "#fff",
+                                            ...cellSize
+                                        }}
                                     >
                                         <Typography sx={marketSegmentHeading}>{v}</Typography>
+                                        
                                     </TableCell>
                                 )
                             })
@@ -63,7 +70,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                     </TableRow>
                 )}
             {rowData && rowData.type === 2 &&
-                (
+            (
                     <TableRow className={classes.sticky} sx={stickyHeaderCell} key={rowData.type} >
                         {
                             colRow.map((v, i) => {
@@ -72,12 +79,15 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                     <TableCell
                                         align="center"
                                         className={i === 0 && classes.sticky}
-                                        style={{ width: '350px', paddingLeft: 0, backgroundColor: "#fff" }}
+                                        // style={{width: "250px", paddingLeft: 0, backgroundColor: "#fff" }}
+                                        style={{ paddingLeft: 0, backgroundColor: "#fff" }}
                                     >
                                         {i > 0 && <Box sx={boxStyle} indexid={i - 1} onClick={getCityIndex}></Box>}
-                                        <Typography sx={marketSegmentHeading}>
+
+                                        <Typography  sx={(i===0) ? marketSegmentHeaderStyle : marketSegmentHeading }>
                                             {rowData.cols[i]}
                                         </Typography>
+                                      
                                     </TableCell>
                                 )
                             })
@@ -118,7 +128,8 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                     className={classes.sticky}
                                     style={{ paddingLeft: 0, backgroundColor: "#fff" }}
                                 >
-                                    <Stack alignItems={"center"} sx={{width: "320px"}} ml={1} flexDirection={"row"}>
+                                    {/* <Stack alignItems={"center"} sx={{width: "250px"}} ml={1} flexDirection={"row"}> */}
+                                    <Stack justifyContent ={"right"} alignItems={"center"}  ml={1} flexDirection={"row"}>
                                         <Typography sx={tableHeader}>
                                             {tableHeaderTitle}
                                         </Typography>
@@ -143,15 +154,6 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                                 <Typography sx={itemTableDataCellStyle}>
                                                     {v}
                                                 </Typography>
-
-
-
-                                                {/* <Typography sx={i === 0 ? tableHeader : itemTableDataCellStyle}>
-                                        {rowData.cols[i]}
-                                    </Typography> */}
-                                                {/* <Typography sx={i === 0 ? tableHeader : itemTableDataCellStyle}>
-                                        {rowData.cols[i]}
-                                    </Typography> */}
                                             </TableCell>
                                         )
                                     })
@@ -173,14 +175,14 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                             <TableHeading heading={rowData.cols[0]} />
 
                         </TableCell>
+
                         <TableCell
                             component="th"
                             scope="row"
                             colSpan={noOfCol - 1}
-                        >
-                            {/* <TableHeading heading={rowData.cols[0]} /> */}
-
+                        >                     
                         </TableCell>
+                    
                     </TableRow>
                 )}
             {rowData && rowData.type === 6 &&

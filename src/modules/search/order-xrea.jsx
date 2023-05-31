@@ -6,6 +6,7 @@ import { LoadingContext } from "store2/loading-context-provider";
 import { postMarketStudyMailSent } from "server/api/market-study-mail-sent";
 import { orderMailConfig } from "user-config";
 import { OpenLink } from "shared/utils";
+import ContentWrapper from "shared/utils/layout/content-wrapper";
 
 const redirect = () => {
   OpenLink("https://xrea.global/market-study");
@@ -37,14 +38,16 @@ export const OrderXrea = (props) => {
       mailTo: mailTo,
       mailfrom: mailfrom,
     };
+
     startLoader();
 
-    const { data } = await postMarketStudyMailSent(payLoad);
-    const { statuscode } = data;
+    const status = await postMarketStudyMailSent(payLoad);
+    //const { statuscode } = data;
     //console.log("statuscode", statuscode);
     stopLoader();
 
-    if (statuscode === 200) {
+
+    if (status === 200) {
       handleResponseMessage("We will get in touch shortly!");
     } else {
       stopLoader();
@@ -72,5 +75,9 @@ export const OrderXrea = (props) => {
       handleClick: isDataSearched ? sentMail : redirect,
     },
   };
-  return <SectionCard2 props={SectionCard2Props} />;
+  return (
+    <ContentWrapper>
+      <SectionCard2 props={SectionCard2Props} />
+    </ContentWrapper>
+  )
 };

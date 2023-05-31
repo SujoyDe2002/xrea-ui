@@ -19,6 +19,7 @@ import {
   xreaButtonContainer,
 } from "app";
 import { LoadingContext } from "store2/loading-context-provider";
+import { useHistory } from "react-router-dom";
 
 
 export const HomeDetails = ({ setDisbled }) => {
@@ -26,8 +27,12 @@ export const HomeDetails = ({ setDisbled }) => {
   const { setUser } = userGetterSetter;
   useEffect(() => {
     setDisbled(false);
+    console.log("sfdffd");
+
     removeLocalStorageItems(["xrea"]);
     setUser(false);
+    console.log("sfdffd");
+    console.log("sfdffd");
   }, []);
 
 

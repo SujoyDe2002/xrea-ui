@@ -10,7 +10,8 @@ const LoadingContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   // todo change to redux
   const [receivedSearchResult, setReceivedSearchResult] = useState(true);
-
+  const [searchTitle, setSearchTitle] = useState();
+  const [xreSearchDisable, setXreSearchDisable] = useState(false);
   const startLoader = () => {
     setLoading(true);
     setResponseMessage(null);
@@ -37,7 +38,11 @@ const LoadingContextProvider = ({ children }) => {
     user,
     setUser,
   };
-
+  const searchTitleGetterSetter = {
+    searchTitle,
+    setSearchTitle
+  }
+  
   return (
     <LoadingContext.Provider
       value={{
@@ -45,6 +50,7 @@ const LoadingContextProvider = ({ children }) => {
         handleResponseMessage,
         searchGetterSetter,
         userGetterSetter,
+        searchTitleGetterSetter
       }}
     >
       {loading && <CircularIndeterminate />}

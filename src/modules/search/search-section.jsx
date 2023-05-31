@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import {
   AutoCompleteSelect,
   updateLocalStorage,
@@ -16,6 +16,7 @@ import {
 import { getCityList } from "server/api/get-citylist";
 import { getUseCaseList } from "server/api/get-usecase-list";
 import Button1 from "shared/utils/button/button1";
+import { LoadingContext } from "store2/loading-context-provider";
 
 const SearchSection = ({
   searchCriteria,
@@ -28,11 +29,18 @@ const SearchSection = ({
   handleClear,
   setSelectedCityList,
   setSelectedUseCaseList,
-  curentSearchTitle
+  setXreSearchDisable,
+  xreaSeachButtonTitle
 }) => {
+  const { searchTitleGetterSetter } = useContext(LoadingContext);
+  const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
+
   const [useCaseList, setUseCaseList] = useState([]);
   const [disabled, setDisabled] = useState(false);
+  const [savedCityList, setSavedCityList] = useState([]);
+  const [savedUseCaseList, setSavedUseCaseList] = useState([]);
   console.log("searchCriteria11111111", searchCriteria);
+
   useEffect(() => {
     let isMounted = true;
     (async () => {
@@ -40,8 +48,10 @@ const SearchSection = ({
       if (isMounted) setUseCaseList(data);
       if (searchCriteria?.city) {
         setSelectedCityList(searchCriteria?.city);
+        setSavedCityList(searchCriteria?.city);
         if (searchCriteria?.useCase) {
           setSelectedUseCaseList(searchCriteria.useCase);
+          setSavedUseCaseList(searchCriteria.useCase);
         }
       }
     })();
@@ -55,8 +65,7 @@ const SearchSection = ({
 
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
-      if (!curentSearchTitle) {
-
+      if (!searchTitle) {
         setDisabled(true);
       } else {
         setDisabled(false);
@@ -68,16 +77,16 @@ const SearchSection = ({
   }, [selectedCityList, selectedUseCaseList]);
 
   const handleChangeCity = async (e) => {
-    if (selectedCityList.length <= 4) {
-      const { value } = e.currentTarget;
-      if (value.length >= 2) {
-        const { data } = await getCityList(value);
-        // console.log("cityList", data);
-        setCityList(data);
-      }
-    } else {
-      setCityList([]);
+    console.log("handleChangeCity");
+
+    const { value } = e.currentTarget;
+    if (value.length >= 2) {
+      const { data } = await getCityList(value);
+      // console.log("cityList", data);
+      setCityList(data);
+      console.log("cityList", cityList);
     }
+
   };
   let autoCompleteSelectPropsCity = {
     headerName: "Location (city, state)",
@@ -85,24 +94,33 @@ const SearchSection = ({
     multiSelectInputList: cityList,
     setSelectedList: setSelectedCityList,
     selectedList: selectedCityList,
+    setSavedList: setSavedCityList,
+    savedList: savedCityList,
     list: true,
     handleChange: handleChangeCity,
-    disabled,
   };
   let autoCompleteSelectPropsUseCase = {
     headerName: "Use case",
     tableActive,
     multiSelectInputList: useCaseList,
     setSelectedList: setSelectedUseCaseList,
-    list: false,
     selectedList: selectedUseCaseList,
-    disabled,
+    setSavedList: setSavedUseCaseList,
+    savedList: savedUseCaseList,
+    list: false,
   };
   // console.log("selectedCityList", selectedCityList);
   // console.log("selectedUseCaseList", selectedUseCaseList);
+  const handleClickOnSearch = () => {
+    setSearchTitle();
+    if (xreaSeachButtonTitle == "Save this XREA Search") {
+      setXreSearchDisable(false);
+    }
+    searchFunction();
+  }
   const button1Props = {
     title: "Search",
-    handleClick: searchFunction,
+    handleClick: handleClickOnSearch,
     disabled,
     style: {
       bgcolor: disabled ? "#cccccc" : AppStyle.palette.primary.main,

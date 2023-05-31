@@ -62,17 +62,6 @@ export const Methodology = ({ children }) => {
             />
           </Box>
         </Stack>
-        <Stack
-          sx={{ ...card2BuronContainer, display: { xs: "flex", md: "none" } }}
-        >
-          <Button
-            sx={{ ...buttonStyle, width: "fit-content" }}
-            variant="contained"
-          >
-            {" "}
-            Learn More
-          </Button>
-        </Stack>
       </>
     ),
     bgStyle: xreaBgStyle,

@@ -15,6 +15,7 @@ export const AppStyle = createTheme({
       main: "#7BBFBA",
     },
   },
+
   typography: {
     fontFamily: ["IBM Plex Sans"],
     secondaryFont: "IBM Plex Mono",
@@ -84,7 +85,8 @@ export const centerAbsoluteItem = {
 export const cardsContainer = {
   position: "absolute",
   top: "5%",
-  width: { xs: "90%", md: "83.34%" },
+  // width: { xs: "90%", md: "83.34%" },
+  width: "100%",
   height: "93%",
   left: "50%",
   transform: "translate(-50%, 0)",
@@ -271,6 +273,7 @@ export const headerItemsContainer = {
 export const headerRightContiner = {
   flexDirection: "row",
   alignItems: "center",
+  display: { xs: "none", sm: "flex" }
 };
 // header end
 // container start
@@ -527,6 +530,8 @@ export const searchSavedList = {
   flexDirection: "row",
   alignItems: "center",
   borderBottom: "0.5px solid #A9A9A9",
+  height: "fit-content",
+  padding: "2px"
 };
 
 // Search view start
@@ -637,6 +642,7 @@ export const card2BuronContainer = {
   flexDirection: "row",
   mt: 1,
   justifyContent: { xs: "center", md: "left" },
+  alignItems: { xs: "end", md: "left" }
 };
 export const card3Style = {
   width: "100%",
@@ -656,8 +662,9 @@ export const card3Style = {
 
 // Table style start
 
-const cellSize = {
-  width: { xs: "150px", md: "320px" }
+export const cellSize = {
+  width: "300px"
+  //width:  {xs:"250px" , md: "350px"} 
 };
 const headerCellSize = {
   ...cellSize
@@ -672,7 +679,7 @@ const tablecellCommon = {
   //display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  width:"350px"
+  // width:"350px"
 };
 
 export const stickyHeaderCell = {
@@ -686,6 +693,7 @@ export const tableHeader = {
   justifyContent: "end",
   fontSize: "1.25rem",
   textAlign: "right",
+  marginLeft: "auto",
   fontFamily: AppStyle.typography.fontFamily[0],
   bgcolor: AppStyle.palette.common.white
 };
@@ -832,16 +840,21 @@ export const boxStyle = {
   margin: "auto",
   cursor: "pointer",
 };
-export const marketSegmentHeading = {
-  // fontStyle: "italic",
+const marketSegmentCommonStyle = {
   fontWeight: 700,
   fontSize: "20px",
   lineHeight: "107.5%",
   mt: 1,
-  textAlign: "center",
   bgcolor: AppStyle.palette.common.white
+}
+export const marketSegmentHeading = {
+  ...marketSegmentCommonStyle,
+  textAlign: "center"
 };
-
+export const marketSegmentHeaderStyle = {
+  ...marketSegmentCommonStyle,
+  textAlign: "right"
+};
 // market segmnent end
 export const centeralignment = {
   alignItems: "center",
