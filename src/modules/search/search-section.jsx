@@ -42,7 +42,6 @@ const SearchSection = ({
   const [savedCityList, setSavedCityList] = useState([]);
   const [savedUseCaseList, setSavedUseCaseList] = useState([]);
   const [autocompleteEnabled, setAutocompleteEnabled] = useState();
-  console.log("searchCriteria11111111", searchCriteria);
 
   const enableAutoComplete = () => {
     setAutocompleteEnabled(true);
@@ -70,7 +69,6 @@ const SearchSection = ({
   }, [searchCriteria]);
 
   useEffect(() => {
-    //  console.log("selectedCityList", selectedCityList);
 
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
@@ -81,7 +79,6 @@ const SearchSection = ({
 
       }
       searchFunction();
-      console.log("inside search");
     }
   }, [selectedCityList, selectedUseCaseList]);
   useEffect(() => {
@@ -92,14 +89,11 @@ const SearchSection = ({
     }
   }, [])
   const handleChangeCity = async (e) => {
-    console.log("handleChangeCity");
 
     const { value } = e.currentTarget;
     if (value.length >= 2) {
       const { data } = await getCityList(value);
-      // console.log("cityList", data);
       setCityList(data);
-      console.log("cityList", cityList);
     }
 
   };
@@ -124,11 +118,9 @@ const SearchSection = ({
     savedList: savedUseCaseList,
     list: false,
   };
-  // console.log("selectedCityList", selectedCityList);
-  // console.log("selectedUseCaseList", selectedUseCaseList);
+ 
   const handleClickOnSearch = () => {
     // setSearchTitle();
-    console.log("xreaSeachButtonTitle", xreaSeachButtonTitle);
     if (xreaSeachButtonTitle == "Save this XREA Search") {
       setXreSearchDisable(false);
     }

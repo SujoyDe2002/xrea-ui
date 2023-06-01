@@ -61,7 +61,6 @@ export const ResultList = ({ searchReasultProps }) => {
                     <Box sx={tabStyle}>
                         {"Test"}
                     </Box> */}
-                    {console.log("cityNameResultList", cityNameResultList)}
                     {(cityNameResultList.map((city) => {
                         return (
                             <Box sx={tabStyle}>

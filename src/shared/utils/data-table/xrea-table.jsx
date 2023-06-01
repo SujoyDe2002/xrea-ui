@@ -34,7 +34,7 @@ function createData(
 export const XreaTable = ({ rows, getCityIndex }) => {
     const classes = useStyles();
     const collength = Math.max(...rows.map(el => el['cols'] && el.type == 1 && el['cols'].length));
-    console.log('collength', collength)
+    //console.log('collength', collength)
     return (
         <TableContainer style={{ paddingTop: "2px" }}>
             <Table

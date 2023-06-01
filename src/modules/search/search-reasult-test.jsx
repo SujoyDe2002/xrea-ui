@@ -77,7 +77,7 @@ const SearchReasultTest = ({ searchReasultProps }) => {
         return Object.values(e)
 
     })
-    console.log("data", data);
+    //console.log("data", data);
     const test = {
         width: "100%",
         "& .tss-0:has(table)": {
@@ -100,7 +100,6 @@ const SearchReasultTest = ({ searchReasultProps }) => {
                 <Stack direction={"row"} justifyContent={"start"} spacing={2}>
 
                     <Box sx={tabRight}></Box>
-                    {console.log("cityNameResultList", cityNameResultList)}
                     {(cityNameResultList.map((city) => {
                         return (
                             <Box sx={tabStyle}>

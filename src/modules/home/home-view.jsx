@@ -65,7 +65,7 @@ export const HomeView = () => {
   //   },
   // };
   const handleLogoClick = () => {
-    console.log("getLocalStorageItem", getLocalStorageItem("xrea"));
+   // console.log("getLocalStorageItem", getLocalStorageItem("xrea"));
     let userId = null;
     if (getLocalStorageItem("xrea")) {
       const { loginData } = getLocalStorageItem("xrea").data;

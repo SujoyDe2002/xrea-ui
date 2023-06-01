@@ -16,11 +16,9 @@ export const xreaRequest = async (url, type, payLoad) => {
         response = await api.get(url);
         // console.log("Response 1 : ", response);
     }
-    console.log("Response 1 ::: ", response );
 
     // const { status, data, message } = response;
     const { status, data, message } = response;
-    console.log("message", message);
     if ( status === 200 ) {
         return { message, data, status }
     } else {

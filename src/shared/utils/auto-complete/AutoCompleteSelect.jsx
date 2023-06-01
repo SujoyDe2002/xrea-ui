@@ -137,9 +137,6 @@ export const AutoCompleteSelect = ({ props }) => {
     multiple: true,
     // handleValue: { handleChange },
     onChange: (e, option, reason) => {
-      // console.log('huku reason',reason)
-      // console.log('huku e',e)
-      console.log('huku option', option)
       setSelectedList(option)
     },
     options: multiSelectInputList && multiSelectInputList,
@@ -148,8 +145,6 @@ export const AutoCompleteSelect = ({ props }) => {
     getOptionLabel: ({ name }) => name
   });
   const [valueLength, setValueLength] = useState(0)
-  // console.log("multiSelectInputList", multiSelectInputList);
-  console.log("setAnchorEl", setAnchorEl);
 
   useEffect(() => {
     // if (savedList.length >= 1) {
@@ -162,18 +157,10 @@ export const AutoCompleteSelect = ({ props }) => {
 
     // }, value)
     // // setSelectedList(value);
-
-    // console.log("value 1", value);
-    // // console.log("value 2", selectedList);
-    // console.log("multiSelectInputList", multiSelectInputList);
-    // setValueLength(value.length);
-    // console.log("value Length" ,valueLength);
-    // console.log("value3" ,value);
+  
   }, [value]);
 
   const handleClick = () => {
-    //console.log("test");
-    console.log("delete");
     return false;
   };
 
@@ -200,7 +187,6 @@ export const AutoCompleteSelect = ({ props }) => {
               {...getTagProps({ index })}
             />
           ))}
-          {console.log("getInputProps", getInputProps)}
           <input
             onKeyUp={handleChange}
             {...getInputProps()}
@@ -209,7 +195,6 @@ export const AutoCompleteSelect = ({ props }) => {
         {groupedOptions && groupedOptions.length > 0 ? (
           list ? (
             <Listbox {...getListboxProps()}>
-              {console.log("getListboxProps", getListboxProps)}
               {groupedOptions.map((option, index) => (
                 <li {...getOptionProps({ option, index })}>
                   <Typography sx={autoCompleList}>{option?.name}</Typography>

@@ -11,7 +11,7 @@ const isArrayElementTrue = (array) => {
 }
 
 export const ArrangeSearchData = (data) => {
-    console.log("data", data)
+    //console.log("data", data)
 
     let finalData = []
     let citylength = 0
@@ -36,15 +36,15 @@ export const ArrangeSearchData = (data) => {
             type: 2,
             cols: []
         }
-        console.log("marketData", marketData);
+        //console.log("marketData", marketData);
         const coldata = marketData[0].map((m, index) => {
-            console.log("clusterName", m);
-            console.log('clusterName', m['clusterName']);
+            //console.log("clusterName", m);
+            //console.log('clusterName', m['clusterName']);
             return m['clusterName']
         })
-        console.log("coldata", coldata);
+       // console.log("coldata", coldata);
         row['cols'] = ["Market Segment", ...coldata]
-        console.log("row2", row);
+        //console.log("row2", row);
         finalData = [...finalData, row]
     }
     // if (generalStat && generalStat.data && generalStat.data.length > 0) {
@@ -68,7 +68,7 @@ export const ArrangeSearchData = (data) => {
         let homePToIncomeValues = [];
         let tenYrPopulationValues = [];
         let medianIncomeValues = [];
-        console.log(generalStat[0].data);
+        //console.log(generalStat[0].data);
         generalStat[0].data.map(({ homePToIncome, tenYearPopGrowthRate, medianIncome }, index) => {
             homePToIncomeValues = [...homePToIncomeValues, homePToIncome];
             tenYrPopulationValues = [...tenYrPopulationValues, tenYearPopGrowthRate];
@@ -102,7 +102,7 @@ export const ArrangeSearchData = (data) => {
         ]
         // console.log("finalData", finalData);
     }
-    console.log("useCasesData", useCasesData);
+   // console.log("useCasesData", useCasesData);
     if (useCasesData && useCasesData[0].data && useCasesData[0].data.length > 0) {
         let row = {
             type: 5,
@@ -110,8 +110,8 @@ export const ArrangeSearchData = (data) => {
         }
         finalData = [...finalData, row]
         // return g['clusterName']
-        console.log("useCasesDatalable", useCasesData[0].label[0]);
-        console.log("useCasesData", useCasesData[0]);
+        //console.log("useCasesDatalable", useCasesData[0].label[0]);
+        //console.log("useCasesData", useCasesData[0]);
         const usecaseLables = useCasesData[0].label?.map(({ use_case_group, use_case_group_desc, use_case_color }) => {
             // let useCaseArray = [`${use_case_group_desc}`]
             // useCasesData[0].data.map((element) => {
@@ -126,7 +126,7 @@ export const ArrangeSearchData = (data) => {
         let { data, label } = useCasesData[0];
         label.map(({ use_case_group, use_case_group_desc, use_case_color }) => {
             let useCaseRow = { use_case_group, use_case_group_desc, use_case_color }
-            console.log("use_case_group", use_case_group);
+            //console.log("use_case_group", use_case_group);
             const groupData = data.map((element) => {
                 const isMax = use_case_group === element.max;
                 return { isMax, value: element[use_case_group] }
@@ -135,7 +135,7 @@ export const ArrangeSearchData = (data) => {
             useCaseRow = { ...useCaseRow, groupData }
             useCaseValue = [...useCaseValue, useCaseRow]
         })
-        console.log("useCaseValue", useCaseValue);
+        //console.log("useCaseValue", useCaseValue);
         finalData = [
             ...finalData,
             {

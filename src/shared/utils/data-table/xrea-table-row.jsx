@@ -39,7 +39,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
             p: 0
         }
     }
-    console.log("noOfCol", noOfCol);
+    //console.log("noOfCol", noOfCol);
     const test = "The United States Home Price to Income Ratio for 2021 is Roughly 3.54"
     return (
         <>
@@ -48,7 +48,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                     <TableRow key={rowData.type}>
                         {
                             rowData.cols.map((v, i) => {
-                                console.log("vasfasdf", v);
+                                //console.log("vasfasdf", v);
                                 return (
                                     <TableCell
                                         align="center" 

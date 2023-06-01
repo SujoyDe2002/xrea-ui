@@ -11,7 +11,7 @@ export const SectionCard2 = ({ props }) => {
   const { title, description, description2, imageSection, bgStyle, button } =
     props;
   const { buttonLable, handleClick } = button;
-  console.log("desc", description);
+  //console.log("desc", description);
   return (
     <Box sx={card2style}>
       <Box sx={bgStyle}></Box>

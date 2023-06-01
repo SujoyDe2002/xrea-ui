@@ -32,7 +32,7 @@ export const SegmentUsecaseTableRow = ({ rowData }) => {
     return (
         <>
             {rowData?.map(({ use_case_group_desc, groupData, use_case_color }, index) => {
-                console.log("use_case_color", use_case_color);
+                //console.log("use_case_color", use_case_color);
                 return (
                     <TableRow key={index}>
 

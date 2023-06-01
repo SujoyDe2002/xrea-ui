@@ -22,7 +22,7 @@ export const SearchView = ({ setDisbled }) => {
   };
   useEffect(() => {
     setDisbled(id !== undefined ? true : false);
-    console.log("getLocalStorageItem", localStorage.getItem("xrea"));
+    //console.log("getLocalStorageItem", localStorage.getItem("xrea"));
     if (getLocalStorageItem("xrea") && getLocalStorageItem("xrea").data) {
       const { loginData } = getLocalStorageItem("xrea").data;
       setUserId(loginData?.userId);

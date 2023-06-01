@@ -71,7 +71,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   }, [savesearchId]);
 
   useEffect(() => {
-    console.log("receivedSearchResult", receivedSearchResult);
+    //console.log("receivedSearchResult", receivedSearchResult);
     if (receivedSearchResult) {
       //console.log("receivedSearchResult", receivedSearchResult);
       handleClear();
@@ -115,7 +115,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
 
       const { general_stat, usecase, marketSegment } = data;
 
-      console.log("searchedReasult", searchedReasult)
+      //console.log("searchedReasult", searchedReasult)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
 
@@ -125,8 +125,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         UseCases: [usecase],
         MarketSegmentData: [marketSegment.data]
       })
-      console.log("searchResultRowData", searchResultRowData);
-      console.log("usecase", usecase);
+     // console.log("searchResultRowData", searchResultRowData);
+     // console.log("usecase", usecase);
       setXreaTableRows(searchResultRowData)
       setTableActive(true);
     }
@@ -147,7 +147,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     setSearchCriteria();
     setIsDataSearched(false);
     reinitializeSearcheSection();
-    console.log("handleClear");
+    //console.log("handleClear");
     updateLocalStorage("xrea", { isdisabled: false })
   };
   // console.log("selectedUseCaseList", selectedUseCaseList);
@@ -155,8 +155,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const getAttributeValue = (e, attributeName) => {
     return e.target.getAttribute(attributeName);
   };
-  console.log("selectedCityList", selectedCityList);
-  console.log("selectedUseCaseList", selectedUseCaseList);
+  //console.log("selectedCityList", selectedCityList);
+  //console.log("selectedUseCaseList", selectedUseCaseList);
   const getCityIndex = (e) => {
     const indexValue = getAttributeValue(e, "indexid");
     const selectedResultRow = searchedReasult.general_stat.data[indexValue];

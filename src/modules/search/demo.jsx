@@ -13,7 +13,7 @@ const Demo = () => {
   useLayoutEffect(() => {
     //  console.log("dataTableParentRef", dataTableParentRef.current.firstChild);
     //  console.log("dataTableParentRef", dataTableParentRef);
-    console.log("dataTableParentRef", dataTableParentRef.current.firstChild.children[2].style.overflowX = "scroll");
+    //console.log("dataTableParentRef", dataTableParentRef.current.firstChild.children[2].style.overflowX = "scroll");
 
   }, [])
   const options = {
@@ -25,7 +25,7 @@ const Demo = () => {
     selectableRowsHideCheckboxes: true,
     display: false,
     renderExpandableRow: (rowData, rowMeta) => {
-      console.log("rowData", rowData);
+      //console.log("rowData", rowData);
       return (
         <tr>
           <td colSpan={4}>
@@ -37,7 +37,7 @@ const Demo = () => {
                 </TableHead>
                 <TableBody>
                   {rowData[3].map((row) => {
-                    console.log(row);
+                    //console.log(row);
                     return (
                       <TableRow key={row.id}>
                         <TableCell component="th" scope="row" align="right">

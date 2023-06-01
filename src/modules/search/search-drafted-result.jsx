@@ -53,7 +53,7 @@ const SearchDraftedResult = ({ setSaveSearchId }) => {
 
   const openModel = async (element) => {
     const currentIndex = GetAttribute(element, "index");
-    console.log("currentIndex", currentIndex);
+    //console.log("currentIndex", currentIndex);
     let confirmationUpdatedSearchList = searchList.map((item, index) => {
       // console.log("savedList index", index);
       if (currentIndex == index) {
@@ -83,7 +83,7 @@ const SearchDraftedResult = ({ setSaveSearchId }) => {
   const handleSearch = (element) => {
     const searchId = GetAttribute(element, "searchid");
     const searchTitle = GetAttribute(element, "searchTitle");
-    console.log("searchTitle", searchTitle);
+    //console.log("searchTitle", searchTitle);
     setSearchTitle(searchTitle);
     setSaveSearchId(searchId);
   };
