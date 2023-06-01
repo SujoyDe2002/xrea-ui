@@ -26,6 +26,8 @@ import { XreaTable } from "shared/utils/data-table/xrea-table";
 const SearchReasult = ({ searchReasultProps }) => {
   const { loaderFunction, handleResponseMessage, searchTitleGetterSetter } =
     useContext(LoadingContext);
+
+
   const { searchTitle, setSearchTitle } = searchTitleGetterSetter
   const { startLoader, stopLoader } = loaderFunction;
   const [showDialog, setShowDialog] = useState(false);
@@ -34,6 +36,7 @@ const SearchReasult = ({ searchReasultProps }) => {
   const [noOfsearch, setNoOfsearch] = useState(
     getLocalStorageItem("xrea")?.data?.noOfsearch
   );
+  const [saveSearchInputError, setSaveSearchInputError] = useState();
   const { searchedReasult, cityNameResultList, getCityIndex, xreSearchDisable, setXreSearchDisable, xreaTableRows, xreaSeachButtonTitle, setXreSearchButtonTitle, setSearchCriteria } = searchReasultProps;
   const { general_stat, usecase, marketSegment } = searchedReasult;
   const theme = useTheme();
@@ -45,10 +48,19 @@ const SearchReasult = ({ searchReasultProps }) => {
     const userId = logdata?.loginData?.userId;
     const isdisabled = logdata?.isdisabled;
     setUserId(userId);
-    if (userId && !isdisabled) {
+    
+      console.log("userId", userId);
+
+    if (userId) {
       if (noOfsearch >= maxSavedLength) {
         setXreSearchButtonTitle("Saved searches limit exceeded");
         setXreSearchDisable(true);
+      }else{
+       // console.log("isdisabled", isdisabled);
+       
+        setXreSearchButtonTitle("Save this XREA Search");
+        setXreSearchDisable(isdisabled);
+        
       }
     } else {
       setXreSearchButtonTitle("Save this XREA Search");
@@ -92,6 +104,7 @@ const SearchReasult = ({ searchReasultProps }) => {
     openDialog();
   };
   const saveSearch = async () => {
+    setSaveSearchInputError();
     if (searchName) {
       const xreaData = getLocalStorageItem("xrea")?.data;
       const { userId } = xreaData.loginData;
@@ -116,19 +129,22 @@ const SearchReasult = ({ searchReasultProps }) => {
         city: citits,
         usecase: usecases,
       };
-      closeDialog();
       startLoader();
-      const { status, data } = await postSearchDetails(payLoad);
+      const { data } = await postSearchDetails(payLoad);
       stopLoader();
-      console.log("Status : " + status);
-      //const { statuscode, noOfSavedSearch } = data;
-      let noOfSavedSearch = data.saveSearchCount;
-      if (status === 200) {
-        handleResponseMessage("Search saved successfully!");
+      const { code, message } = data;
+      if (code === 200) {
+        closeDialog();
+        handleResponseMessage(message);
+        let noOfSavedSearch = data.saveSearchCount;
         const noOfSearch = Number(noOfSavedSearch);
         setLocalStorageItem("xrea", { ...xreaData, noOfsearch });
         setNoOfsearch(noOfSearch);
+      } else {
+        setSaveSearchInputError(message);
       }
+    } else {
+      setSaveSearchInputError("Enter a search title");
     }
   };
   const button1Props = {
@@ -143,7 +159,8 @@ const SearchReasult = ({ searchReasultProps }) => {
     title: "Save XREA search",
     dialogContent: (
       <TextField
-        error={false}
+        error={saveSearchInputError}
+        helperText={saveSearchInputError}
         id="date"
         placeholder="Enter Name of your search"
         type="text"
@@ -159,8 +176,9 @@ const SearchReasult = ({ searchReasultProps }) => {
       button1: <Button2 props={button2Props} />,
       button2: <Button1 props={button1Props} />
     },
-    actionsOnUnMount: function (params) {
-      setSearchName()
+    actionsOnUnMount: function () {
+      setSearchName();
+      setSaveSearchInputError();
     }
   };
   const xreaTooltipTitle =

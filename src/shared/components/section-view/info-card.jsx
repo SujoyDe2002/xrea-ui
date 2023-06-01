@@ -55,7 +55,10 @@ export const InfoCard = ({ children }) => {
                     <Typography sx={savedSeacrhCriteria} >
                       <span>
                         <Link to={{
-                          pathname: "/search", state: { id: 3 }
+                          pathname: "/search",
+                          state: {
+                            id: 3
+                          }
                         }}>
                           Young Professionals and Couples with Young Kids analysis in
                           multiple locations

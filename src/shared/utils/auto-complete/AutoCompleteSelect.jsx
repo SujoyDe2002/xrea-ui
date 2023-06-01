@@ -18,24 +18,16 @@ import {
 import { GetAttribute } from "..";
 
 function Tag(props) {
-  let { label, onDelete,onChange, color, id, setSavedList, savedList, ...other } = props;
+  let { label, onDelete, onChange, color, id, setSavedList, savedList, ...other } = props;
   color = color ? color : "#4591F0";
   const tagStyle = {
     bgcolor: color,
     border: `1px solid ${color}`,
   };
-  console.log("id", id);
-  const handleDelete = (e) => {
-    const geoId = GetAttribute(e, "geoId")
-    console.log("geoId", geoId);
-    console.log("");
-    const kuku = onDelete()
-    console.log("huku", kuku);
-  }
   return (
     <Box sx={tagStyle} {...other}>
       <span>{label}</span>
-      <CloseIcon geoId={id} onClick={handleDelete} />
+      <CloseIcon geoId={id} onClick={onDelete} />
     </Box>
   );
 }
@@ -81,7 +73,7 @@ Tag.propTypes = {
   color: PropTypes.string,
   id: PropTypes.string,
   savedList: PropTypes.array,
-  setSavedList: PropTypes.func,
+  setSavedList: PropTypes.func
 };
 
 const AutoCompleteTabList = ({
@@ -144,14 +136,14 @@ export const AutoCompleteSelect = ({ props }) => {
     id: "customized-hook-demo",
     multiple: true,
     // handleValue: { handleChange },
-    onChange:(e, option, reason)=>{
+    onChange: (e, option, reason) => {
       // console.log('huku reason',reason)
       // console.log('huku e',e)
-      console.log('huku option',option)
+      console.log('huku option', option)
       setSelectedList(option)
     },
     options: multiSelectInputList && multiSelectInputList,
-    value:selectedList||[],
+    value: selectedList || [],
     //defaultValue:selectedList||[],
     getOptionLabel: ({ name }) => name
   });
@@ -196,6 +188,7 @@ export const AutoCompleteSelect = ({ props }) => {
           // onClick={handleClick}
           ref={setAnchorEl}
           className={focused ? "focused" : ""}
+
         >
           {selectedList && selectedList.length > 0 && selectedList.map(({ color, name, id }, index) => (
             <StyledTag
@@ -211,52 +204,50 @@ export const AutoCompleteSelect = ({ props }) => {
           <input
             onKeyUp={handleChange}
             {...getInputProps()}
-          
           />
         </InputWrapper>
-      {groupedOptions && groupedOptions.length> 0 ? (
-        list ? (
-          <Listbox {...getListboxProps()}>
-            {console.log("getListboxProps", getListboxProps)}
-            {groupedOptions.map((option, index) => (
-              <li {...getOptionProps({ option, index })}>
-                <Typography sx={autoCompleList}>{option?.name}</Typography>
-              </li>
-            ))}
-          </Listbox>
-
-        ) : (
-          <Listbox {...getListboxProps()}>
-            <Stack>
-              <AutoCompleteTabList
-                selectedList={selectedList}
-                getOptionProps={getOptionProps}
-                groupedOptions={groupedOptions}
-                fromIndex={0}
-                toIndex={1}
-              />
-
-              <Typography sx={UseCaseHeading}>MULTI-FAMILY</Typography>
+        {groupedOptions && groupedOptions.length > 0 ? (
+          list ? (
+            <Listbox {...getListboxProps()}>
+              {console.log("getListboxProps", getListboxProps)}
+              {groupedOptions.map((option, index) => (
+                <li {...getOptionProps({ option, index })}>
+                  <Typography sx={autoCompleList}>{option?.name}</Typography>
+                </li>
+              ))}
+            </Listbox>
+          ) : (
+            <Listbox {...getListboxProps()}>
               <Stack>
                 <AutoCompleteTabList
                   selectedList={selectedList}
                   getOptionProps={getOptionProps}
                   groupedOptions={groupedOptions}
-                  fromIndex={1}
-                  toIndex={4}
+                  fromIndex={0}
+                  toIndex={1}
                 />
-                <AutoCompleteTabList
-                  selectedList={selectedList}
-                  getOptionProps={getOptionProps}
-                  groupedOptions={groupedOptions}
-                  fromIndex={4}
-                  toIndex={7}
-                />
+
+                <Typography sx={UseCaseHeading}>MULTI-FAMILY</Typography>
+                <Stack>
+                  <AutoCompleteTabList
+                    selectedList={selectedList}
+                    getOptionProps={getOptionProps}
+                    groupedOptions={groupedOptions}
+                    fromIndex={1}
+                    toIndex={4}
+                  />
+                  <AutoCompleteTabList
+                    selectedList={selectedList}
+                    getOptionProps={getOptionProps}
+                    groupedOptions={groupedOptions}
+                    fromIndex={4}
+                    toIndex={7}
+                  />
+                </Stack>
               </Stack>
-            </Stack>
-          </Listbox>
-        )
-      ) : null}
+            </Listbox>
+          )
+        ) : null}
       </div>
     </Box>
   );

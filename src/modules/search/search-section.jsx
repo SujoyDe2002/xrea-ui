@@ -9,6 +9,7 @@ import {
   AppStyle,
   clearLinkStyle,
   disable,
+  disableStyle,
   searchButtonContainer,
   searchButtonStyle,
   searchContainter,
@@ -32,15 +33,23 @@ const SearchSection = ({
   setXreSearchDisable,
   xreaSeachButtonTitle
 }) => {
-  const { searchTitleGetterSetter } = useContext(LoadingContext);
+  const { searchTitleGetterSetter, userGetterSetter } = useContext(LoadingContext);
   const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
+  const { user } = userGetterSetter;
 
   const [useCaseList, setUseCaseList] = useState([]);
   const [disabled, setDisabled] = useState(false);
   const [savedCityList, setSavedCityList] = useState([]);
   const [savedUseCaseList, setSavedUseCaseList] = useState([]);
+  const [autocompleteEnabled, setAutocompleteEnabled] = useState();
   console.log("searchCriteria11111111", searchCriteria);
 
+  const enableAutoComplete = () => {
+    setAutocompleteEnabled(true);
+  }
+  const disableAutoComplete = () => {
+    setAutocompleteEnabled(false);
+  }
   useEffect(() => {
     let isMounted = true;
     (async () => {
@@ -75,7 +84,13 @@ const SearchSection = ({
       console.log("inside search");
     }
   }, [selectedCityList, selectedUseCaseList]);
-
+  useEffect(() => {
+    if (user) {
+      enableAutoComplete();
+    } else {
+      disableAutoComplete();
+    }
+  }, [])
   const handleChangeCity = async (e) => {
     console.log("handleChangeCity");
 
@@ -112,7 +127,8 @@ const SearchSection = ({
   // console.log("selectedCityList", selectedCityList);
   // console.log("selectedUseCaseList", selectedUseCaseList);
   const handleClickOnSearch = () => {
-    setSearchTitle();
+    // setSearchTitle();
+    console.log("xreaSeachButtonTitle", xreaSeachButtonTitle);
     if (xreaSeachButtonTitle == "Save this XREA Search") {
       setXreSearchDisable(false);
     }
@@ -124,15 +140,15 @@ const SearchSection = ({
     disabled,
     style: {
       bgcolor: disabled ? "#cccccc" : AppStyle.palette.primary.main,
-    },
+    }
   };
   return (
     <Box sx={searchContainter}>
       <Grid container spacing={1}>
-        <Grid item xs={5.25}>
+        <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
           <AutoCompleteSelect props={autoCompleteSelectPropsCity} />
         </Grid>
-        <Grid item xs={5.25}>
+        <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
           <AutoCompleteSelect props={autoCompleteSelectPropsUseCase} />
         </Grid>
         <Grid item xs={1.5}>

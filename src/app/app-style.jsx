@@ -53,6 +53,12 @@ export const AppStyle = createTheme({
     },
   },
 });
+
+// disable class
+export const disableStyle = {
+  pointerEvents: "none",
+  opacity: 0.4
+}
 // buttons container start
 export const buttonContainer = {
   flexDirection: "row",
@@ -171,9 +177,12 @@ export const input = {
       fontStyle: "italic",
       fontWeight: 700,
       fontSize: "2rem",
-      lineHeight: "107.5%",
+      lineHeight: "107.5%"
     },
   },
+  "& .MuiFormHelperText-root": {
+    fontSize: "1.2rem"
+  }
 };
 // loader start
 export const loaderContainer = {
