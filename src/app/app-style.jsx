@@ -874,5 +874,5 @@ export const imageBoxStackContainers = {
   flexDirection: "row",
   alignItems: "end",
   height: "194px",
-  justifyContent: "end",
+  justifyContent: {xs:"center", md:"end"},
 };

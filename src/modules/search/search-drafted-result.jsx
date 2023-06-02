@@ -83,7 +83,7 @@ const SearchDraftedResult = ({ setSaveSearchId }) => {
   const handleSearch = (element) => {
     const searchId = GetAttribute(element, "searchid");
     const searchTitle = GetAttribute(element, "searchTitle");
-    //console.log("searchTitle", searchTitle);
+   //console.log("searchTitle", searchTitle);
     setSearchTitle(searchTitle);
     setSaveSearchId(searchId);
   };
@@ -91,7 +91,8 @@ const SearchDraftedResult = ({ setSaveSearchId }) => {
     ...text1,
     whiteSpace: "normal",
     maxWidth: "500px",
-    overflowWrap: "break-word"
+    overflowWrap: "break-word",
+    p: "2px 0"
   };
   return (
     <SectionSearchCard>

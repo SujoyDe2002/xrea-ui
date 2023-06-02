@@ -16,7 +16,7 @@ export const SectionCard2 = ({ props }) => {
     <Box sx={card2style}>
       <Box sx={bgStyle}></Box>
       <Grid container spacing={"1.2rem"}>
-        <Grid item xs={12} md={9}>
+        <Grid item xs={12} md={9} order={{xs: 2, md: 1}}>
           <div>
             <div className="frame-homepagewiththesearchbarandthetotallistofclu-text14">
               <Typography sx={heading1}>{title}</Typography>
@@ -33,7 +33,7 @@ export const SectionCard2 = ({ props }) => {
             </Button>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3}  order={{xs: 1, md: 2}}>
           {imageSection}
           <Stack
             sx={{ ...card2BuronContainer, display: { xs: "flex", md: "none" } }}

@@ -11,8 +11,8 @@ const orderMailConfig = {
     firstName: "PRADIP",
     lastName: "CHANDA",
     phoneNo: "900889494",
-    mailTo: "pauldibyojit1@gmail.com",
-    // mailTo: "oscar@fusionff.com",
+    //mailTo: "pauldibyojit1@gmail.com",
+    mailTo: "oscar@fusionff.com",
     mailFrom: ""
 }
 
