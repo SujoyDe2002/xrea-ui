@@ -2,9 +2,11 @@ import { React, useRef } from 'react'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import jsPDF from 'jspdf';
-import {GeneralStat, UseCaseTable,TableHeading,MarketSegmentRow}from './search-result-grid';
+import { GeneralStat, UseCaseTable, TableHeading, MarketSegmentRow } from './search-result-grid';
 
 import { cityContainer, lastTab, searchResultSection, tabStyle, tablesContainter } from 'app';
+import { OrderXrea } from './order-xrea';
+import SearchSection from './search-section';
 
 
 
@@ -47,6 +49,7 @@ export const ResultList = ({ searchReasultProps }) => {
 
     return (
         <>
+            <SearchSection />
             <Stack mt={5} flexDirection={"row"} justifyContent={"space-between"} width={"100%"} p={".5rem 1rem"}>
                 <Typography variant='h2' sx={searchResultSection}>Search results</Typography>
                 <Button variant='contained' sx={secondarybtn} onClick={(e) => downLoadReport(e)}>Save this XREA Search</Button>
@@ -61,6 +64,7 @@ export const ResultList = ({ searchReasultProps }) => {
                     <Box sx={tabStyle}>
                         {"Test"}
                     </Box> */}
+                    {console.log("cityNameResultList", cityNameResultList)}
                     {(cityNameResultList.map((city) => {
                         return (
                             <Box sx={tabStyle}>
@@ -97,6 +101,7 @@ export const ResultList = ({ searchReasultProps }) => {
                 <TableHeading heading={"USE CASE SCORE"} />
                 <UseCaseTable rows={usecase} />
             </Box>
+            <OrderXrea />
         </>
     )
 }

@@ -12,7 +12,7 @@ export const MarketSegmentRow = ({ marketSegmentProps }) => {
   // const { marketSegmentData, rowLength, getCityIndex } = marketSegmentProps;
   // const { data } = marketSegmentData;
 
-  //console.log("rowLengthff", rowLength);
+  //
   return (
     <Stack sx={tableRow}>
       {/* <Box sx={tableHeader}>{"Market Segment"}</Box> */}

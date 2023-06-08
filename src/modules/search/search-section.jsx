@@ -2,7 +2,9 @@ import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { React, useState, useEffect, useContext } from "react";
 import {
+  ArrangeSearchData,
   AutoCompleteSelect,
+  getLocalStorageItem,
   updateLocalStorage,
 } from "shared/utils";
 import {
@@ -18,22 +20,39 @@ import { getCityList } from "server/api/get-citylist";
 import { getUseCaseList } from "server/api/get-usecase-list";
 import Button1 from "shared/utils/button/button1";
 import { LoadingContext } from "store2/loading-context-provider";
+import { SectionCard } from "shared/components";
+import { getSearchedResult } from "server/api/city-search";
+import { useHistory, useLocation } from "react-router-dom";
+import { getSpecificSearch } from "server/api/get-specific-search";
+import isLogin from "shared/utils/associate/is-login";
 
-const SearchSection = ({
-  searchCriteria,
-  tableActive,
-  setCityList,
-  cityList,
-  selectedUseCaseList,
-  selectedCityList,
-  searchFunction,
-  handleClear,
-  setSelectedCityList,
-  setSelectedUseCaseList,
-  setXreSearchDisable,
-  xreaSeachButtonTitle
-}) => {
-  const { searchTitleGetterSetter, userGetterSetter } = useContext(LoadingContext);
+const SearchSection = () => {
+  const {
+    searchTitleGetterSetter,
+    userGetterSetter,
+    searchCriteria,
+    tableActive,
+    setCityList,
+    cityList,
+    selectedUseCaseList,
+    selectedCityList,
+    // searchFunction,
+    setSelectedCityList,
+    setSelectedUseCaseList,
+    setCityNameList,
+    // setUseCaseList,
+    searchedReasult,
+    setSearchedReasult,
+    setCityNameResultList,
+    setXreSearchDisable,
+    xreaSeachButtonTitle,
+    setXreaTableRows,
+    setSearchCriteria,
+    savesearchId,
+    hasResult,
+    setSaveSearchId,
+    setUseCaseNameList
+  } = useContext(LoadingContext);
   const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
   const { user } = userGetterSetter;
 
@@ -42,13 +61,38 @@ const SearchSection = ({
   const [savedCityList, setSavedCityList] = useState([]);
   const [savedUseCaseList, setSavedUseCaseList] = useState([]);
   const [autocompleteEnabled, setAutocompleteEnabled] = useState();
+  const [userId, setUserId] = useState();
 
-  const enableAutoComplete = () => {
-    setAutocompleteEnabled(true);
+  const location = useLocation();
+  const { id } = location?.state || {};
+  
+  const SearchCriteria = {
+    searchId: id,
+  };
+  const history = useHistory();
+  const navigate = (path) => {
+    history.push(path)
   }
-  const disableAutoComplete = () => {
-    setAutocompleteEnabled(false);
-  }
+
+
+  useEffect(() => {
+    
+    
+    // if (getLocalStorageItem("xrea")) {
+    //   const { userId } = getLocalStorageItem("xrea")?.data?.loginData;
+    //   // setUserId(userId);
+    // }
+    if (SearchCriteria?.searchId) {
+      handleSpecificSearchResponse(SearchCriteria?.searchId, "GUEST");
+    }
+    if (savesearchId) {
+      //
+      handleSpecificSearchResponse(savesearchId, "USER");
+    }
+    return () => {
+      setSaveSearchId();
+    }
+  }, [savesearchId]);
   useEffect(() => {
     let isMounted = true;
     (async () => {
@@ -69,31 +113,138 @@ const SearchSection = ({
   }, [searchCriteria]);
 
   useEffect(() => {
+    //  
 
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
-      if (!searchTitle) {
-        setDisabled(true);
-      } else {
-        setDisabled(false);
+      // if (!searchTitle) {
+      //   setDisabled(true);
+      // } else {
+      //   setDisabled(false);
 
-      }
+      // }
       searchFunction();
+      
     }
   }, [selectedCityList, selectedUseCaseList]);
   useEffect(() => {
-    if (user) {
+    //todo
+    // if (user) {
+    const userId = isLogin();
+    setUserId(userId);
+    setDisabled(!userId);
+    if (userId) {
       enableAutoComplete();
     } else {
       disableAutoComplete();
     }
+    // return (
+    //   () => {
+    //     handleClear()
+    //   }
+    // )
   }, [])
+
+
+  const handleSpecificSearchResponse = async (searchId, searchtype) => {
+    //
+    
+    if (searchId) {
+      const payLoad = {
+        saveSearchId: searchId,
+        type: searchtype,
+      };
+      const response = await getSpecificSearch(payLoad);
+      //
+      setSearchCriteria(response);
+    }
+  };
+  // const reinitializeSearcheSection = () => {
+  //   setActiveSearch(false);
+  //   setTimeout(() => {
+  //     setActiveSearch(true);
+  //   });
+  // };
+  const handleClear = () => {
+    setCityNameResultList([]);
+    setSearchedReasult();
+    setSelectedCityList([]);
+    setSelectedUseCaseList([]);
+    setCityList([]);
+    setSearchCriteria();
+    setXreaTableRows([]);
+    setSearchTitle();
+    updateLocalStorage("xrea", { isdisabled: false })
+  };
+  const searchFunction = async () => {
+    let location = selectedCityList.map((city) => {
+      return {
+        geo_id: city?.id,
+        geographic_area_name: city?.name,
+      };
+    });
+    //
+    let useCase = selectedUseCaseList.map((element) => {
+      return {
+        use_case_group: element.code,
+      };
+    });
+
+    const payLoad = {
+      location,
+      usecase: useCase
+    };
+    const { data } = await getSearchedResult(payLoad);
+    if (data) {
+      //
+      const cityNameList = selectedCityList.map(({ name }) => {
+        return name;
+      });
+
+      const usecaseNameList = selectedUseCaseList.map(({ name }) => {
+        return name;
+      });
+
+
+      setCityNameList(cityNameList.join(" , "));
+      setUseCaseNameList(usecaseNameList.join(" , "));
+      // setIsDataSearched(true);
+      // setSearchTitle();
+      setSearchedReasult(data);
+      navigate("/search_result");
+      const { general_stat, usecase, marketSegment } = data;
+
+      // 
+      // setReceivedSearchResult(false);
+      setCityNameResultList(selectedCityList);
+
+      const searchResultRowData = ArrangeSearchData({
+        CityData: [selectedCityList],
+        GeneralStat: [general_stat],
+        UseCases: [usecase],
+        MarketSegmentData: [marketSegment.data]
+      })
+      
+      
+      setXreaTableRows(searchResultRowData)
+      // setTableActive(true);
+    }
+  };
+  const enableAutoComplete = () => {
+    setAutocompleteEnabled(true);
+  }
+  const disableAutoComplete = () => {
+    setAutocompleteEnabled(false);
+  }
   const handleChangeCity = async (e) => {
+    
 
     const { value } = e.currentTarget;
     if (value.length >= 2) {
       const { data } = await getCityList(value);
+      // 
       setCityList(data);
+      
     }
 
   };
@@ -110,7 +261,7 @@ const SearchSection = ({
   };
   let autoCompleteSelectPropsUseCase = {
     headerName: "Use case",
-    tableActive,
+
     multiSelectInputList: useCaseList,
     setSelectedList: setSelectedUseCaseList,
     selectedList: selectedUseCaseList,
@@ -118,9 +269,11 @@ const SearchSection = ({
     savedList: savedUseCaseList,
     list: false,
   };
- 
+  // 
+  // 
   const handleClickOnSearch = () => {
     // setSearchTitle();
+    
     if (xreaSeachButtonTitle == "Save this XREA Search") {
       setXreSearchDisable(false);
     }
@@ -135,36 +288,33 @@ const SearchSection = ({
     }
   };
   return (
-    <Box sx={searchContainter}>
-      <Grid container spacing={1}>
-        <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
-          <AutoCompleteSelect props={autoCompleteSelectPropsCity} />
+    <SectionCard>
+      <Box sx={searchContainter}>
+        <Grid container spacing={1}>
+          <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
+            <AutoCompleteSelect props={autoCompleteSelectPropsCity} />
+          </Grid>
+          <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
+            <AutoCompleteSelect props={autoCompleteSelectPropsUseCase} />
+          </Grid>
+          <Grid item xs={1.5}>
+            <Stack sx={searchButtonContainer}>
+              <Box sx={searchButtonStyle}>
+                <Button1 props={button1Props} />
+                {
+                  hasResult &&
+                  <Box variant="contained"
+                    onClick={() => userId && handleClear()}
+                    sx={userId ? clearLinkStyle : { ...clearLinkStyle, ...disable }}>
+                    Clear search
+                  </Box>
+                }
+              </Box>
+            </Stack>
+          </Grid>
         </Grid>
-        <Grid item xs={5.25} sx={autocompleteEnabled ? null : disableStyle}>
-          <AutoCompleteSelect props={autoCompleteSelectPropsUseCase} />
-        </Grid>
-        <Grid item xs={1.5}>
-          <Stack sx={searchButtonContainer}>
-            <Box sx={searchButtonStyle}>
-              <Button1 props={button1Props} />
-              {disabled ? (
-                <Box variant="contained" sx={{ ...clearLinkStyle, ...disable }}>
-                  Clear search
-                </Box>
-              ) : tableActive ? (
-                <Box
-                  variant="contained"
-                  sx={clearLinkStyle}
-                  onClick={handleClear}
-                >
-                  Clear search
-                </Box>
-              ) : null}
-            </Box>
-          </Stack>
-        </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </SectionCard>
   );
 };
 

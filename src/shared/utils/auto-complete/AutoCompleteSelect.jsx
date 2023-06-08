@@ -18,16 +18,31 @@ import {
 import { GetAttribute } from "..";
 
 function Tag(props) {
-  let { label, onDelete, onChange, color, id, setSavedList, savedList, ...other } = props;
+  let {
+    label,
+    onDelete,
+    onChange,
+    color,
+    id,
+    setSavedList,
+    savedList,
+    setClickedClose,
+    ...other
+  } = props;
   color = color ? color : "#4591F0";
   const tagStyle = {
     bgcolor: color,
     border: `1px solid ${color}`,
   };
+
+  const handleDelete = () => {
+    onDelete();
+    setClickedClose(true);
+  }
   return (
     <Box sx={tagStyle} {...other}>
       <span>{label}</span>
-      <CloseIcon geoId={id} onClick={onDelete} />
+      <CloseIcon geoId={id} onClick={handleDelete} />
     </Box>
   );
 }
@@ -73,7 +88,8 @@ Tag.propTypes = {
   color: PropTypes.string,
   id: PropTypes.string,
   savedList: PropTypes.array,
-  setSavedList: PropTypes.func
+  setSavedList: PropTypes.func,
+  setClickedClose: PropTypes.func
 };
 
 const AutoCompleteTabList = ({
@@ -121,6 +137,7 @@ export const AutoCompleteSelect = ({ props }) => {
     setSavedList
   } = props;
   let {
+    
     getRootProps,
     getInputLabelProps,
     getInputProps,
@@ -135,37 +152,62 @@ export const AutoCompleteSelect = ({ props }) => {
   } = useAutocomplete({
     id: "customized-hook-demo",
     multiple: true,
+    filterSelectedOptions: true,
     // handleValue: { handleChange },
-    onChange: (e, option, reason) => {
-      setSelectedList(option)
+    onChange: (e, option, reason, details) => {
+      console.log("option", option);
+      // if (reason === "selectOption") {
+      //   let isValueExists = selectedList.find(({ id }) => {
+      //     return id == details.option.id
+      //   }, details)
+      //   console.log(":isValueExists", isValueExists);
+      //   if (!isValueExists) {
+      //     setSelectedList(option)
+      //   }
+      // } else {
+      //   setSelectedList(option)
+      // }
+      console.log("reason", reason);
+      if (reason === "selectOption") {
+        let isValueExists = selectedList.find(({ id }) => {
+          if (id === details.option.id) {
+            return id
+          }
+        }, details)
+        console.log(":isValueExists", isValueExists);
+        if (!isValueExists) {
+        console.log(":isValueExists", isValueExists);
+          setSelectedList(option)
+        }else{
+          return false
+        }
+      } else {
+        const updatedList =  selectedList.filter(({id})=> id !== details.option.id);
+        setSelectedList(updatedList)
+      }
+
+      // let isValueExists = selectedList.find(({ id }) => {
+      //   if (id === details.option.id) {
+      //     return id
+      //   }
+      // }, details)
+      // console.log(":isValueExists", isValueExists);
+      
+      // if (!isValueExists) {
+      //   setSelectedList(option)
+      // }
+      // else {
+      //   setSelectedList(option)
+      // }
     },
     options: multiSelectInputList && multiSelectInputList,
     value: selectedList || [],
     //defaultValue:selectedList||[],
     getOptionLabel: ({ name }) => name
   });
-  const [valueLength, setValueLength] = useState(0)
-
-  useEffect(() => {
-    // if (savedList.length >= 1) {
-    //   setSelectedList([...savedList, ...value]);
-    // } else {
-    //   setSelectedList(value);
-
-    // }
-    // selectedList.length > 0 && selectedList.map(()=>{
-
-    // }, value)
-    // // setSelectedList(value);
-  
-  }, [value]);
-
-  const handleClick = () => {
-    return false;
-  };
-
 
   //console.log("selectedList", selectedList);
+  const [clickedClose, setClickedClose] = useState(false);
 
   return (
     <Box sx={autoCompleteSection}>
@@ -185,8 +227,10 @@ export const AutoCompleteSelect = ({ props }) => {
               savedList={savedList}
               setSavedList={setSavedList}
               {...getTagProps({ index })}
+              setClickedClose={setClickedClose}
             />
           ))}
+          {console.log("getInputProps", getInputProps)}
           <input
             onKeyUp={handleChange}
             {...getInputProps()}
@@ -195,6 +239,7 @@ export const AutoCompleteSelect = ({ props }) => {
         {groupedOptions && groupedOptions.length > 0 ? (
           list ? (
             <Listbox {...getListboxProps()}>
+              {console.log("getListboxProps", getListboxProps)}
               {groupedOptions.map((option, index) => (
                 <li {...getOptionProps({ option, index })}>
                   <Typography sx={autoCompleList}>{option?.name}</Typography>

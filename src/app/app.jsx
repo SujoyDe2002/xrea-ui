@@ -7,13 +7,13 @@ import { HomeView } from '../modules'
 import LoadingContextProvider from "store2/loading-context-provider"
 
 export const App = () => {
-   
+
     return (
         <ThemeProvider theme={AppStyle}>
             <LoadingContextProvider>
 
                 <Router>
-                    <HomeView />
+                        <HomeView />
                 </Router>
             </LoadingContextProvider>
 

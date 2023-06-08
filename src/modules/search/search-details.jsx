@@ -7,7 +7,6 @@ import {
   getLocalStorageItem,
   updateLocalStorage,
 } from "shared/utils";
-import { SectionCard } from "shared/components";
 import { getSearchedResult } from "server/api/city-search";
 import { MarketSegmentView } from "modules/market";
 import { LoadingContext } from "store2/loading-context-provider";
@@ -20,13 +19,12 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     searchDetailsProps;
 
   const { searchTitleGetterSetter, searchGetterSetter } = useContext(LoadingContext);
-  const { setSearchTitle } = searchTitleGetterSetter;
   const { setReceivedSearchResult, receivedSearchResult } = searchGetterSetter;
 
   const [tableActive, setTableActive] = useState(false);
   const [selectedCityList, setSelectedCityList] = useState([]);
   const [selectedUseCaseList, setSelectedUseCaseList] = useState([]);
-  const [searchedReasult, setSearchedReasult] = useState([]);
+  const [searchedReasult, setSearchedReasult] = useState();
   const [cityNameResultList, setCityNameResultList] = useState([]);
   const [cityList, setCityList] = useState([]);
   const [activeSearch, setActiveSearch] = useState(true);
@@ -42,14 +40,12 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   );
 
   const handleSpecificSearchResponse = async (searchId, searchtype) => {
-    //console.log("searchId111", searchId);
     if (searchId) {
       const payLoad = {
         saveSearchId: searchId,
         type: searchtype,
       };
       const response = await getSpecificSearch(payLoad);
-      //console.log("response", response);
       setSearchCriteria(response);
     }
   };
@@ -62,7 +58,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       handleSpecificSearchResponse(children?.searchId, "GUEST");
     }
     if (savesearchId) {
-      //console.log("searchId1", savesearchId);
       handleSpecificSearchResponse(savesearchId, "USER");
     }
     return () => {
@@ -71,9 +66,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   }, [savesearchId]);
 
   useEffect(() => {
-    //console.log("receivedSearchResult", receivedSearchResult);
+    console.log("receivedSearchResult", receivedSearchResult);
     if (receivedSearchResult) {
-      //console.log("receivedSearchResult", receivedSearchResult);
       handleClear();
     }
   }, [receivedSearchResult]);
@@ -85,7 +79,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         geographic_area_name: city?.name,
       };
     });
-    //console.log("location", location);
     let useCase = selectedUseCaseList.map((element) => {
       return {
         use_case_group: element.code,
@@ -98,7 +91,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     };
     const { data } = await getSearchedResult(payLoad);
     if (data) {
-      //console.log("selectedCityList", selectedCityList);
       const cityNameList = selectedCityList.map(({ name }) => {
         return name;
       });
@@ -115,7 +107,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
 
       const { general_stat, usecase, marketSegment } = data;
 
-      //console.log("searchedReasult", searchedReasult)
+      console.log("searchedReasult", searchedReasult)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
 
@@ -125,8 +117,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         UseCases: [usecase],
         MarketSegmentData: [marketSegment.data]
       })
-     // console.log("searchResultRowData", searchResultRowData);
-     // console.log("usecase", usecase);
+      console.log("searchResultRowData", searchResultRowData);
+      console.log("usecase", usecase);
       setXreaTableRows(searchResultRowData)
       setTableActive(true);
     }
@@ -147,16 +139,11 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
     setSearchCriteria();
     setIsDataSearched(false);
     reinitializeSearcheSection();
-    //console.log("handleClear");
     updateLocalStorage("xrea", { isdisabled: false })
   };
-  // console.log("selectedUseCaseList", selectedUseCaseList);
-  // console.log("selectedCityList", selectedCityList);
   const getAttributeValue = (e, attributeName) => {
     return e.target.getAttribute(attributeName);
   };
-  //console.log("selectedCityList", selectedCityList);
-  //console.log("selectedUseCaseList", selectedUseCaseList);
   const getCityIndex = (e) => {
     const indexValue = getAttributeValue(e, "indexid");
     const selectedResultRow = searchedReasult.general_stat.data[indexValue];
@@ -197,27 +184,24 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
 
   return (
     <DetailSection>
-      <SectionCard>
-        {activeSearch ? (
-          <SearchSection
-            searchCriteria={searchCriteria}
-            curentSearchTitle={curentSearchTitle}
-            cityList={cityList}
-            setCityList={setCityList}
-            selectedCityList={selectedCityList}
-            selectedUseCaseList={selectedUseCaseList}
-            setSelectedCityList={setSelectedCityList}
-            setSelectedUseCaseList={setSelectedUseCaseList}
-            tableActive={tableActive}
-            handleClear={handleClear}
-            searchFunction={searchFunction}
-            setXreSearchDisable={setXreSearchDisable}
-            xreaSeachButtonTitle={xreaSeachButtonTitle}
-            
+      {activeSearch ? (
+        <SearchSection
+          searchCriteria={searchCriteria}
+          curentSearchTitle={curentSearchTitle}
+          cityList={cityList}
+          setCityList={setCityList}
+          selectedCityList={selectedCityList}
+          selectedUseCaseList={selectedUseCaseList}
+          setSelectedCityList={setSelectedCityList}
+          setSelectedUseCaseList={setSelectedUseCaseList}
+          tableActive={tableActive}
+          handleClear={handleClear}
+          searchFunction={searchFunction}
+          setXreSearchDisable={setXreSearchDisable}
+          xreaSeachButtonTitle={xreaSeachButtonTitle}
+        />
+      ) : null}
 
-          />
-        ) : null}
-      </SectionCard>
       {receivedSearchResult && userId && (
         <SearchDraftedResult setSaveSearchId={setSaveSearchId} />
       )}
@@ -229,7 +213,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
           <SearchReasult searchReasultProps={searchReasultProps} />
         )
       ) : null}
-      {/* <SearchReasult searchReasultProps={searchReasultProps} /> */}
     </DetailSection>
   );
 };

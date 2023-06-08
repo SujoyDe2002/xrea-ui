@@ -31,7 +31,7 @@ export const InfoCard = ({ children }) => {
                       <span>
 
                         <Link to={{
-                          pathname: "/search", state: {
+                          pathname: "/search_result", state: {
                             id: 1
 
                           }
@@ -45,7 +45,7 @@ export const InfoCard = ({ children }) => {
                 <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom"> */}
                     <Typography sx={savedSeacrhCriteria} >
                       <Link to={{
-                        pathname: "/search", state: { id: 2 }
+                        pathname: "/search_result", state: { id: 2 }
                       }}>
                         <span>All Uses for Peoria, IL</span>
                       </Link>
@@ -55,7 +55,7 @@ export const InfoCard = ({ children }) => {
                     <Typography sx={savedSeacrhCriteria} >
                       <span>
                         <Link to={{
-                          pathname: "/search",
+                          pathname: "/search_result",
                           state: {
                             id: 3
                           }

@@ -9,12 +9,13 @@ import { getLocalStorageItem } from "shared/utils";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
 
 export const SearchView = ({ setDisbled }) => {
-  const location = useLocation();
   const [cityNameList, setCityNameList] = useState(null);
   const [usecaseList, setUsecaseList] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isDataSearched, setIsDataSearched] = useState(false);
   const [marketSegmentData, setMarketSegmentData] = useState(null);
+  const location = useLocation();
+
   const { id } = location?.state || {};
   const history = useHistory();
   const SearchCriteria = {
@@ -22,7 +23,7 @@ export const SearchView = ({ setDisbled }) => {
   };
   useEffect(() => {
     setDisbled(id !== undefined ? true : false);
-    //console.log("getLocalStorageItem", localStorage.getItem("xrea"));
+    console.log("getLocalStorageItem", localStorage.getItem("xrea"));
     if (getLocalStorageItem("xrea") && getLocalStorageItem("xrea").data) {
       const { loginData } = getLocalStorageItem("xrea").data;
       setUserId(loginData?.userId);
@@ -41,10 +42,6 @@ export const SearchView = ({ setDisbled }) => {
     setCityNameList,
     setUsecaseList,
     setIsDataSearched,
-  };
-  const handleClick = () => {
-    // console.log("setMarketSegmentData", setMarketSegmentData);
-    setMarketSegmentData(null);
   };
   // console.log("usecaseListdd", usecaseList);
   return (

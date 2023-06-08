@@ -27,7 +27,6 @@ export const HomeDetails = ({ setDisbled }) => {
   const { setUser } = userGetterSetter;
   useEffect(() => {
     setDisbled(false);
-
     removeLocalStorageItems(["xrea"]);
     setUser(false);
   }, []);

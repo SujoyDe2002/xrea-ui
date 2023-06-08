@@ -7,6 +7,8 @@ import { postMarketStudyMailSent } from "server/api/market-study-mail-sent";
 import { orderMailConfig } from "user-config";
 import { OpenLink } from "shared/utils";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
+import IsObjEmpty from "shared/utils/associate/is-object-empty";
+import PrivateComponent from "modules/account/private-component/private-component";
 
 const redirect = () => {
   OpenLink("https://xrea.global/market-study");
@@ -21,36 +23,26 @@ export const OrderXrea = (props) => {
     mailTo,
     mailfrom,
   } = orderMailConfig;
-  const { loaderFunction, handleResponseMessage } = useContext(LoadingContext);
+  const { loaderFunction, handleResponseMessage, hasResult, cityNameList, useCaseNameList } = useContext(LoadingContext);
   const { startLoader, stopLoader } = loaderFunction;
-  const { isDataSearched, cityList, useCaseList } = props;
-
-  //console.log("isDataSearched1", props);
-  const sentMail = async () => {
+  const senDMail = async () => {
     const payLoad = {
       companyName: companyName,
       userName: userName,
       firstName: firstName,
       lastName: lastName,
       phoneNo: phoneNo,
-      cityList: cityList,
-      caseList: useCaseList,
+      cityList: cityNameList,
+      caseList: useCaseNameList,
       mailTo: mailTo,
       mailfrom: mailfrom,
     };
 
     startLoader();
-
     const status = await postMarketStudyMailSent(payLoad);
-    //const { statuscode } = data;
-    //console.log("statuscode", statuscode);
     stopLoader();
-
-
     if (status === 200) {
       handleResponseMessage("We will get in touch shortly!");
-    } else {
-      stopLoader();
     }
   };
 
@@ -72,12 +64,16 @@ export const OrderXrea = (props) => {
     bgStyle: xreaMaretStudy,
     button: {
       buttonLable: "Contact Sales",
-      handleClick: isDataSearched ? sentMail : redirect,
+      // handleClick: IsObjEmpty(searchedReasult) ? redirect  : senDMail
+      handleClick: hasResult ? senDMail : redirect
     },
   };
+  console.log("hasResult", hasResult);
   return (
-    <ContentWrapper>
-      <SectionCard2 props={SectionCard2Props} />
-    </ContentWrapper>
+    <PrivateComponent>
+      <ContentWrapper>
+        <SectionCard2 props={SectionCard2Props} />
+      </ContentWrapper>
+    </PrivateComponent>
   )
 };

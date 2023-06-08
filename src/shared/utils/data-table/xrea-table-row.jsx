@@ -39,8 +39,6 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
             p: 0
         }
     }
-    //console.log("noOfCol", noOfCol);
-    const test = "The United States Home Price to Income Ratio for 2021 is Roughly 3.54"
     return (
         <>
             {rowData && rowData.type === 1 &&
@@ -48,20 +46,20 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                     <TableRow key={rowData.type}>
                         {
                             rowData.cols.map((v, i) => {
-                                //console.log("vasfasdf", v);
+                                console.log("vasfasdf", v);
                                 return (
                                     <TableCell
-                                        align="center" 
+                                        align="center"
                                         className={i === 0 ? classes.sticky : classes.tabcol}
                                         //width={{xs:"250px",md:"350px"}}
                                         style={{
-                                            paddingLeft: 0, 
+                                            paddingLeft: 0,
                                             backgroundColor: "#fff",
                                             ...cellSize
                                         }}
                                     >
                                         <Typography sx={marketSegmentHeading}>{v}</Typography>
-                                        
+
                                     </TableCell>
                                 )
                             })
@@ -70,7 +68,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                     </TableRow>
                 )}
             {rowData && rowData.type === 2 &&
-            (
+                (
                     <TableRow className={classes.sticky} sx={stickyHeaderCell} key={rowData.type} >
                         {
                             colRow.map((v, i) => {
@@ -84,10 +82,10 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                     >
                                         {i > 0 && <Box sx={boxStyle} indexid={i - 1} onClick={getCityIndex}></Box>}
 
-                                        <Typography  sx={(i===0) ? marketSegmentHeaderStyle : marketSegmentHeading }>
+                                        <Typography sx={(i === 0) ? marketSegmentHeaderStyle : marketSegmentHeading}>
                                             {rowData.cols[i]}
                                         </Typography>
-                                      
+
                                     </TableCell>
                                 )
                             })
@@ -97,7 +95,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                 )}
             {rowData && rowData.type === 3 &&
                 (
-                    <TableRow key={rowData.type} sx={{...headingRow, backgroundColor: AppStyle.palette.tableHeader.main}} className={classes.tabcol3}>
+                    <TableRow key={rowData.type} sx={{ ...headingRow, backgroundColor: AppStyle.palette.tableHeader.main }} className={classes.tabcol3}>
                         <TableCell
                             component="th"
                             scope="row"
@@ -110,7 +108,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                         <TableCell
                             component="th"
                             scope="row"
-                            colSpan={noOfCol-1}
+                            colSpan={noOfCol - 1}
                         >
                             {/* <TableHeading heading={rowData.cols[0]} /> */}
 
@@ -129,7 +127,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                     style={{ paddingLeft: 0, backgroundColor: "#fff" }}
                                 >
                                     {/* <Stack alignItems={"center"} sx={{width: "250px"}} ml={1} flexDirection={"row"}> */}
-                                    <Stack justifyContent ={"right"} alignItems={"center"}  ml={1} flexDirection={"row"}>
+                                    <Stack justifyContent={"right"} alignItems={"center"} ml={1} flexDirection={"row"}>
                                         <Typography sx={tableHeader}>
                                             {tableHeaderTitle}
                                         </Typography>
@@ -165,7 +163,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                 )}
             {rowData && rowData.type === 5 &&
                 (
-                    <TableRow key={rowData.type} sx={{...headingRow,  backgroundColor: AppStyle.palette.tableHeader.main}} className={classes.tabcol3} >
+                    <TableRow key={rowData.type} sx={{ ...headingRow, backgroundColor: AppStyle.palette.tableHeader.main }} className={classes.tabcol3} >
                         <TableCell
                             component="th"
                             scope="row"
@@ -180,9 +178,9 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                             component="th"
                             scope="row"
                             colSpan={noOfCol - 1}
-                        >                     
+                        >
                         </TableCell>
-                    
+
                     </TableRow>
                 )}
             {rowData && rowData.type === 6 &&
