@@ -587,12 +587,8 @@
   width: fit-content;
   display: inline-block;
   cursor: pointer;
-  / padding: 8px 12px; /
-  / position: relative; /
   align-items: flex-start;
-  / border-color: transparent; /
   border-radius: 5px;
-  / background-color: rgba(249, 249, 249, 1); /
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-text12 {
