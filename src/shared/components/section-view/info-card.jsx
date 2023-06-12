@@ -1,16 +1,24 @@
-// import { Grid } from '@mui/material'
-// import React from 'react'
-// import './frame-homepagewiththesearchbarandthetotallistofclu.css'
-// import SectionCard from './SectionCard'
-// import { Link } from 'react-router-dom'
-
 import { Box, Grid, Stack, Typography } from "@mui/material"
 import { SectionCard } from "."
-import { InfoSearch, cardImageContainer,  homeCardHeading1, imageBox, infoCardImageGrid, infoDes, savedSeacrhCriteria } from "app"
+import { InfoSearch, cardImageContainer, homeCardDes, homeCardHeading1, imageBox, infoCardImageGrid, infoDes, savedSeacrhCriteria } from "app"
 import { GetAttribute } from "shared/utils"
 import { useContext } from "react"
 import { LoadingContext } from "store2/loading-context-provider"
 
+const guestSearches = [
+  {
+    searchId: 1,
+    searchName: `Young Professionals and Couples with Young Kids analysis for Peoria, IL`
+  },
+  {
+    searchId: 2,
+    searchName: `All Uses for Peoria, IL`
+  },
+  {
+    searchId: 3,
+    searchName: `Young Professionals and Couples with Young Kids analysis in multiple locations`
+  }
+]
 export const InfoCard = ({ children }) => {
   const { handleSpecificSearchResponse } = useContext(LoadingContext);
   const handleGuestSearch = (element) => {
@@ -34,35 +42,19 @@ export const InfoCard = ({ children }) => {
                 </Typography>
 
                 <div >
-                  <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                    <Typography sx={savedSeacrhCriteria} >
-                      <span>
-
-                      
-                        <Box searchId={1} onClick={handleGuestSearch}>
-                          Young Professionals and Couples with Young Kids analysis for
-                          Peoria, IL
-                        </Box>
-                      </span>
-                    </Typography>
-                    {/* </div>
-                <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom"> */}
-                    <Typography sx={savedSeacrhCriteria} >
-                      <Box searchId={2} onClick={handleGuestSearch}>
-                        <span>All Uses for Peoria, IL</span>
-                      </Box>
-                    </Typography>
-                  </div>
-                  <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
-                    <Typography sx={savedSeacrhCriteria} >
-                      <span>
-                        <Box searchId={3} onClick={handleGuestSearch}>
-                          Young Professionals and Couples with Young Kids analysis in
-                          multiple locations
-                        </Box>
-                      </span>
-                    </Typography>
-                  </div>
+                  {guestSearches.map(({ searchId, searchName }) => {
+                    return (
+                      <div className="frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom">
+                        <Typography sx={savedSeacrhCriteria} >
+                          <span>
+                            <Box searchId={searchId} onClick={handleGuestSearch}>
+                              {searchName}
+                            </Box>
+                          </span>
+                        </Typography>
+                      </div>
+                    )
+                  })}
                 </div>
               </Box>
               <Box sx={{ display: { xs: "block", md: "none" } }}>
