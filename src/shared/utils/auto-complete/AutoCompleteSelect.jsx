@@ -145,38 +145,20 @@ export const AutoCompleteSelect = ({ props }) => {
     getListboxProps,
     getOptionProps,
     groupedOptions,
-    value,
-    //defaultValue,
     focused,
     setAnchorEl,
   } = useAutocomplete({
     id: "customized-hook-demo",
     multiple: true,
     filterSelectedOptions: true,
-    // handleValue: { handleChange },
     onChange: (e, option, reason, details) => {
-      console.log("option", option);
-      // if (reason === "selectOption") {
-      //   let isValueExists = selectedList.find(({ id }) => {
-      //     return id == details.option.id
-      //   }, details)
-      //   console.log(":isValueExists", isValueExists);
-      //   if (!isValueExists) {
-      //     setSelectedList(option)
-      //   }
-      // } else {
-      //   setSelectedList(option)
-      // }
-      console.log("reason", reason);
       if (reason === "selectOption") {
         let isValueExists = selectedList.find(({ id }) => {
           if (id === details.option.id) {
             return id
           }
         }, details)
-        console.log(":isValueExists", isValueExists);
         if (!isValueExists) {
-        console.log(":isValueExists", isValueExists);
           setSelectedList(option)
         }else{
           return false
@@ -186,19 +168,6 @@ export const AutoCompleteSelect = ({ props }) => {
         setSelectedList(updatedList)
       }
 
-      // let isValueExists = selectedList.find(({ id }) => {
-      //   if (id === details.option.id) {
-      //     return id
-      //   }
-      // }, details)
-      // console.log(":isValueExists", isValueExists);
-      
-      // if (!isValueExists) {
-      //   setSelectedList(option)
-      // }
-      // else {
-      //   setSelectedList(option)
-      // }
     },
     options: multiSelectInputList && multiSelectInputList,
     value: selectedList || [],
@@ -206,7 +175,6 @@ export const AutoCompleteSelect = ({ props }) => {
     getOptionLabel: ({ name }) => name
   });
 
-  //console.log("selectedList", selectedList);
   const [clickedClose, setClickedClose] = useState(false);
 
   return (
@@ -214,7 +182,6 @@ export const AutoCompleteSelect = ({ props }) => {
       <div className="tag autocompleteInput" {...getRootProps()}>
         <Label {...getInputLabelProps()}>{headerName}</Label>
         <InputWrapper
-          // onClick={handleClick}
           ref={setAnchorEl}
           className={focused ? "focused" : ""}
 
@@ -230,7 +197,6 @@ export const AutoCompleteSelect = ({ props }) => {
               setClickedClose={setClickedClose}
             />
           ))}
-          {console.log("getInputProps", getInputProps)}
           <input
             onKeyUp={handleChange}
             {...getInputProps()}
@@ -239,7 +205,6 @@ export const AutoCompleteSelect = ({ props }) => {
         {groupedOptions && groupedOptions.length > 0 ? (
           list ? (
             <Listbox {...getListboxProps()}>
-              {console.log("getListboxProps", getListboxProps)}
               {groupedOptions.map((option, index) => (
                 <li {...getOptionProps({ option, index })}>
                   <Typography sx={autoCompleList}>{option?.name}</Typography>

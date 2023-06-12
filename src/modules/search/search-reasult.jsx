@@ -1,7 +1,6 @@
-import { React, useRef, useContext, useEffect, useCallback } from "react";
+import { React,  useContext, useEffect } from "react";
 import ScrollContainer from 'react-indiana-drag-scroll';
 import {
-  ArrangeSearchData,
   GetAttribute,
   SectionSearchCard,
   getLocalStorageItem,
@@ -58,10 +57,8 @@ const SearchReasult = () => {
   );
   const [saveSearchInputError, setSaveSearchInputError] = useState();
   const history = useHistory();
-  console.log("searchedReasult", searchedReasult);
   const { usecase } = searchedReasult || {};
   const theme = useTheme();
-  console.log("xreaTableRows", xreaTableRows);
   useEffect(() => {
     const logdata = getLocalStorageItem("xrea")?.data;
     const maxSavedLength =  logdata?.maxSavedLength;
@@ -73,7 +70,6 @@ const SearchReasult = () => {
         setXreSearchButtonTitle("Saved searches limit exceeded");
         setXreSearchDisable(true);
       } else {
-        console.log("isdisabled", isdisabled);
 
         setXreSearchButtonTitle("Save this XREA Search");
         setXreSearchDisable(isdisabled);
@@ -93,7 +89,6 @@ const SearchReasult = () => {
 
   const getCityIndex = (e) => {
     const indexValue = GetAttribute(e, "indexid");
-    console.log("indexValue", indexValue);
     const selectedResultRow = searchedReasult.general_stat.data[indexValue];
     const selectedMarketSegmentRow =
       searchedReasult.marketSegment.data[indexValue];
@@ -216,7 +211,6 @@ const SearchReasult = () => {
           {
             xreaTableRows && xreaTableRows.length > 0 ? (
               <SearchSectionHeading>
-                {console.log("searchTitle", searchTitle)}
                 <Typography variant="h2" sx={searchResultSection}>
                   {searchTitle ? searchTitle : "Search results"}
                 </Typography>

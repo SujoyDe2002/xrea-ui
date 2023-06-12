@@ -46,7 +46,6 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                     <TableRow key={rowData.type}>
                         {
                             rowData.cols.map((v, i) => {
-                                console.log("vasfasdf", v);
                                 return (
                                     <TableCell
                                         align="center"

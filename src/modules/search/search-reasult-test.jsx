@@ -1,8 +1,7 @@
 import { React, useRef } from 'react'
-import { SectionSearchCard, getLocalStorageItem } from 'shared/utils'
-import { Box, Button, Grid, Stack, TextField, Typography } from '@mui/material'
+import { SectionSearchCard } from 'shared/utils'
+import { Box, Button,  Stack, TextField, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import jsPDF from 'jspdf'
 import { GeneralStat, UseCaseTable, MarketSegmentRow, TableHeading } from './search-result-grid';
 import { input, searchResultSection, tabRight, tabStyle, tablesContainter } from 'app';
 import { SearchSectionHeading } from './search-section-heading';
@@ -10,7 +9,6 @@ import AlertDialog from 'shared/utils/dialog/alert-dialog';
 import { useState } from 'react';
 import Button1 from 'shared/utils/button/button1';
 import Button2 from 'shared/utils/button/button2';
-import Demo from './demo';
 import DataTable from 'shared/utils/data-table/DataTable';
 
 
@@ -77,7 +75,6 @@ const SearchReasultTest = ({ searchReasultProps }) => {
         return Object.values(e)
 
     })
-    console.log("data", data);
     const test = {
         width: "100%",
         "& .tss-0:has(table)": {
@@ -100,7 +97,6 @@ const SearchReasultTest = ({ searchReasultProps }) => {
                 <Stack direction={"row"} justifyContent={"start"} spacing={2}>
 
                     <Box sx={tabRight}></Box>
-                    {console.log("cityNameResultList", cityNameResultList)}
                     {(cityNameResultList.map((city) => {
                         return (
                             <Box sx={tabStyle}>

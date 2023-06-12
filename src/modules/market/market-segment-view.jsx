@@ -12,11 +12,12 @@ import React, { useContext, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { SectionSearchCard } from "shared/utils";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
+import ScrollToTop from "shared/utils/scroll-to/scroll-to-top";
 import { LoadingContext } from "store2/loading-context-provider";
 
-export const MarketSegmentView = ({ props }) => {
+ const MarketSegmentView = ({ props }) => {
   const { marketSegmentData  } = useContext(LoadingContext);
-  
+
   const {
     cityName,
     tenYearPopGrowthRate,
@@ -103,3 +104,5 @@ export const MarketSegmentView = ({ props }) => {
     </ContentWrapper>
   );
 };
+
+export default ScrollToTop(MarketSegmentView)

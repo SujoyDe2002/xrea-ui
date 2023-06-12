@@ -18,7 +18,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   const { setCityNameList, setUsecaseList, setIsDataSearched } =
     searchDetailsProps;
 
-  const { searchTitleGetterSetter, searchGetterSetter } = useContext(LoadingContext);
+  const { searchTitleGetterSetter, searchGetterSetter, handleClear } = useContext(LoadingContext);
   const { setReceivedSearchResult, receivedSearchResult } = searchGetterSetter;
 
   const [tableActive, setTableActive] = useState(false);
@@ -66,7 +66,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   }, [savesearchId]);
 
   useEffect(() => {
-    console.log("receivedSearchResult", receivedSearchResult);
+    //console.log("receivedSearchResult", receivedSearchResult);
     if (receivedSearchResult) {
       handleClear();
     }
@@ -107,7 +107,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
 
       const { general_stat, usecase, marketSegment } = data;
 
-      console.log("searchedReasult", searchedReasult)
+      //console.log("searchedReasult", searchedReasult)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
 
@@ -117,8 +117,8 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         UseCases: [usecase],
         MarketSegmentData: [marketSegment.data]
       })
-      console.log("searchResultRowData", searchResultRowData);
-      console.log("usecase", usecase);
+      //console.log("searchResultRowData", searchResultRowData);
+      //console.log("usecase", usecase);
       setXreaTableRows(searchResultRowData)
       setTableActive(true);
     }
@@ -129,18 +129,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
       setActiveSearch(true);
     });
   };
-  const handleClear = () => {
-    setTableActive(false);
-    setCityNameResultList([]);
-    setSearchedReasult([]);
-    setSelectedCityList([]);
-    setSelectedUseCaseList([]);
-    setCityList([]);
-    setSearchCriteria();
-    setIsDataSearched(false);
-    reinitializeSearcheSection();
-    updateLocalStorage("xrea", { isdisabled: false })
-  };
+
   const getAttributeValue = (e, attributeName) => {
     return e.target.getAttribute(attributeName);
   };
@@ -206,13 +195,7 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         <SearchDraftedResult setSaveSearchId={setSaveSearchId} />
       )}
 
-      {tableActive && !receivedSearchResult ? (
-        marketSegmentData ? (
-          <MarketSegmentView props={marketSegmentProps} />
-        ) : (
-          <SearchReasult searchReasultProps={searchReasultProps} />
-        )
-      ) : null}
+  
     </DetailSection>
   );
 };

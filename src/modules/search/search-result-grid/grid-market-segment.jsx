@@ -9,10 +9,8 @@ import {
 } from "app";
 
 export const MarketSegmentRow = ({ marketSegmentProps }) => {
-  // const { marketSegmentData, rowLength, getCityIndex } = marketSegmentProps;
-  // const { data } = marketSegmentData;
 
-  //
+
   return (
     <Stack sx={tableRow}>
       {/* <Box sx={tableHeader}>{"Market Segment"}</Box> */}

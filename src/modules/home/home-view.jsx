@@ -13,36 +13,32 @@ import {
   smallFont,
 } from "app";
 import { HomeDetails } from "./homeDetails";
-import { SearchView } from "modules/search";
-import { createTheme } from "@mui/material/styles";
 import { LoadingContext } from "store2/loading-context-provider";
-import { getLocalStorageItem, removeLocalStorageItems, setLocalStorageItem } from "shared/utils";
 import { userInfo } from "user-config";
-import { PricingContent } from "modules/pricing";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
 import SearchDraftedResult from "modules/search/search-drafted-result";
-import { ResultList } from "modules/search/search-result-list";
 import SearchReasult from "modules/search/search-reasult";
-import { MarketSegmentView } from "modules/market";
-import PrivateRoute from "modules/account/private-route/private-route";
 import isLogin from "shared/utils/associate/is-login";
+import PricingContent from "modules/pricing/pricing-content";
+import MarketSegmentView from "modules/market/market-segment-view";
 
 
 export const HomeView = () => {
-  const { userGetterSetter, searchGetterSetter } = useContext(LoadingContext);
+  const { userGetterSetter, searchGetterSetter, handleClear } = useContext(LoadingContext);
   const { user, setUser } = userGetterSetter;
   const { receivedSearchResult, setReceivedSearchResult } = searchGetterSetter;
 
   const history = useHistory();
   const handleLogin = () => {
+    handleClear();
     const userId = userInfo.userId;
     const loginData = {
       userId
     };
     setUser(loginData);
     setLocalStorageItem("xrea", { loginData });
-    // history.push("/search"); 
     history.push("/saved_searches");
+
   };
   const [disbled, setDisbled] = useState(false);
   const location = useLocation();
@@ -53,12 +49,10 @@ export const HomeView = () => {
       const { pathname } = location;
       if (pathname === "/saved_searches") {
         history.push("/search_result")
-      }else{
+      } else {
         history.push("/saved_searches")
-        
+
       }
-      // /search_result
-      // /saved_searches
     } else {
       history.push("/")
     }
@@ -133,7 +127,6 @@ export const HomeView = () => {
             <Route exact path="/">
               <HomeDetails setDisbled={setDisbled} />
             </Route>
-            {/* <PrivateRoute component={SearchDraftedResult}  exact path="/saved_searches"/> */}
             <Route exact path="/saved_searches">
               <SearchDraftedResult />
             </Route>
@@ -143,9 +136,6 @@ export const HomeView = () => {
             <Route exact path="/market_segment">
               <MarketSegmentView />
             </Route>
-            {/* <Route exact path="/search">
-              <SearchView setDisbled={setDisbled} />
-            </Route> */}
             <Route exact path="/pricing">
               <PricingContent />
             </Route>

@@ -1,10 +1,8 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
-import { React, useState, useEffect, useContext } from "react";
+import { React, useState, useEffect, useContext, useLayoutEffect } from "react";
 import {
-  ArrangeSearchData,
   AutoCompleteSelect,
-  getLocalStorageItem,
   updateLocalStorage,
 } from "shared/utils";
 import {
@@ -21,9 +19,7 @@ import { getUseCaseList } from "server/api/get-usecase-list";
 import Button1 from "shared/utils/button/button1";
 import { LoadingContext } from "store2/loading-context-provider";
 import { SectionCard } from "shared/components";
-import { getSearchedResult } from "server/api/city-search";
-import { useHistory, useLocation } from "react-router-dom";
-import { getSpecificSearch } from "server/api/get-specific-search";
+import { useLocation } from "react-router-dom";
 import isLogin from "shared/utils/associate/is-login";
 
 const SearchSection = () => {
@@ -36,24 +32,22 @@ const SearchSection = () => {
     cityList,
     selectedUseCaseList,
     selectedCityList,
-    // searchFunction,
+    searchFunction,
     setSelectedCityList,
     setSelectedUseCaseList,
-    setCityNameList,
-    // setUseCaseList,
-    searchedReasult,
     setSearchedReasult,
     setCityNameResultList,
     setXreSearchDisable,
     xreaSeachButtonTitle,
     setXreaTableRows,
     setSearchCriteria,
+    handleSpecificSearchResponse,
     savesearchId,
     hasResult,
     setSaveSearchId,
     setUseCaseNameList
   } = useContext(LoadingContext);
-  const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
+  const {  setSearchTitle } = searchTitleGetterSetter;
   const { user } = userGetterSetter;
 
   const [useCaseList, setUseCaseList] = useState([]);
@@ -65,28 +59,15 @@ const SearchSection = () => {
 
   const location = useLocation();
   const { id } = location?.state || {};
-  
   const SearchCriteria = {
     searchId: id,
   };
-  const history = useHistory();
-  const navigate = (path) => {
-    history.push(path)
-  }
-
 
   useEffect(() => {
-    
-    
-    // if (getLocalStorageItem("xrea")) {
-    //   const { userId } = getLocalStorageItem("xrea")?.data?.loginData;
-    //   // setUserId(userId);
-    // }
     if (SearchCriteria?.searchId) {
       handleSpecificSearchResponse(SearchCriteria?.searchId, "GUEST");
     }
     if (savesearchId) {
-      //
       handleSpecificSearchResponse(savesearchId, "USER");
     }
     return () => {
@@ -112,21 +93,12 @@ const SearchSection = () => {
     };
   }, [searchCriteria]);
 
-  useEffect(() => {
-    //  
-
+  useLayoutEffect(() => {
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
-      // if (!searchTitle) {
-      //   setDisabled(true);
-      // } else {
-      //   setDisabled(false);
-
-      // }
-      searchFunction();
-      
+     
     }
-  }, [selectedCityList, selectedUseCaseList]);
+  }, [selectedCityList]);
   useEffect(() => {
     //todo
     // if (user) {
@@ -138,33 +110,11 @@ const SearchSection = () => {
     } else {
       disableAutoComplete();
     }
-    // return (
-    //   () => {
-    //     handleClear()
-    //   }
-    // )
+   
   }, [])
 
 
-  const handleSpecificSearchResponse = async (searchId, searchtype) => {
-    //
-    
-    if (searchId) {
-      const payLoad = {
-        saveSearchId: searchId,
-        type: searchtype,
-      };
-      const response = await getSpecificSearch(payLoad);
-      //
-      setSearchCriteria(response);
-    }
-  };
-  // const reinitializeSearcheSection = () => {
-  //   setActiveSearch(false);
-  //   setTimeout(() => {
-  //     setActiveSearch(true);
-  //   });
-  // };
+  
   const handleClear = () => {
     setCityNameResultList([]);
     setSearchedReasult();
@@ -176,60 +126,9 @@ const SearchSection = () => {
     setSearchTitle();
     updateLocalStorage("xrea", { isdisabled: false })
   };
-  const searchFunction = async () => {
-    let location = selectedCityList.map((city) => {
-      return {
-        geo_id: city?.id,
-        geographic_area_name: city?.name,
-      };
-    });
-    //
-    let useCase = selectedUseCaseList.map((element) => {
-      return {
-        use_case_group: element.code,
-      };
-    });
-
-    const payLoad = {
-      location,
-      usecase: useCase
-    };
-    const { data } = await getSearchedResult(payLoad);
-    if (data) {
-      //
-      const cityNameList = selectedCityList.map(({ name }) => {
-        return name;
-      });
-
-      const usecaseNameList = selectedUseCaseList.map(({ name }) => {
-        return name;
-      });
+  
 
 
-      setCityNameList(cityNameList.join(" , "));
-      setUseCaseNameList(usecaseNameList.join(" , "));
-      // setIsDataSearched(true);
-      // setSearchTitle();
-      setSearchedReasult(data);
-      navigate("/search_result");
-      const { general_stat, usecase, marketSegment } = data;
-
-      // 
-      // setReceivedSearchResult(false);
-      setCityNameResultList(selectedCityList);
-
-      const searchResultRowData = ArrangeSearchData({
-        CityData: [selectedCityList],
-        GeneralStat: [general_stat],
-        UseCases: [usecase],
-        MarketSegmentData: [marketSegment.data]
-      })
-      
-      
-      setXreaTableRows(searchResultRowData)
-      // setTableActive(true);
-    }
-  };
   const enableAutoComplete = () => {
     setAutocompleteEnabled(true);
   }
@@ -237,14 +136,11 @@ const SearchSection = () => {
     setAutocompleteEnabled(false);
   }
   const handleChangeCity = async (e) => {
-    
 
     const { value } = e.currentTarget;
     if (value.length >= 2) {
       const { data } = await getCityList(value);
-      // 
       setCityList(data);
-      
     }
 
   };
@@ -269,15 +165,13 @@ const SearchSection = () => {
     savedList: savedUseCaseList,
     list: false,
   };
-  // 
-  // 
   const handleClickOnSearch = () => {
     // setSearchTitle();
-    
     if (xreaSeachButtonTitle == "Save this XREA Search") {
       setXreSearchDisable(false);
     }
     searchFunction();
+    setSearchTitle();
   }
   const button1Props = {
     title: "Search",

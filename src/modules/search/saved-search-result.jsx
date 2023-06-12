@@ -53,9 +53,8 @@ const SavedSearchResult = ({ setSaveSearchId }) => {
 
   const openModel = async (element) => {
     const currentIndex = GetAttribute(element, "index");
-    //console.log("currentIndex", currentIndex);
     let confirmationUpdatedSearchList = searchList.map((item, index) => {
-      // console.log("savedList index", index);
+      
       if (currentIndex == index) {
         item.deleteConfirmationOpen = true;
       } else {

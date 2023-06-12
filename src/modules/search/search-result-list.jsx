@@ -1,10 +1,10 @@
 import { React, useRef } from 'react'
-import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import jsPDF from 'jspdf';
 import { GeneralStat, UseCaseTable, TableHeading, MarketSegmentRow } from './search-result-grid';
 
-import { cityContainer, lastTab, searchResultSection, tabStyle, tablesContainter } from 'app';
+import { lastTab, searchResultSection, tabStyle, tablesContainter } from 'app';
 import { OrderXrea } from './order-xrea';
 import SearchSection from './search-section';
 
@@ -58,13 +58,6 @@ export const ResultList = ({ searchReasultProps }) => {
 
                 <Stack ml={"320px"} direction={"row"} justifyContent={"start"} spacing={2}>
 
-                    {/* <Box sx={tabStyle}>
-                        {"Test"}
-                    </Box>
-                    <Box sx={tabStyle}>
-                        {"Test"}
-                    </Box> */}
-                    {console.log("cityNameResultList", cityNameResultList)}
                     {(cityNameResultList.map((city) => {
                         return (
                             <Box sx={tabStyle}>
@@ -77,25 +70,10 @@ export const ResultList = ({ searchReasultProps }) => {
                     </Box>
 
                 </Stack>
-                {/* <Grid container spacing={0} p={"1.2rem"}>
-                    <Grid item xs={3}>
-                    </Grid>
-                    <Grid item xs={9}>
-                        <Stack direction={"row"} justifyContent={"start"} spacing={2}>
-                            {(cityNameResultList.map((city) => {
-                                return (
-                                    <Box sx={cityContainer}>
-                                        {city.name}
-                                    </Box>
-                                )
-                            }))}
-                        </Stack>
-                    </Grid>
-                </Grid> */}
+
 
                 <MarketSegmentRow marketSegmentProps={marketSegmentProps} />
 
-                {/* <GeneralStat rows={generalStat} /> */}
                 <TableHeading heading={"GENERAL STATISTICS"} />
                 <GeneralStat rows={generalStat} />
                 <TableHeading heading={"USE CASE SCORE"} />

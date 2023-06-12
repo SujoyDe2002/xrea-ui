@@ -11,7 +11,6 @@ export const SectionCard2 = ({ props }) => {
   const { title, description, description2, imageSection, bgStyle, button } =
     props;
   const { buttonLable, handleClick } = button;
-  //console.log("desc", description);
   return (
     <Box sx={card2style}>
       <Box sx={bgStyle}></Box>
@@ -25,6 +24,7 @@ export const SectionCard2 = ({ props }) => {
             </div>
             {/* <Typography sx={description1}>{description}</Typography> */}
           </div>
+          
           <Stack
             sx={{ ...card2BuronContainer, display: { xs: "none", md: "flex" } }}
           >

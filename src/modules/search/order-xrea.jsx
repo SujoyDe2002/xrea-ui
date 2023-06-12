@@ -68,7 +68,6 @@ export const OrderXrea = (props) => {
       handleClick: hasResult ? senDMail : redirect
     },
   };
-  console.log("hasResult", hasResult);
   return (
     <PrivateComponent>
       <ContentWrapper>

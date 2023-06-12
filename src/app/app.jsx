@@ -10,12 +10,12 @@ export const App = () => {
 
     return (
         <ThemeProvider theme={AppStyle}>
-            <LoadingContextProvider>
+            <Router>
+                <LoadingContextProvider>
 
-                <Router>
-                        <HomeView />
-                </Router>
-            </LoadingContextProvider>
+                    <HomeView />
+                </LoadingContextProvider>
+            </Router>
 
         </ThemeProvider>
     )
