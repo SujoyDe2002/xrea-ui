@@ -585,15 +585,14 @@
   top: 24.5908203125px;
   left: 0px;
   width: fit-content;
-  display: flex;
-  /* padding: 8px 12px; */
-  /* position: relative; */
+  display: inline-block;
+  cursor: pointer;
+  / padding: 8px 12px; /
+  / position: relative; /
   align-items: flex-start;
-  /* border-color: transparent; */
+  / border-color: transparent; /
   border-radius: 5px;
-  /* background-color: rgba(249, 249, 249, 1); */
-
-
+  / background-color: rgba(249, 249, 249, 1); /
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-text12 {
