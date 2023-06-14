@@ -15,7 +15,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 export const UseCaseTable = ({ rows }) => {
   const { data, label } = rows;
-  //console.log("label", label);
+  
 
   return (
     <Box>

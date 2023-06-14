@@ -10,7 +10,7 @@ import {
 
 export const MarketSegmentRow = ({ marketSegmentProps }) => {
 
-
+  
   return (
     <Stack sx={tableRow}>
       {/* <Box sx={tableHeader}>{"Market Segment"}</Box> */}

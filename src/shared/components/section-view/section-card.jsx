@@ -5,7 +5,6 @@ import React from 'react'
 
 export const SectionCard = ({ children }) => {
     return (
-        // <div className="frame-homepagewiththesearchbarandthetotallistofclu-group63">
         <Card sx={card1style}>
             {children}
         </Card>

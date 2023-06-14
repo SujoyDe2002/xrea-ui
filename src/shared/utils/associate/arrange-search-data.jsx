@@ -13,7 +13,6 @@ const isArrayElementTrue = (array) => {
 export const ArrangeSearchData = (data) => {
 
     let finalData = []
-    let citylength = 0
     const cityData = data['CityData']
     const marketData = data['MarketSegmentData']
     const generalStat = data['GeneralStat']
@@ -41,7 +40,6 @@ export const ArrangeSearchData = (data) => {
         row['cols'] = ["Market Segment", ...coldata]
         finalData = [...finalData, row]
     }
-  
     if (generalStat && generalStat[0].data && generalStat[0].data.length > 0) {
         let row = {
             type: 3,
@@ -58,9 +56,6 @@ export const ArrangeSearchData = (data) => {
             medianIncomeValues = [...medianIncomeValues, medianIncome]
         })
 
-        
-
-
         let generalStatValues = []
         generalStatValues = [...generalStatValues, { tableHeaderTitle: "10-year Population Growth Rate", toolTip: tooltip_10YrPopulation, groupData: tenYrPopulationValues }]
         generalStatValues = [...generalStatValues, { tableHeaderTitle: "Home Price to Income Ratio", toolTip: tooltip_homePriceToIncome, groupData: homePToIncomeValues }]
@@ -73,6 +68,7 @@ export const ArrangeSearchData = (data) => {
             }
         ]
     }
+   
     if (useCasesData && useCasesData[0].data && useCasesData[0].data.length > 0) {
         let row = {
             type: 5,

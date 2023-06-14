@@ -4,6 +4,7 @@ import { getSearchedResult } from "server/api/city-search";
 import { getSpecificSearch } from "server/api/get-specific-search";
 import { timeout } from "shared/constants/attachment-extention";
 import { ArrangeSearchData, updateLocalStorage } from "shared/utils";
+import ChangeObjPropertyName from "shared/utils/associate/change-object-property-name";
 import CircularIndeterminate from "shared/utils/loader/circularIndeterminate";
 import ResponseMessage from "shared/utils/response-message/response-message";
 export const LoadingContext = createContext();
@@ -43,6 +44,7 @@ const LoadingContextProvider = ({ children }) => {
     setLoading(false);
   };
   const handleResponseMessage = (message) => {
+    
     setResponseMessage(message);
     setTimeout(() => {
       setResponseMessage(null);
@@ -71,15 +73,32 @@ const LoadingContextProvider = ({ children }) => {
   }
   const handleSpecificSearchResponse = async (searchId, searchtype) => {
     setIsFirstRender(true);
+    
     if (searchId) {
       const payLoad = {
         saveSearchId: searchId,
         type: searchtype,
       };
-      const response = await getSpecificSearch(payLoad);
+      let response = await getSpecificSearch(payLoad);
+      const useCase = response.useCase.map((element) => {
+        const properTyNames = [
+          {
+            oldProperty: "use_case_id",
+            newProperty: "id"
+          },
+          {
+            oldProperty: "use_case_group_desc",
+            newProperty: "name"
+          },
+          {
+            oldProperty: "use_case_color",
+            newProperty: "color"
+          }
+        ]
+        return ChangeObjPropertyName(element, properTyNames)
+      })
       setSelectedCityList(response.city)
-      setSelectedUseCaseList(response.useCase)
-
+      setSelectedUseCaseList(useCase)
       setSearchCriteria(response);
       // searchFunction()
 
@@ -100,10 +119,8 @@ const LoadingContextProvider = ({ children }) => {
     if (IsFirstRender) {
       setIsFirstRender(false);
       searchFunction();
-
     }
-
-  }, [searchCriteria])
+  }, [searchCriteria, selectedUseCaseList])
 
   const searchFunction = async () => {
 
@@ -113,12 +130,17 @@ const LoadingContextProvider = ({ children }) => {
         geographic_area_name: city?.name,
       };
     });
+    
     let useCase = selectedUseCaseList.map((element) => {
-      return {
-        use_case_group: element.code,
-      };
-    });
+      if (element.code) {
 
+        return {
+          use_case_group: element.code
+        };
+      } else {
+        return element
+      }
+    });
     const payLoad = {
       location,
       usecase: useCase
@@ -126,6 +148,7 @@ const LoadingContextProvider = ({ children }) => {
     const { data } = await getSearchedResult(payLoad);
 
     if (data) {
+      
       const cityNameList = selectedCityList.map(({ name }) => {
         return name;
       });
@@ -138,7 +161,6 @@ const LoadingContextProvider = ({ children }) => {
       setSearchedReasult(data);
       history.push("/search_result")
 
-      // navigate("/search_result");
       const { general_stat, usecase, marketSegment } = data;
       setCityNameResultList(selectedCityList);
 
@@ -149,7 +171,6 @@ const LoadingContextProvider = ({ children }) => {
         MarketSegmentData: [marketSegment.data]
       })
       setXreaTableRows(searchResultRowData)
-      // setTableActive(true);
     }
   }
   useEffect(() => {

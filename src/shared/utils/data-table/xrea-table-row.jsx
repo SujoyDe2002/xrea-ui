@@ -48,6 +48,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                             rowData.cols.map((v, i) => {
                                 return (
                                     <TableCell
+                                        key={i}
                                         align="center"
                                         className={i === 0 ? classes.sticky : classes.tabcol}
                                         //width={{xs:"250px",md:"350px"}}
@@ -74,6 +75,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                 return (
 
                                     <TableCell
+                                        key={i}
                                         align="center"
                                         className={i === 0 && classes.sticky}
                                         // style={{width: "250px", paddingLeft: 0, backgroundColor: "#fff" }}
@@ -144,6 +146,7 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex }) => {
                                         return (
 
                                             <TableCell
+                                                key={i}
                                                 align="center"
                                                 style={{ paddingLeft: 0, backgroundColor: "#fff" }}
                                             >

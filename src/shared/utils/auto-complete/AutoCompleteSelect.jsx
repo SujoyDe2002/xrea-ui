@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useLayoutEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import useAutocomplete from "@mui/base/useAutocomplete";
 import CloseIcon from "@mui/icons-material/Close";
@@ -24,9 +24,6 @@ function Tag(props) {
     onChange,
     color,
     id,
-    setSavedList,
-    savedList,
-    setClickedClose,
     ...other
   } = props;
   color = color ? color : "#4591F0";
@@ -37,12 +34,12 @@ function Tag(props) {
 
   const handleDelete = () => {
     onDelete();
-    setClickedClose(true);
+   
   }
   return (
     <Box sx={tagStyle} {...other}>
       <span>{label}</span>
-      <CloseIcon geoId={id} onClick={handleDelete} />
+      <CloseIcon onClick={handleDelete} />
     </Box>
   );
 }
@@ -86,10 +83,7 @@ Tag.propTypes = {
   onDelete: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   color: PropTypes.string,
-  id: PropTypes.string,
-  savedList: PropTypes.array,
-  setSavedList: PropTypes.func,
-  setClickedClose: PropTypes.func
+  savedList: PropTypes.array
 };
 
 const AutoCompleteTabList = ({
@@ -99,6 +93,7 @@ const AutoCompleteTabList = ({
   toIndex,
   selectedList,
 }) => {
+ 
   return (
     <Stack sx={{ lineHeight: 1.6, flexDirection: "row" }}>
       {groupedOptions.slice(fromIndex, toIndex).map((option, index) => {
@@ -133,11 +128,9 @@ export const AutoCompleteSelect = ({ props }) => {
     setSelectedList,
     selectedList,
     list,
-    savedList,
-    setSavedList
   } = props;
   let {
-    
+
     getRootProps,
     getInputLabelProps,
     getInputProps,
@@ -160,28 +153,27 @@ export const AutoCompleteSelect = ({ props }) => {
         }, details)
         if (!isValueExists) {
           setSelectedList(option)
-        }else{
+        } else {
           return false
         }
       } else {
-        const updatedList =  selectedList.filter(({id})=> id !== details.option.id);
+        const updatedList = selectedList.filter(({ id }) => id !== details.option.id);
         setSelectedList(updatedList)
       }
-
     },
     options: multiSelectInputList && multiSelectInputList,
     value: selectedList || [],
     //defaultValue:selectedList||[],
     getOptionLabel: ({ name }) => name
   });
-
-  const [clickedClose, setClickedClose] = useState(false);
-
+  
   return (
     <Box sx={autoCompleteSection}>
+      {/* <Box ref={boxRef} onClick={handleClick}>tesr</Box> */}
       <div className="tag autocompleteInput" {...getRootProps()}>
         <Label {...getInputLabelProps()}>{headerName}</Label>
         <InputWrapper
+          // onClick={handleClick}
           ref={setAnchorEl}
           className={focused ? "focused" : ""}
 
@@ -191,10 +183,7 @@ export const AutoCompleteSelect = ({ props }) => {
               color={color}
               label={name}
               id={id}
-              savedList={savedList}
-              setSavedList={setSavedList}
               {...getTagProps({ index })}
-              setClickedClose={setClickedClose}
             />
           ))}
           <input
@@ -202,17 +191,17 @@ export const AutoCompleteSelect = ({ props }) => {
             {...getInputProps()}
           />
         </InputWrapper>
-        {groupedOptions && groupedOptions.length > 0 ? (
-          list ? (
-            <Listbox {...getListboxProps()}>
-              {groupedOptions.map((option, index) => (
+        {groupedOptions && groupedOptions.length > 0 && (
+
+          <Listbox {...getListboxProps()}>
+            {list ?
+              groupedOptions.map((option, index) => (
                 <li {...getOptionProps({ option, index })}>
                   <Typography sx={autoCompleList}>{option?.name}</Typography>
                 </li>
-              ))}
-            </Listbox>
-          ) : (
-            <Listbox {...getListboxProps()}>
+
+              ))
+              :
               <Stack>
                 <AutoCompleteTabList
                   selectedList={selectedList}
@@ -221,7 +210,6 @@ export const AutoCompleteSelect = ({ props }) => {
                   fromIndex={0}
                   toIndex={1}
                 />
-
                 <Typography sx={UseCaseHeading}>MULTI-FAMILY</Typography>
                 <Stack>
                   <AutoCompleteTabList
@@ -239,10 +227,11 @@ export const AutoCompleteSelect = ({ props }) => {
                     toIndex={7}
                   />
                 </Stack>
-              </Stack>
-            </Listbox>
-          )
-        ) : null}
+              </Stack>}
+
+          </Listbox>
+        )
+        }
       </div>
     </Box>
   );

@@ -47,7 +47,7 @@ const SearchSection = () => {
     setSaveSearchId,
     setUseCaseNameList
   } = useContext(LoadingContext);
-  const {  setSearchTitle } = searchTitleGetterSetter;
+  const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
   const { user } = userGetterSetter;
 
   const [useCaseList, setUseCaseList] = useState([]);
@@ -56,7 +56,6 @@ const SearchSection = () => {
   const [savedUseCaseList, setSavedUseCaseList] = useState([]);
   const [autocompleteEnabled, setAutocompleteEnabled] = useState();
   const [userId, setUserId] = useState();
-
   const location = useLocation();
   const { id } = location?.state || {};
   const SearchCriteria = {
@@ -68,6 +67,7 @@ const SearchSection = () => {
       handleSpecificSearchResponse(SearchCriteria?.searchId, "GUEST");
     }
     if (savesearchId) {
+      
       handleSpecificSearchResponse(savesearchId, "USER");
     }
     return () => {
@@ -96,7 +96,6 @@ const SearchSection = () => {
   useLayoutEffect(() => {
     if (searchCriteria?.city && selectedCityList?.length > 0) {
       updateLocalStorage("xrea", { isdisabled: true })
-     
     }
   }, [selectedCityList]);
   useEffect(() => {
@@ -110,11 +109,10 @@ const SearchSection = () => {
     } else {
       disableAutoComplete();
     }
-   
+
   }, [])
 
 
-  
   const handleClear = () => {
     setCityNameResultList([]);
     setSearchedReasult();
@@ -126,8 +124,6 @@ const SearchSection = () => {
     setSearchTitle();
     updateLocalStorage("xrea", { isdisabled: false })
   };
-  
-
 
   const enableAutoComplete = () => {
     setAutocompleteEnabled(true);
@@ -136,7 +132,6 @@ const SearchSection = () => {
     setAutocompleteEnabled(false);
   }
   const handleChangeCity = async (e) => {
-
     const { value } = e.currentTarget;
     if (value.length >= 2) {
       const { data } = await getCityList(value);
@@ -150,23 +145,20 @@ const SearchSection = () => {
     multiSelectInputList: cityList,
     setSelectedList: setSelectedCityList,
     selectedList: selectedCityList,
-    setSavedList: setSavedCityList,
     savedList: savedCityList,
     list: true,
     handleChange: handleChangeCity,
   };
   let autoCompleteSelectPropsUseCase = {
     headerName: "Use case",
-
     multiSelectInputList: useCaseList,
     setSelectedList: setSelectedUseCaseList,
     selectedList: selectedUseCaseList,
-    setSavedList: setSavedUseCaseList,
     savedList: savedUseCaseList,
-    list: false,
+    list: false
   };
+
   const handleClickOnSearch = () => {
-    // setSearchTitle();
     if (xreaSeachButtonTitle == "Save this XREA Search") {
       setXreSearchDisable(false);
     }

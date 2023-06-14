@@ -64,7 +64,6 @@ export const OrderXrea = (props) => {
     bgStyle: xreaMaretStudy,
     button: {
       buttonLable: "Contact Sales",
-      // handleClick: IsObjEmpty(searchedReasult) ? redirect  : senDMail
       handleClick: hasResult ? senDMail : redirect
     },
   };

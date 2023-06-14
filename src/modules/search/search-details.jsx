@@ -66,7 +66,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
   }, [savesearchId]);
 
   useEffect(() => {
-    //console.log("receivedSearchResult", receivedSearchResult);
     if (receivedSearchResult) {
       handleClear();
     }
@@ -107,7 +106,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
 
       const { general_stat, usecase, marketSegment } = data;
 
-      //console.log("searchedReasult", searchedReasult)
       setReceivedSearchResult(false);
       setCityNameResultList(selectedCityList);
 
@@ -117,8 +115,6 @@ export const SearchDetails = ({ children, searchDetailsProps }) => {
         UseCases: [usecase],
         MarketSegmentData: [marketSegment.data]
       })
-      //console.log("searchResultRowData", searchResultRowData);
-      //console.log("usecase", usecase);
       setXreaTableRows(searchResultRowData)
       setTableActive(true);
     }

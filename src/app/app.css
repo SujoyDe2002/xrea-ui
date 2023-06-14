@@ -569,31 +569,15 @@
   text-decoration: none;
 }
 
-/* .frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion2 {
-    top: 24.5908203125px;
-    left: 0px;
-    width: 700px;
-    display: flex;
-    padding: 10px 15px;
-    position: relative;
-    align-items: flex-start;
-    border-color: transparent;
-    border-radius: 3px;
-    background-color: rgba(249, 249, 249, 1);
-  } */
+
 .frame-homepagewiththesearchbarandthetotallistofclu-emptystatesuggestion_custom {
   top: 24.5908203125px;
   left: 0px;
   width: fit-content;
-  display: flex;
-  /* padding: 8px 12px; */
-  /* position: relative; */
+  display: inline-block;
+  cursor: pointer;
   align-items: flex-start;
-  /* border-color: transparent; */
   border-radius: 5px;
-  /* background-color: rgba(249, 249, 249, 1); */
-
-
 }
 
 .frame-homepagewiththesearchbarandthetotallistofclu-text12 {
