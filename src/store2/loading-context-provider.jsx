@@ -44,7 +44,7 @@ const LoadingContextProvider = ({ children }) => {
     setLoading(false);
   };
   const handleResponseMessage = (message) => {
-    
+
     setResponseMessage(message);
     setTimeout(() => {
       setResponseMessage(null);
@@ -73,7 +73,7 @@ const LoadingContextProvider = ({ children }) => {
   }
   const handleSpecificSearchResponse = async (searchId, searchtype) => {
     setIsFirstRender(true);
-    
+
     if (searchId) {
       const payLoad = {
         saveSearchId: searchId,
@@ -130,7 +130,7 @@ const LoadingContextProvider = ({ children }) => {
         geographic_area_name: city?.name,
       };
     });
-    
+
     let useCase = selectedUseCaseList.map((element) => {
       if (element.code) {
 
@@ -145,10 +145,10 @@ const LoadingContextProvider = ({ children }) => {
       location,
       usecase: useCase
     };
-    const { data } = await getSearchedResult(payLoad);
+    const  data  = await getSearchedResult(payLoad);
 
     if (data) {
-      
+
       const cityNameList = selectedCityList.map(({ name }) => {
         return name;
       });
@@ -160,7 +160,6 @@ const LoadingContextProvider = ({ children }) => {
       setUseCaseNameList(usecaseNameList.join(" , "));
       setSearchedReasult(data);
       history.push("/search_result")
-
       const { general_stat, usecase, marketSegment } = data;
       setCityNameResultList(selectedCityList);
 
@@ -173,6 +172,7 @@ const LoadingContextProvider = ({ children }) => {
       setXreaTableRows(searchResultRowData)
     }
   }
+
   useEffect(() => {
     if (!searchedReasult) {
       setHasResult(false)

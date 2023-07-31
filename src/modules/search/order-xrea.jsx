@@ -1,13 +1,12 @@
 import { Box, Stack } from "@mui/material";
 import { imageBoxStackContainers, imageBoxcard2, xreaMaretStudy } from "app";
-import { React, useContext, useState } from "react";
+import { React, useContext } from "react";
 import { SectionCard2 } from "shared/components/section-view/section-card-2";
 import { LoadingContext } from "store2/loading-context-provider";
 import { postMarketStudyMailSent } from "server/api/market-study-mail-sent";
 import { orderMailConfig } from "user-config";
 import { OpenLink } from "shared/utils";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
-import IsObjEmpty from "shared/utils/associate/is-object-empty";
 import PrivateComponent from "modules/account/private-component/private-component";
 
 const redirect = () => {

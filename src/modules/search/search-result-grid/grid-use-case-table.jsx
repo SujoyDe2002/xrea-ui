@@ -1,8 +1,6 @@
 import * as React from "react";
 import {
   AppStyle,
-  blankTableCell,
-  centerAbsoluteItem,
   itemTableDataCellStyle,
   itemTableDataCellStyleBold,
   maxIndexValue,

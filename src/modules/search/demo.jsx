@@ -25,7 +25,6 @@ const Demo = () => {
     selectableRowsHideCheckboxes: true,
     display: false,
     renderExpandableRow: (rowData, rowMeta) => {
-      //console.log("rowData", rowData);
       return (
         <tr>
           <td colSpan={4}>

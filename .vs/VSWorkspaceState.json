@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\modules",
+    "\\src\\modules\\home",
+    "\\src\\shared",
+    "\\src\\shared\\components",
+    "\\src\\shared\\components\\section-view"
+  ],
+  "SelectedNode": "\\src\\shared\\components\\section-view\\info-card.jsx",
+  "PreviewInSolutionExplorer": false
+}

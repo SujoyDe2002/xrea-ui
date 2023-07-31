@@ -19,7 +19,7 @@ function createData(
 }
 
 
-export const XreaTable = ({ rows, getCityIndex }) => {
+export const XreaTable = ({ rows, getCityIndex, currentDropdown }) => {
     const classes = useStyles();
     const collength = Math.max(...rows.map(el => el['cols'] && el.type == 1 && el['cols'].length));
     return (
@@ -33,7 +33,7 @@ export const XreaTable = ({ rows, getCityIndex }) => {
 
                     {
                         rows && Array.isArray(rows) && rows.length>0 && rows.map((row, index) => (
-                            <XreaTableRow key={index} rowData={row} noOfCol={collength} getCityIndex={getCityIndex} />
+                            <XreaTableRow key={index} rowData={row} noOfCol={collength} getCityIndex={getCityIndex} currentDropdown={currentDropdown} />
                         ))
                     }
                 </TableBody>

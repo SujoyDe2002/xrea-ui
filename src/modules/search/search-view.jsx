@@ -8,7 +8,7 @@ import { OrderXrea } from "./order-xrea";
 import { getLocalStorageItem } from "shared/utils";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
 
-export const SearchView = ({ setDisbled }) => {
+export const SearchView = () => {
   const [cityNameList, setCityNameList] = useState(null);
   const [usecaseList, setUsecaseList] = useState(null);
   const [userId, setUserId] = useState(null);
@@ -22,7 +22,7 @@ export const SearchView = ({ setDisbled }) => {
     searchId: id,
   };
   useEffect(() => {
-    setDisbled(id !== undefined ? true : false);
+    // setDisbled(id !== undefined ? true : false);
     if (getLocalStorageItem("xrea") && getLocalStorageItem("xrea").data) {
       const { loginData } = getLocalStorageItem("xrea").data;
       setUserId(loginData?.userId);

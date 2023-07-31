@@ -7,26 +7,13 @@ import {
   Methodology,
 } from "shared/components/";
 import { useEffect } from "react";
-import { SectionCard2 } from "shared/components/section-view/section-card-2";
-import { Box, Button, Stack, Typography } from "@mui/material";
-import {
-  barImgContainer,
-  buttonStyle,
-  card2BuronContainer,
-  iconContainer,
-  smallTextStyle,
-  xreaBgStyle,
-  xreaButtonContainer,
-} from "app";
 import { LoadingContext } from "store2/loading-context-provider";
-import { useHistory } from "react-router-dom";
 
 
-export const HomeDetails = ({ setDisbled }) => {
+export const HomeDetails = () => {
   const { userGetterSetter } = useContext(LoadingContext);
   const { setUser } = userGetterSetter;
   useEffect(() => {
-    setDisbled(false);
     removeLocalStorageItems(["xrea"]);
     setUser(false);
   }, []);

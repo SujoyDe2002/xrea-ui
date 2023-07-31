@@ -1,4 +1,4 @@
-import { React,  useContext, useEffect } from "react";
+import { React, useContext, useEffect } from "react";
 import ScrollContainer from 'react-indiana-drag-scroll';
 import {
   GetAttribute,
@@ -6,11 +6,17 @@ import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "shared/utils";
-import { Box, Button, TextField, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Box, Button, TextField, Typography, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio } from "@mui/material";
 import {
+  button4,
+  customStyleForXREAText,
   input,
+  radioDisablabel,
+  radioStyle,
   searchResultSection,
+  searchResultText,
+  secondarybtn,
+  showRadioItemStyle,
   tablesContainter,
 } from "app";
 import { SearchSectionHeading } from "./search-section-heading";
@@ -26,8 +32,8 @@ import SearchSection from "./search-section";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
 import { useHistory } from "react-router-dom";
 import { OrderXrea } from "./order-xrea";
-import isLogin from "shared/utils/associate/is-login";
 import ScrollToTop from "shared/utils/scroll-to/scroll-to-top";
+import { useUser } from "@clerk/clerk-react";
 
 const SearchReasult = () => {
   const {
@@ -46,26 +52,51 @@ const SearchReasult = () => {
   } =
     useContext(LoadingContext);
 
+  const showDropdown = [
+    {
+      value: "G",
+      label: "Grade",
+      dropdownHeading:
+        <>
+          <Typography style={{ ...customStyleForXREAText, display: 'inline-block', marginRight: '10px' }}>XREA
+          </Typography>
+          <Typography style={{ ...customStyleForXREAText }}> Score </Typography>
+        </>
+    },
+    {
+      value: "P",
+      label: "Percentile score",
+      dropdownHeading:
+        <Typography style={{ ...customStyleForXREAText }}> Score percentile </Typography>
+    }
+  ]
+
+  const firstDropDownElement = showDropdown[0];
 
   const { searchTitle, setSearchTitle } = searchTitleGetterSetter
   const { startLoader, stopLoader } = loaderFunction;
   const [showDialog, setShowDialog] = useState(false);
   const [searchName, setSearchName] = useState();
-  const [userId, setUserId] = useState();
+  // const [userId, setUserId] = useState();
   const [noOfsearch, setNoOfsearch] = useState(
     getLocalStorageItem("xrea")?.data?.noOfsearch
   );
+  const [radioVisible, setRadioVisible] = useState(false);
   const [saveSearchInputError, setSaveSearchInputError] = useState();
+  const [selectedValue, setSelectedValue] = useState(firstDropDownElement.value);
+  const [dropdownHeading, setDropdownHeading] = useState(firstDropDownElement.dropdownHeading);
+
   const history = useHistory();
   const { usecase } = searchedReasult || {};
-  const theme = useTheme();
+  const { isSignedIn, user } = useUser();
+
   useEffect(() => {
     const logdata = getLocalStorageItem("xrea")?.data;
-    const maxSavedLength =  logdata?.maxSavedLength;
-    const userId = isLogin();
+    const maxSavedLength = logdata?.maxSavedLength;
+    // const userId = isLogin();
     const isdisabled = logdata?.isdisabled;
-    setUserId(userId);
-    if (userId) {
+    // setUserId(userId);
+    if (isSignedIn) {
       if (noOfsearch >= maxSavedLength) {
         setXreSearchButtonTitle("Saved searches limit exceeded");
         setXreSearchDisable(true);
@@ -106,14 +137,17 @@ const SearchReasult = () => {
       cluster_desc
     });
   };
-  const secondarybtn = {
-    textTransform: "none",
-    bgcolor: theme.palette.secondary.main,
-    fontWeight: 700,
-    fontSize: "1.125rem",
-    lineHeight: "107.5%",
-  };
 
+  const handleDropdownClick = () => {
+    setRadioVisible(!radioVisible);
+  }
+  const handleRadioChange = ({ target }) => {
+    const selectedDropdownValue = target.value;
+    setSelectedValue(selectedDropdownValue);
+    const { dropdownHeading } = showDropdown.find(({ value }) => value === selectedDropdownValue);
+    setDropdownHeading(dropdownHeading);
+    handleDropdownClick();
+  };
   const openDialog = () => {
     setShowDialog(true);
   };
@@ -127,7 +161,8 @@ const SearchReasult = () => {
     setSaveSearchInputError();
     if (searchName) {
       const xreaData = getLocalStorageItem("xrea")?.data;
-      const { userId } = xreaData.loginData;
+
+      // const {userId} = xreaData.loginData;
       const citits = cityNameResultList.map(({ name, id }) => {
         return {
           geographic_area_name: name,
@@ -145,7 +180,7 @@ const SearchReasult = () => {
       );
       const payLoad = {
         name: searchName,
-        user_id: userId,
+        user_id: user?.id,
         city: citits,
         usecase: usecases,
       };
@@ -201,6 +236,7 @@ const SearchReasult = () => {
       setSaveSearchInputError();
     }
   };
+
   const xreaTooltipTitle =
     "You have exceeded the limit of saved searches. Please delete older searches before saving new ones.";
   return (
@@ -214,7 +250,42 @@ const SearchReasult = () => {
                 <Typography variant="h2" sx={searchResultSection}>
                   {searchTitle ? searchTitle : "Search results"}
                 </Typography>
-                {xreSearchDisable && userId ? (
+                <Box flexGrow={1} position={"relative"} top={18} left={10} display={'inline'}>
+                  <FormControl>
+                    <Button sx={button4} variant="contained" onClick={handleDropdownClick}
+                      disableElevation>
+                      <Typography style={{ ...searchResultText, display: 'inline-block' }}>Showing</Typography>
+                      {dropdownHeading}
+                      <Box sx={{marginLeft: "8px"}}>
+                      <img
+                        src="/playground_assets/down-triangle.svg"
+                      />
+                      </Box>
+                    </Button>
+                    {radioVisible && (
+                      <FormControl >
+                        <FormLabel disabled style={radioDisablabel}>Select your default view:</FormLabel>
+                        <RadioGroup
+                          name="radioButtons"
+                          value={selectedValue}
+                          onChange={handleRadioChange}
+                        >
+                          {showDropdown && showDropdown.length > 0 &&
+                            showDropdown.map(({ label, value }, index) =>
+                              <FormControlLabel key={index} value={value} control={<Radio size={'12px'} sx={radioStyle} />} label={
+                                <Typography variant="body1" sx={showRadioItemStyle}>
+                                  {label}
+                                </Typography>
+                              } />
+                            )
+                          }
+
+                        </RadioGroup>
+                      </FormControl>
+                    )}
+                  </FormControl>
+                </Box>
+                {xreSearchDisable && isSignedIn ? (
                   <BrightTooltip title={xreaTooltipTitle} placement="bottom" arrow>
                     <span>
                       <Button
@@ -243,9 +314,8 @@ const SearchReasult = () => {
           }
 
           <Box sx={tablesContainter}>
-            {/* <Box onClick={getCityIndex}>ss</Box> */}
             <ScrollContainer >
-              <XreaTable rows={xreaTableRows} getCityIndex={getCityIndex} />
+              <XreaTable rows={xreaTableRows} getCityIndex={getCityIndex} currentDropdown={selectedValue} />
             </ScrollContainer>
           </Box>
           {showDialog && <AlertDialog props={AlertDialogProps} />}
@@ -255,5 +325,8 @@ const SearchReasult = () => {
     </>
   );
 };
+
+
+
 
 export default ScrollToTop(SearchReasult);

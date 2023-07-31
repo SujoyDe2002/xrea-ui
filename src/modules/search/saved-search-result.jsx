@@ -9,22 +9,18 @@ import {
   buttonContainer,
   smallMessageBox,
 } from "app";
-import { React, useEffect, useState, useContext } from "react";
+import { React, useEffect, useState } from "react";
 import { SearchSectionHeading } from "./search-section-heading";
 import {
   SectionSearchCard,
   DateFilter,
   getLocalStorageItem,
-  setLocalStorageItem,
-  GetAttribute,
-  updateLocalStorage,
+  GetAttribute
 } from "shared/utils";
 import { getSavedSearch } from "server/api/saved-search";
 import { message_nodata } from "shared/constants/attachment-extention";
-import { LoadingContext } from "store2/loading-context-provider";
-import ConfirmationBox from "shared/utils/confirmation-box/confirmation-box";
 import { deleteSearch } from "server/api/delete-search";
-import { Link } from "react-router-dom";
+
 
 const SavedSearchResult = ({ setSaveSearchId }) => {
   const [searchList, setSearchList] = useState(null);
@@ -33,19 +29,13 @@ const SavedSearchResult = ({ setSaveSearchId }) => {
   );
   const setSearchedData = async () => {
     const { response } = await getSavedSearch(userId);
-    const { maxSavedLength } = response;
     let { savedList } = response;
     // todo make another function
     savedList = savedList.map((item) => {
       item.deleteConfirmationOpen = false;
       return item;
     });
-
     setSearchList(savedList);
-    const noOfsearch = savedList.length;
-    // const xreaData = getLocalStorageItem("xrea")?.data;
-    // setLocalStorageItem("xrea", { ...xreaData, maxSavedLength, noOfsearch });
-    // updateLocalStorage("xrea", { maxSavedLength, noOfsearch })
   };
   useEffect(() => {
     setSearchedData();
@@ -63,13 +53,6 @@ const SavedSearchResult = ({ setSaveSearchId }) => {
       return item;
     }, currentIndex);
     setSearchList(confirmationUpdatedSearchList);
-
-    // const payLoad = {
-    //     userId,
-    //     searchName
-    // }
-    // await deleteSearch(payLoad);
-    // setSearchedData();
   };
   const handleDelete = async (element) => {
     const searchName = GetAttribute(element, "searchName");
@@ -80,7 +63,7 @@ const SavedSearchResult = ({ setSaveSearchId }) => {
     await deleteSearch(payLoad);
     setSearchedData();
   };
-  const handleClose = (element) => {
+  const handleClose = () => {
     const updatedSearchList = searchList.map((item) => {
       item.deleteConfirmationOpen = false;
       return item;
@@ -116,17 +99,7 @@ const SavedSearchResult = ({ setSaveSearchId }) => {
                       <Grid
                         item
                         xs={4}
-                        // searchId={save_search_id}
-                        //onRowClick={handleSearch}
                       >
-                        {/* <Link
-                          to={{
-                            pathname: "/search",
-                            state: {
-                              id: { save_search_id },
-                            },
-                          }}
-                        > */}
                         <Button
                           searchId={save_search_id}
                           onClick={handleSearch}

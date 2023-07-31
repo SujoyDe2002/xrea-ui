@@ -29,17 +29,17 @@ import { Link, Route } from "react-router-dom";
 import SearchSection from "./search-section";
 import { OrderXrea } from "./order-xrea";
 import { ResultList } from "./search-result-list";
+import { useUser } from "@clerk/clerk-react";
 
 const SearchDraftedResult = () => {
   const { searchTitleGetterSetter, userGetterSetter, setSaveSearchId  } = useContext(LoadingContext);
   const { setSearchTitle } = searchTitleGetterSetter;
-  const { user } = userGetterSetter;
+  const { isSignedIn, user, isLoaded } = useUser();
   const [searchList, setSearchList] = useState(null);
-  const [userId, setUserId] = useState(
-    getLocalStorageItem("xrea")?.data?.loginData?.userId
-  );
+  const userId = user?.id;
+
   const setSearchedData = async () => {
-    const { data } = await getSavedSearch(userId);
+    const data = (await getSavedSearch(userId)).data;
     let { maxSavedLength, savedList } = data.response;
     // todo make another function
     savedList = savedList.map((item) => {
@@ -52,8 +52,11 @@ const SearchDraftedResult = () => {
     updateLocalStorage("xrea", { maxSavedLength, noOfsearch })
   };
   useEffect(() => {
-    setSearchedData();
-  }, [user]);
+    if(isLoaded && isSignedIn)
+    {
+      setSearchedData();
+    }
+  }, [isLoaded, isSignedIn]);
 
   const openModel = async (element) => {
     const currentIndex = GetAttribute(element, "index");

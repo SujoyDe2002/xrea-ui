@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Link, Switch, Route, useHistory, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Helmet } from "react-helmet";
@@ -9,64 +9,37 @@ import {
   headerRightContiner,
   layoutContainer,
   loginFont,
+  logoContainter,
+  logoImageContainer,
   pageHeader,
   smallFont,
 } from "app";
 import { HomeDetails } from "./homeDetails";
-import { getLocalStorageItem, removeLocalStorageItems, setLocalStorageItem } from "shared/utils";
-import { LoadingContext } from "store2/loading-context-provider";
-import { userInfo } from "user-config";
 import ContentWrapper from "shared/utils/layout/content-wrapper";
 import SearchDraftedResult from "modules/search/search-drafted-result";
 import SearchReasult from "modules/search/search-reasult";
-import isLogin from "shared/utils/associate/is-login";
 import PricingContent from "modules/pricing/pricing-content";
 import MarketSegmentView from "modules/market/market-segment-view";
 
+import {
+  SignedIn,
+  SignedOut,
+  SignIn,
+  UserButton,
+  useUser
+} from "@clerk/clerk-react";
+
 
 export const HomeView = () => {
-  const { userGetterSetter, searchGetterSetter, handleClear } = useContext(LoadingContext);
-  const { user, setUser } = userGetterSetter;
-  const { receivedSearchResult, setReceivedSearchResult } = searchGetterSetter;
+
+  const [loginPopoutModal, setLoginPopoutModal] = useState(false);
+  const { isSignedIn, user } = useUser();
 
   const history = useHistory();
   const handleLogin = () => {
-    handleClear();
-    const userId = userInfo.userId;
-    const loginData = {
-      userId
-    };
-    setUser(loginData);
-    setLocalStorageItem("xrea", { loginData });
-    history.push("/saved_searches");
-
+    setLoginPopoutModal(true);
   };
-  const [disbled, setDisbled] = useState(false);
-  const location = useLocation();
 
-  const handleLogoClick = () => {
-    if (isLogin()) {
-      history.push("/");
-      const { pathname } = location;
-      if (pathname === "/saved_searches") {
-        history.push("/search_result")
-      } else {
-        history.push("/saved_searches")
-
-      }
-    } else {
-      history.push("/")
-    }
-  };
-  const handleLogout = () => {
-    setUser()
-    removeLocalStorageItems(["xrea"])
-    history.push("/")
-  }
-  //todo for temporary logout
-  useEffect(() => {
-    handleLogout();
-  }, [])
   return (
     <Box sx={layoutContainer}>
       <Box
@@ -85,39 +58,65 @@ export const HomeView = () => {
         <Box sx={cardsContainer}>
           <ContentWrapper>
             <Stack sx={headerItemsContainer}>
-              <div className="frame-homepagewiththesearchbarandthetotallistofclu-group7">
-                <Box
-                  onClick={handleLogoClick}
-                  className="frame-homepagewiththesearchbarandthetotallistofclu-group4"
+              {/* XREA LOGO */}
+              <Stack sx={logoContainter}>
+                <Stack
+                  sx={logoImageContainer}
                 >
                   <img
                     src="/playground_assets/logo.svg"
                     alt="Rectangle4I120"
                     className="logo"
+                    onClick={() => {
+                      history.push("/");
+                    }}
                   />
-                  <Box></Box>
-                </Box>
-              </div>
-              <Stack sx={headerRightContiner}>
-                <Box mr={1}>
-                  <img
-                    src="/playground_assets/image2i120-7k5g-200h.png"
-                    alt="image2I120"
-                    className="frame-homepagewiththesearchbarandthetotallistofclu-image2"
+                </Stack>
+              </Stack>
+              <Stack sx={headerRightContiner} className="">
+                {/* Signed out profile picture */}
+                <SignedOut>
+                  <Box className="mb-[35px]">
+                    <img
+                      src="/playground_assets/image2i120-7k5g-200h.png"
+                      alt="image2I120"
+                      className="frame-homepagewiththesearchbarandthetotallistofclu-image2"
+                    />
+                  </Box>
+                </SignedOut>
+                <Box mr={3} mb={4}>
+                  <UserButton
+                    afterSignOutUrl="/"
+                    appearance={{
+                      elements: {
+                        userButtonPopoverCard: {
+                          "margin-left": "200px",
+                        },
+                      },
+                    }}
                   />
                 </Box>
-                <Box>
+                <Box className="mb-[35px]">
+                  {loginPopoutModal ?
+                    <SignIn redirectUrl="/saved_searches"
+                      appearance={{
+                        elements: {
+                          rootBox: "absolute right-[30px] top-[50px]",
+                        }
+                      }}></SignIn> : <div></div>}
                   <Typography sx={loginFont} component={"div"}>
-                    {disbled ? (
-                      <Box sx={{ cursor: "text" }}>{"Log In / Sign Up"}</Box>
-                    ) : (
-                      <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
-                        {user ? `${userInfo.companyName}` : "Log In / Sign Up"}
-                      </Box>
-                    )}
+                    <Box sx={{ cursor: "pointer" }} onClick={handleLogin}>
+                      {user ? `${user.fullName}` : "Log In / Sign Up"}
+                    </Box>
                   </Typography>
                   <Typography sx={smallFont} component={"div"}>
-                    {user ? `${userInfo.userName}` : "To unlock full access"}
+                    <SignedIn>
+                      {isSignedIn ? (
+                        <div>{user.fullName}</div>
+                      ) : (
+                        <div>please sign in</div>
+                      )}
+                    </SignedIn>
                   </Typography>
                 </Box>
               </Stack>
@@ -126,7 +125,7 @@ export const HomeView = () => {
 
           <Switch>
             <Route exact path="/">
-              <HomeDetails setDisbled={setDisbled} />
+              <HomeDetails />
             </Route>
             <Route exact path="/saved_searches">
               <SearchDraftedResult />

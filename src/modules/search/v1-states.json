@@ -1,0 +1,3828 @@
+{
+  "data": {
+    "city_view_2021": [
+      {
+        "geo_id": "1600000US0402430",
+        "geographic_area_name": "Anthem CDP, Arizona",
+        "city_name": "Anthem CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0402830",
+        "geographic_area_name": "Apache Junction city, Arizona",
+        "city_name": "Apache Junction city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0404720",
+        "geographic_area_name": "Avondale city, Arizona",
+        "city_name": "Avondale city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0407940",
+        "geographic_area_name": "Buckeye city, Arizona",
+        "city_name": "Buckeye city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0408220",
+        "geographic_area_name": "Bullhead City city, Arizona",
+        "city_name": "Bullhead City city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0410530",
+        "geographic_area_name": "Casa Grande city, Arizona",
+        "city_name": "Casa Grande city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0410670",
+        "geographic_area_name": "Casas Adobes CDP, Arizona",
+        "city_name": "Casas Adobes CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0411230",
+        "geographic_area_name": "Catalina Foothills CDP, Arizona",
+        "city_name": "Catalina Foothills CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0412000",
+        "geographic_area_name": "Chandler city, Arizona",
+        "city_name": "Chandler city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0420540",
+        "geographic_area_name": "Drexel Heights CDP, Arizona",
+        "city_name": "Drexel Heights CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0422220",
+        "geographic_area_name": "El Mirage city, Arizona",
+        "city_name": "El Mirage city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0423620",
+        "geographic_area_name": "Flagstaff city, Arizona",
+        "city_name": "Flagstaff city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0423760",
+        "geographic_area_name": "Florence town, Arizona",
+        "city_name": "Florence town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0425030",
+        "geographic_area_name": "Fortuna Foothills CDP, Arizona",
+        "city_name": "Fortuna Foothills CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0425300",
+        "geographic_area_name": "Fountain Hills town, Arizona",
+        "city_name": "Fountain Hills town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0427400",
+        "geographic_area_name": "Gilbert town, Arizona",
+        "city_name": "Gilbert town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0427820",
+        "geographic_area_name": "Glendale city, Arizona",
+        "city_name": "Glendale city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0428380",
+        "geographic_area_name": "Goodyear city, Arizona",
+        "city_name": "Goodyear city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0429710",
+        "geographic_area_name": "Green Valley CDP, Arizona",
+        "city_name": "Green Valley CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0437620",
+        "geographic_area_name": "Kingman city, Arizona",
+        "city_name": "Kingman city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0439370",
+        "geographic_area_name": "Lake Havasu City city, Arizona",
+        "city_name": "Lake Havasu City city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0444270",
+        "geographic_area_name": "Marana town, Arizona",
+        "city_name": "Marana town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0444410",
+        "geographic_area_name": "Maricopa city, Arizona",
+        "city_name": "Maricopa city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0446000",
+        "geographic_area_name": "Mesa city, Arizona",
+        "city_name": "Mesa city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0451600",
+        "geographic_area_name": "Oro Valley town, Arizona",
+        "city_name": "Oro Valley town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0454050",
+        "geographic_area_name": "Peoria city, Arizona",
+        "city_name": "Peoria city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0455000",
+        "geographic_area_name": "Phoenix City, Arizona",
+        "city_name": "Phoenix City",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0457450",
+        "geographic_area_name": "Prescott Valley town, Arizona",
+        "city_name": "Prescott Valley town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0457380",
+        "geographic_area_name": "Prescott city, Arizona",
+        "city_name": "Prescott city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0458150",
+        "geographic_area_name": "Queen Creek town, Arizona",
+        "city_name": "Queen Creek town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0460180",
+        "geographic_area_name": "Rio Rico CDP, Arizona",
+        "city_name": "Rio Rico CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0462140",
+        "geographic_area_name": "Sahuarita town, Arizona",
+        "city_name": "Sahuarita town",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0463470",
+        "geographic_area_name": "San Luis city, Arizona",
+        "city_name": "San Luis city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0464210",
+        "geographic_area_name": "San Tan Valley CDP, Arizona",
+        "city_name": "San Tan Valley CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0465000",
+        "geographic_area_name": "Scottsdale city, Arizona",
+        "city_name": "Scottsdale city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0466820",
+        "geographic_area_name": "Sierra Vista city, Arizona",
+        "city_name": "Sierra Vista city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0470320",
+        "geographic_area_name": "Sun City CDP, Arizona",
+        "city_name": "Sun City CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0470355",
+        "geographic_area_name": "Sun City West CDP, Arizona",
+        "city_name": "Sun City West CDP",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0471510",
+        "geographic_area_name": "Surprise city, Arizona",
+        "city_name": "Surprise city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0473000",
+        "geographic_area_name": "Tempe city, Arizona",
+        "city_name": "Tempe city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0477000",
+        "geographic_area_name": "Tucson city, Arizona",
+        "city_name": "Tucson city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US0485540",
+        "geographic_area_name": "Yuma city, Arizona",
+        "city_name": "Yuma city",
+        "state_name": "Arizona"
+      },
+      {
+        "geo_id": "1600000US1200410",
+        "geographic_area_name": "Alafaya CDP, Florida",
+        "city_name": "Alafaya CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1200950",
+        "geographic_area_name": "Altamonte Springs city, Florida",
+        "city_name": "Altamonte Springs city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1201675",
+        "geographic_area_name": "Apollo Beach CDP, Florida",
+        "city_name": "Apollo Beach CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1201700",
+        "geographic_area_name": "Apopka city, Florida",
+        "city_name": "Apopka city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1202681",
+        "geographic_area_name": "Aventura city, Florida",
+        "city_name": "Aventura city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1204162",
+        "geographic_area_name": "Bayonet Point CDP, Florida",
+        "city_name": "Bayonet Point CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1205462",
+        "geographic_area_name": "Bellview CDP, Florida",
+        "city_name": "Bellview CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1206875",
+        "geographic_area_name": "Bloomingdale CDP, Florida",
+        "city_name": "Bloomingdale CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1207300",
+        "geographic_area_name": "Boca Raton city, Florida",
+        "city_name": "Boca Raton city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1207525",
+        "geographic_area_name": "Bonita Springs city, Florida",
+        "city_name": "Bonita Springs city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1207875",
+        "geographic_area_name": "Boynton Beach city, Florida",
+        "city_name": "Boynton Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1207950",
+        "geographic_area_name": "Bradenton city, Florida",
+        "city_name": "Bradenton city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1208150",
+        "geographic_area_name": "Brandon CDP, Florida",
+        "city_name": "Brandon CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1208300",
+        "geographic_area_name": "Brent CDP, Florida",
+        "city_name": "Brent CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1209415",
+        "geographic_area_name": "Buenaventura Lakes CDP, Florida",
+        "city_name": "Buenaventura Lakes CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1210275",
+        "geographic_area_name": "Cape Coral city, Florida",
+        "city_name": "Cape Coral city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1210825",
+        "geographic_area_name": "Carrollwood CDP, Florida",
+        "city_name": "Carrollwood CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1211050",
+        "geographic_area_name": "Casselberry city, Florida",
+        "city_name": "Casselberry city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1212425",
+        "geographic_area_name": "Citrus Park CDP, Florida",
+        "city_name": "Citrus Park CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1212875",
+        "geographic_area_name": "Clearwater city, Florida",
+        "city_name": "Clearwater city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1212925",
+        "geographic_area_name": "Clermont city, Florida",
+        "city_name": "Clermont city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1213275",
+        "geographic_area_name": "Coconut Creek city, Florida",
+        "city_name": "Coconut Creek city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1214125",
+        "geographic_area_name": "Cooper City city, Florida",
+        "city_name": "Cooper City city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1214250",
+        "geographic_area_name": "Coral Gables city, Florida",
+        "city_name": "Coral Gables city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1214400",
+        "geographic_area_name": "Coral Springs city, Florida",
+        "city_name": "Coral Springs city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1214412",
+        "geographic_area_name": "Coral Terrace CDP, Florida",
+        "city_name": "Coral Terrace CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1214895",
+        "geographic_area_name": "Country Club CDP, Florida",
+        "city_name": "Country Club CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1215475",
+        "geographic_area_name": "Crestview city, Florida",
+        "city_name": "Crestview city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1215968",
+        "geographic_area_name": "Cutler Bay town, Florida",
+        "city_name": "Cutler Bay town",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216335",
+        "geographic_area_name": "Dania Beach city, Florida",
+        "city_name": "Dania Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216475",
+        "geographic_area_name": "Davie town, Florida",
+        "city_name": "Davie town",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216525",
+        "geographic_area_name": "Daytona Beach city, Florida",
+        "city_name": "Daytona Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216675",
+        "geographic_area_name": "DeBary city, Florida",
+        "city_name": "DeBary city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216875",
+        "geographic_area_name": "DeLand city, Florida",
+        "city_name": "DeLand city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1216725",
+        "geographic_area_name": "Deerfield Beach city, Florida",
+        "city_name": "Deerfield Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1217100",
+        "geographic_area_name": "Delray Beach city, Florida",
+        "city_name": "Delray Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1217200",
+        "geographic_area_name": "Deltona city, Florida",
+        "city_name": "Deltona city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1217935",
+        "geographic_area_name": "Doral city, Florida",
+        "city_name": "Doral city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1218575",
+        "geographic_area_name": "Dunedin city, Florida",
+        "city_name": "Dunedin city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1219206",
+        "geographic_area_name": "East Lake CDP, Florida",
+        "city_name": "East Lake CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1219212",
+        "geographic_area_name": "East Lake-Orient Park CDP, Florida",
+        "city_name": "East Lake-Orient Park CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1219825",
+        "geographic_area_name": "Edgewater city, Florida",
+        "city_name": "Edgewater city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1220108",
+        "geographic_area_name": "Egypt Lake-Leto CDP, Florida",
+        "city_name": "Egypt Lake-Leto CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1220925",
+        "geographic_area_name": "Ensley CDP, Florida",
+        "city_name": "Ensley CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1221150",
+        "geographic_area_name": "Estero village, Florida",
+        "city_name": "Estero village",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1221350",
+        "geographic_area_name": "Eustis city, Florida",
+        "city_name": "Eustis city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1222275",
+        "geographic_area_name": "Ferry Pass CDP, Florida",
+        "city_name": "Ferry Pass CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1222387",
+        "geographic_area_name": "Fish Hawk CDP, Florida",
+        "city_name": "Fish Hawk CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1222660",
+        "geographic_area_name": "Fleming Island CDP, Florida",
+        "city_name": "Fleming Island CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1223050",
+        "geographic_area_name": "Florida Ridge CDP, Florida",
+        "city_name": "Florida Ridge CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224000",
+        "geographic_area_name": "Fort Lauderdale city, Florida",
+        "city_name": "Fort Lauderdale city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224125",
+        "geographic_area_name": "Fort Myers city, Florida",
+        "city_name": "Fort Myers city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224300",
+        "geographic_area_name": "Fort Pierce city, Florida",
+        "city_name": "Fort Pierce city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224475",
+        "geographic_area_name": "Fort Walton Beach city, Florida",
+        "city_name": "Fort Walton Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224562",
+        "geographic_area_name": "Fountainebleau CDP, Florida",
+        "city_name": "Fountainebleau CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224581",
+        "geographic_area_name": "Four Corners CDP, Florida",
+        "city_name": "Four Corners CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1224925",
+        "geographic_area_name": "Fruit Cove CDP, Florida",
+        "city_name": "Fruit Cove CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1225175",
+        "geographic_area_name": "Gainesville city, Florida",
+        "city_name": "Gainesville city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1226300",
+        "geographic_area_name": "Golden Gate CDP, Florida",
+        "city_name": "Golden Gate CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1226375",
+        "geographic_area_name": "Golden Glades CDP, Florida",
+        "city_name": "Golden Glades CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1227322",
+        "geographic_area_name": "Greenacres city, Florida",
+        "city_name": "Greenacres city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1228400",
+        "geographic_area_name": "Haines City city, Florida",
+        "city_name": "Haines City city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1228452",
+        "geographic_area_name": "Hallandale Beach city, Florida",
+        "city_name": "Hallandale Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1230025",
+        "geographic_area_name": "Hialeah Gardens city, Florida",
+        "city_name": "Hialeah Gardens city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1230000",
+        "geographic_area_name": "Hialeah city, Florida",
+        "city_name": "Hialeah city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1231075",
+        "geographic_area_name": "Holiday CDP, Florida",
+        "city_name": "Holiday CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1232000",
+        "geographic_area_name": "Hollywood city, Florida",
+        "city_name": "Hollywood city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1232275",
+        "geographic_area_name": "Homestead city, Florida",
+        "city_name": "Homestead city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1232610",
+        "geographic_area_name": "Horizon West CDP, Florida",
+        "city_name": "Horizon West CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1233250",
+        "geographic_area_name": "Immokalee CDP, Florida",
+        "city_name": "Immokalee CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1234400",
+        "geographic_area_name": "Ives Estates CDP, Florida",
+        "city_name": "Ives Estates CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1235000",
+        "geographic_area_name": "Jacksonville City, Florida",
+        "city_name": "Jacksonville City",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1235050",
+        "geographic_area_name": "Jacksonville Beach city, Florida",
+        "city_name": "Jacksonville Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1235350",
+        "geographic_area_name": "Jasmine Estates CDP, Florida",
+        "city_name": "Jasmine Estates CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1235875",
+        "geographic_area_name": "Jupiter town, Florida",
+        "city_name": "Jupiter town",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236062",
+        "geographic_area_name": "Kendale Lakes CDP, Florida",
+        "city_name": "Kendale Lakes CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236100",
+        "geographic_area_name": "Kendall CDP, Florida",
+        "city_name": "Kendall CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236121",
+        "geographic_area_name": "Kendall West CDP, Florida",
+        "city_name": "Kendall West CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236550",
+        "geographic_area_name": "Key West city, Florida",
+        "city_name": "Key West city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236462",
+        "geographic_area_name": "Keystone CDP, Florida",
+        "city_name": "Keystone CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1236950",
+        "geographic_area_name": "Kissimmee city, Florida",
+        "city_name": "Kissimmee city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1238350",
+        "geographic_area_name": "Lake Magdalene CDP, Florida",
+        "city_name": "Lake Magdalene CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239081",
+        "geographic_area_name": "Lake Worth Beach city, Florida",
+        "city_name": "Lake Worth Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1238250",
+        "geographic_area_name": "Lakeland city, Florida",
+        "city_name": "Lakeland city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1238813",
+        "geographic_area_name": "Lakeside CDP, Florida",
+        "city_name": "Lakeside CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239067",
+        "geographic_area_name": "Lakewood Ranch CDP, Florida",
+        "city_name": "Lakewood Ranch CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239200",
+        "geographic_area_name": "Land O' Lakes CDP, Florida",
+        "city_name": "Land O' Lakes CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239425",
+        "geographic_area_name": "Largo city, Florida",
+        "city_name": "Largo city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239525",
+        "geographic_area_name": "Lauderdale Lakes city, Florida",
+        "city_name": "Lauderdale Lakes city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239550",
+        "geographic_area_name": "Lauderhill city, Florida",
+        "city_name": "Lauderhill city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239775",
+        "geographic_area_name": "Lealman CDP, Florida",
+        "city_name": "Lealman CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239875",
+        "geographic_area_name": "Leesburg city, Florida",
+        "city_name": "Leesburg city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239925",
+        "geographic_area_name": "Lehigh Acres CDP, Florida",
+        "city_name": "Lehigh Acres CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1239950",
+        "geographic_area_name": "Leisure City CDP, Florida",
+        "city_name": "Leisure City CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1240387",
+        "geographic_area_name": "Liberty Triangle CDP, Florida",
+        "city_name": "Liberty Triangle CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1241775",
+        "geographic_area_name": "Lutz CDP, Florida",
+        "city_name": "Lutz CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1243125",
+        "geographic_area_name": "Margate city, Florida",
+        "city_name": "Margate city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1243300",
+        "geographic_area_name": "Marion Oaks CDP, Florida",
+        "city_name": "Marion Oaks CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1243800",
+        "geographic_area_name": "Meadow Woods CDP, Florida",
+        "city_name": "Meadow Woods CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1243975",
+        "geographic_area_name": "Melbourne city, Florida",
+        "city_name": "Melbourne city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1244275",
+        "geographic_area_name": "Merritt Island CDP, Florida",
+        "city_name": "Merritt Island CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1245025",
+        "geographic_area_name": "Miami Beach city, Florida",
+        "city_name": "Miami Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1245060",
+        "geographic_area_name": "Miami Gardens city, Florida",
+        "city_name": "Miami Gardens city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1245100",
+        "geographic_area_name": "Miami Lakes town, Florida",
+        "city_name": "Miami Lakes town",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1245000",
+        "geographic_area_name": "Miami city, Florida",
+        "city_name": "Miami city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1245975",
+        "geographic_area_name": "Miramar city, Florida",
+        "city_name": "Miramar city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1248050",
+        "geographic_area_name": "Navarre CDP, Florida",
+        "city_name": "Navarre CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1248625",
+        "geographic_area_name": "New Smyrna Beach city, Florida",
+        "city_name": "New Smyrna Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249350",
+        "geographic_area_name": "North Fort Myers CDP, Florida",
+        "city_name": "North Fort Myers CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249425",
+        "geographic_area_name": "North Lauderdale city, Florida",
+        "city_name": "North Lauderdale city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249475",
+        "geographic_area_name": "North Miami Beach city, Florida",
+        "city_name": "North Miami Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249450",
+        "geographic_area_name": "North Miami city, Florida",
+        "city_name": "North Miami city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249675",
+        "geographic_area_name": "North Port city, Florida",
+        "city_name": "North Port city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1249260",
+        "geographic_area_name": "Northdale CDP, Florida",
+        "city_name": "Northdale CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1250638",
+        "geographic_area_name": "Oak Ridge CDP, Florida",
+        "city_name": "Oak Ridge CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1250575",
+        "geographic_area_name": "Oakland Park city, Florida",
+        "city_name": "Oakland Park city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1250630",
+        "geographic_area_name": "Oakleaf Plantation CDP, Florida",
+        "city_name": "Oakleaf Plantation CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1250750",
+        "geographic_area_name": "Ocala city, Florida",
+        "city_name": "Ocala city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1251075",
+        "geographic_area_name": "Ocoee city, Florida",
+        "city_name": "Ocoee city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1253000",
+        "geographic_area_name": "Orlando city, Florida",
+        "city_name": "Orlando city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1253150",
+        "geographic_area_name": "Ormond Beach city, Florida",
+        "city_name": "Ormond Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1253575",
+        "geographic_area_name": "Oviedo city, Florida",
+        "city_name": "Oviedo city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1253725",
+        "geographic_area_name": "Pace CDP, Florida",
+        "city_name": "Pace CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254000",
+        "geographic_area_name": "Palm Bay city, Florida",
+        "city_name": "Palm Bay city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254075",
+        "geographic_area_name": "Palm Beach Gardens city, Florida",
+        "city_name": "Palm Beach Gardens city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254175",
+        "geographic_area_name": "Palm City CDP, Florida",
+        "city_name": "Palm City CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254200",
+        "geographic_area_name": "Palm Coast city, Florida",
+        "city_name": "Palm Coast city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254350",
+        "geographic_area_name": "Palm Harbor CDP, Florida",
+        "city_name": "Palm Harbor CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254387",
+        "geographic_area_name": "Palm River-Clair Mel CDP, Florida",
+        "city_name": "Palm River-Clair Mel CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254450",
+        "geographic_area_name": "Palm Springs village, Florida",
+        "city_name": "Palm Springs village",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254525",
+        "geographic_area_name": "Palm Valley CDP, Florida",
+        "city_name": "Palm Valley CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254275",
+        "geographic_area_name": "Palmetto Bay village, Florida",
+        "city_name": "Palmetto Bay village",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1254700",
+        "geographic_area_name": "Panama City city, Florida",
+        "city_name": "Panama City city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1255125",
+        "geographic_area_name": "Parkland city, Florida",
+        "city_name": "Parkland city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1255775",
+        "geographic_area_name": "Pembroke Pines city, Florida",
+        "city_name": "Pembroke Pines city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1255925",
+        "geographic_area_name": "Pensacola city, Florida",
+        "city_name": "Pensacola city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1256825",
+        "geographic_area_name": "Pine Hills CDP, Florida",
+        "city_name": "Pine Hills CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1256975",
+        "geographic_area_name": "Pinellas Park city, Florida",
+        "city_name": "Pinellas Park city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1257550",
+        "geographic_area_name": "Plant City city, Florida",
+        "city_name": "Plant City city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1257425",
+        "geographic_area_name": "Plantation city, Florida",
+        "city_name": "Plantation city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1257900",
+        "geographic_area_name": "Poinciana CDP, Florida",
+        "city_name": "Poinciana CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258050",
+        "geographic_area_name": "Pompano Beach city, Florida",
+        "city_name": "Pompano Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258350",
+        "geographic_area_name": "Port Charlotte CDP, Florida",
+        "city_name": "Port Charlotte CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258575",
+        "geographic_area_name": "Port Orange city, Florida",
+        "city_name": "Port Orange city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258700",
+        "geographic_area_name": "Port St. John CDP, Florida",
+        "city_name": "Port St. John CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258715",
+        "geographic_area_name": "Port St. Lucie city, Florida",
+        "city_name": "Port St. Lucie city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1258975",
+        "geographic_area_name": "Princeton CDP, Florida",
+        "city_name": "Princeton CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1260230",
+        "geographic_area_name": "Richmond West CDP, Florida",
+        "city_name": "Richmond West CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1260950",
+        "geographic_area_name": "Riverview CDP, Florida",
+        "city_name": "Riverview CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1260975",
+        "geographic_area_name": "Riviera Beach city, Florida",
+        "city_name": "Riviera Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1261500",
+        "geographic_area_name": "Rockledge city, Florida",
+        "city_name": "Rockledge city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1262100",
+        "geographic_area_name": "Royal Palm Beach village, Florida",
+        "city_name": "Royal Palm Beach village",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1262275",
+        "geographic_area_name": "Ruskin CDP, Florida",
+        "city_name": "Ruskin CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1263650",
+        "geographic_area_name": "Sanford city, Florida",
+        "city_name": "Sanford city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1264175",
+        "geographic_area_name": "Sarasota city, Florida",
+        "city_name": "Sarasota city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1264825",
+        "geographic_area_name": "Sebastian city, Florida",
+        "city_name": "Sebastian city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1266175",
+        "geographic_area_name": "Silver Springs Shores CDP, Florida",
+        "city_name": "Silver Springs Shores CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1267258",
+        "geographic_area_name": "South Bradenton CDP, Florida",
+        "city_name": "South Bradenton CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1267575",
+        "geographic_area_name": "South Miami Heights CDP, Florida",
+        "city_name": "South Miami Heights CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1268350",
+        "geographic_area_name": "Spring Hill CDP, Florida",
+        "city_name": "Spring Hill CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1262625",
+        "geographic_area_name": "St. Cloud city, Florida",
+        "city_name": "St. Cloud city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1263000",
+        "geographic_area_name": "St. Petersburg city, Florida",
+        "city_name": "St. Petersburg city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1269250",
+        "geographic_area_name": "Sun City Center CDP, Florida",
+        "city_name": "Sun City Center CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1269555",
+        "geographic_area_name": "Sunny Isles Beach city, Florida",
+        "city_name": "Sunny Isles Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1269700",
+        "geographic_area_name": "Sunrise city, Florida",
+        "city_name": "Sunrise city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1270600",
+        "geographic_area_name": "Tallahassee city, Florida",
+        "city_name": "Tallahassee city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1270675",
+        "geographic_area_name": "Tamarac city, Florida",
+        "city_name": "Tamarac city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1270700",
+        "geographic_area_name": "Tamiami CDP, Florida",
+        "city_name": "Tamiami CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271000",
+        "geographic_area_name": "Tampa city, Florida",
+        "city_name": "Tampa city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271150",
+        "geographic_area_name": "Tarpon Springs city, Florida",
+        "city_name": "Tarpon Springs city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271400",
+        "geographic_area_name": "Temple Terrace city, Florida",
+        "city_name": "Temple Terrace city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271564",
+        "geographic_area_name": "The Acreage CDP, Florida",
+        "city_name": "The Acreage CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271567",
+        "geographic_area_name": "The Crossings CDP, Florida",
+        "city_name": "The Crossings CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271569",
+        "geographic_area_name": "The Hammocks CDP, Florida",
+        "city_name": "The Hammocks CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271625",
+        "geographic_area_name": "The Villages CDP, Florida",
+        "city_name": "The Villages CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1271900",
+        "geographic_area_name": "Titusville city, Florida",
+        "city_name": "Titusville city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1272145",
+        "geographic_area_name": "Town 'n' Country CDP, Florida",
+        "city_name": "Town 'n' Country CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1273163",
+        "geographic_area_name": "University CDP (Hillsborough County), Florida",
+        "city_name": "University CDP (Hillsborough County)",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1273172",
+        "geographic_area_name": "University CDP (Orange County), Florida",
+        "city_name": "University CDP (Orange County)",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1273700",
+        "geographic_area_name": "Valrico CDP, Florida",
+        "city_name": "Valrico CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1273900",
+        "geographic_area_name": "Venice city, Florida",
+        "city_name": "Venice city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1274200",
+        "geographic_area_name": "Vero Beach South CDP, Florida",
+        "city_name": "Vero Beach South CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1275725",
+        "geographic_area_name": "Wekiwa Springs CDP, Florida",
+        "city_name": "Wekiwa Springs CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1275812",
+        "geographic_area_name": "Wellington village, Florida",
+        "city_name": "Wellington village",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1275875",
+        "geographic_area_name": "Wesley Chapel CDP, Florida",
+        "city_name": "Wesley Chapel CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276487",
+        "geographic_area_name": "West Little River CDP, Florida",
+        "city_name": "West Little River CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276500",
+        "geographic_area_name": "West Melbourne city, Florida",
+        "city_name": "West Melbourne city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276600",
+        "geographic_area_name": "West Palm Beach city, Florida",
+        "city_name": "West Palm Beach city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276675",
+        "geographic_area_name": "West Pensacola CDP, Florida",
+        "city_name": "West Pensacola CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276062",
+        "geographic_area_name": "Westchase CDP, Florida",
+        "city_name": "Westchase CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276075",
+        "geographic_area_name": "Westchester CDP, Florida",
+        "city_name": "Westchester CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1276582",
+        "geographic_area_name": "Weston city, Florida",
+        "city_name": "Weston city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1278250",
+        "geographic_area_name": "Winter Garden city, Florida",
+        "city_name": "Winter Garden city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1278275",
+        "geographic_area_name": "Winter Haven city, Florida",
+        "city_name": "Winter Haven city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1278300",
+        "geographic_area_name": "Winter Park city, Florida",
+        "city_name": "Winter Park city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1278325",
+        "geographic_area_name": "Winter Springs city, Florida",
+        "city_name": "Winter Springs city",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1278800",
+        "geographic_area_name": "Wright CDP, Florida",
+        "city_name": "Wright CDP",
+        "state_name": "Florida"
+      },
+      {
+        "geo_id": "1600000US1700243",
+        "geographic_area_name": "Addison village, Illinois",
+        "city_name": "Addison village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1700685",
+        "geographic_area_name": "Algonquin village, Illinois",
+        "city_name": "Algonquin village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1701114",
+        "geographic_area_name": "Alton city, Illinois",
+        "city_name": "Alton city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1702154",
+        "geographic_area_name": "Arlington Heights village, Illinois",
+        "city_name": "Arlington Heights village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1703012",
+        "geographic_area_name": "Aurora city, Illinois",
+        "city_name": "Aurora city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1704013",
+        "geographic_area_name": "Bartlett village, Illinois",
+        "city_name": "Bartlett village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1704078",
+        "geographic_area_name": "Batavia city, Illinois",
+        "city_name": "Batavia city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1704845",
+        "geographic_area_name": "Belleville city, Illinois",
+        "city_name": "Belleville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1705092",
+        "geographic_area_name": "Belvidere city, Illinois",
+        "city_name": "Belvidere city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1705573",
+        "geographic_area_name": "Berwyn city, Illinois",
+        "city_name": "Berwyn city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1706587",
+        "geographic_area_name": "Bloomingdale village, Illinois",
+        "city_name": "Bloomingdale village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1706613",
+        "geographic_area_name": "Bloomington city, Illinois",
+        "city_name": "Bloomington city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1706704",
+        "geographic_area_name": "Blue Island city, Illinois",
+        "city_name": "Blue Island city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1707133",
+        "geographic_area_name": "Bolingbrook village, Illinois",
+        "city_name": "Bolingbrook village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1709447",
+        "geographic_area_name": "Buffalo Grove village, Illinois",
+        "city_name": "Buffalo Grove village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1709642",
+        "geographic_area_name": "Burbank city, Illinois",
+        "city_name": "Burbank city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1710487",
+        "geographic_area_name": "Calumet City city, Illinois",
+        "city_name": "Calumet City city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1711163",
+        "geographic_area_name": "Carbondale city, Illinois",
+        "city_name": "Carbondale city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1711332",
+        "geographic_area_name": "Carol Stream village, Illinois",
+        "city_name": "Carol Stream village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1711358",
+        "geographic_area_name": "Carpentersville village, Illinois",
+        "city_name": "Carpentersville village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1712385",
+        "geographic_area_name": "Champaign city, Illinois",
+        "city_name": "Champaign city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1714000",
+        "geographic_area_name": "Chicago City, Illinois",
+        "city_name": "Chicago City",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1714026",
+        "geographic_area_name": "Chicago Heights city, Illinois",
+        "city_name": "Chicago Heights city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1714351",
+        "geographic_area_name": "Cicero town, Illinois",
+        "city_name": "Cicero town",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1715599",
+        "geographic_area_name": "Collinsville city, Illinois",
+        "city_name": "Collinsville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1717458",
+        "geographic_area_name": "Crest Hill city, Illinois",
+        "city_name": "Crest Hill city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1717887",
+        "geographic_area_name": "Crystal Lake city, Illinois",
+        "city_name": "Crystal Lake city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1718563",
+        "geographic_area_name": "Danville city, Illinois",
+        "city_name": "Danville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1718628",
+        "geographic_area_name": "Darien city, Illinois",
+        "city_name": "Darien city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1719161",
+        "geographic_area_name": "DeKalb city, Illinois",
+        "city_name": "DeKalb city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1718823",
+        "geographic_area_name": "Decatur city, Illinois",
+        "city_name": "Decatur city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1719642",
+        "geographic_area_name": "Des Plaines city, Illinois",
+        "city_name": "Des Plaines city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1720292",
+        "geographic_area_name": "Dolton village, Illinois",
+        "city_name": "Dolton village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1720591",
+        "geographic_area_name": "Downers Grove village, Illinois",
+        "city_name": "Downers Grove village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1722073",
+        "geographic_area_name": "East Moline city, Illinois",
+        "city_name": "East Moline city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1722164",
+        "geographic_area_name": "East Peoria city, Illinois",
+        "city_name": "East Peoria city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1722697",
+        "geographic_area_name": "Edwardsville city, Illinois",
+        "city_name": "Edwardsville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1723074",
+        "geographic_area_name": "Elgin city, Illinois",
+        "city_name": "Elgin city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1723256",
+        "geographic_area_name": "Elk Grove Village village, Illinois",
+        "city_name": "Elk Grove Village village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1723620",
+        "geographic_area_name": "Elmhurst city, Illinois",
+        "city_name": "Elmhurst city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1723724",
+        "geographic_area_name": "Elmwood Park village, Illinois",
+        "city_name": "Elmwood Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1724582",
+        "geographic_area_name": "Evanston city, Illinois",
+        "city_name": "Evanston city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1727624",
+        "geographic_area_name": "Frankfort village, Illinois",
+        "city_name": "Frankfort village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1727884",
+        "geographic_area_name": "Freeport city, Illinois",
+        "city_name": "Freeport city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1728326",
+        "geographic_area_name": "Galesburg city, Illinois",
+        "city_name": "Galesburg city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1728872",
+        "geographic_area_name": "Geneva city, Illinois",
+        "city_name": "Geneva city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1729756",
+        "geographic_area_name": "Glen Ellyn village, Illinois",
+        "city_name": "Glen Ellyn village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1729730",
+        "geographic_area_name": "Glendale Heights village, Illinois",
+        "city_name": "Glendale Heights village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1729938",
+        "geographic_area_name": "Glenview village, Illinois",
+        "city_name": "Glenview village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1730926",
+        "geographic_area_name": "Granite City city, Illinois",
+        "city_name": "Granite City city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1731121",
+        "geographic_area_name": "Grayslake village, Illinois",
+        "city_name": "Grayslake village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1732018",
+        "geographic_area_name": "Gurnee village, Illinois",
+        "city_name": "Gurnee village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1732746",
+        "geographic_area_name": "Hanover Park village, Illinois",
+        "city_name": "Hanover Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1733383",
+        "geographic_area_name": "Harvey city, Illinois",
+        "city_name": "Harvey city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1734722",
+        "geographic_area_name": "Highland Park city, Illinois",
+        "city_name": "Highland Park city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1735411",
+        "geographic_area_name": "Hoffman Estates village, Illinois",
+        "city_name": "Hoffman Estates village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1735835",
+        "geographic_area_name": "Homer Glen village, Illinois",
+        "city_name": "Homer Glen village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1736750",
+        "geographic_area_name": "Huntley village, Illinois",
+        "city_name": "Huntley village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1738570",
+        "geographic_area_name": "Joliet city, Illinois",
+        "city_name": "Joliet city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1738934",
+        "geographic_area_name": "Kankakee city, Illinois",
+        "city_name": "Kankakee city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1741183",
+        "geographic_area_name": "Lake in the Hills village, Illinois",
+        "city_name": "Lake in the Hills village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1742028",
+        "geographic_area_name": "Lansing village, Illinois",
+        "city_name": "Lansing village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1743250",
+        "geographic_area_name": "Libertyville village, Illinois",
+        "city_name": "Libertyville village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1743939",
+        "geographic_area_name": "Lisle village, Illinois",
+        "city_name": "Lisle village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1744225",
+        "geographic_area_name": "Lockport city, Illinois",
+        "city_name": "Lockport city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1744407",
+        "geographic_area_name": "Lombard village, Illinois",
+        "city_name": "Lombard village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1745031",
+        "geographic_area_name": "Loves Park city, Illinois",
+        "city_name": "Loves Park city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1745726",
+        "geographic_area_name": "Machesney Park village, Illinois",
+        "city_name": "Machesney Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1747774",
+        "geographic_area_name": "Maywood village, Illinois",
+        "city_name": "Maywood village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1745694",
+        "geographic_area_name": "McHenry city, Illinois",
+        "city_name": "McHenry city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1748242",
+        "geographic_area_name": "Melrose Park village, Illinois",
+        "city_name": "Melrose Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1749867",
+        "geographic_area_name": "Moline city, Illinois",
+        "city_name": "Moline city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1750218",
+        "geographic_area_name": "Montgomery village, Illinois",
+        "city_name": "Montgomery village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1750647",
+        "geographic_area_name": "Morton Grove village, Illinois",
+        "city_name": "Morton Grove village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1751089",
+        "geographic_area_name": "Mount Prospect village, Illinois",
+        "city_name": "Mount Prospect village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1751349",
+        "geographic_area_name": "Mundelein village, Illinois",
+        "city_name": "Mundelein village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1751622",
+        "geographic_area_name": "Naperville city, Illinois",
+        "city_name": "Naperville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1752584",
+        "geographic_area_name": "New Lenox village, Illinois",
+        "city_name": "New Lenox village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1753000",
+        "geographic_area_name": "Niles village, Illinois",
+        "city_name": "Niles village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1753234",
+        "geographic_area_name": "Normal town, Illinois",
+        "city_name": "Normal town",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1753559",
+        "geographic_area_name": "North Chicago city, Illinois",
+        "city_name": "North Chicago city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1753481",
+        "geographic_area_name": "Northbrook village, Illinois",
+        "city_name": "Northbrook village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1755249",
+        "geographic_area_name": "O'Fallon city, Illinois",
+        "city_name": "O'Fallon city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1754638",
+        "geographic_area_name": "Oak Forest city, Illinois",
+        "city_name": "Oak Forest city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1754820",
+        "geographic_area_name": "Oak Lawn village, Illinois",
+        "city_name": "Oak Lawn village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1754885",
+        "geographic_area_name": "Oak Park village, Illinois",
+        "city_name": "Oak Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1756640",
+        "geographic_area_name": "Orland Park village, Illinois",
+        "city_name": "Orland Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1756887",
+        "geographic_area_name": "Oswego village, Illinois",
+        "city_name": "Oswego village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1757225",
+        "geographic_area_name": "Palatine village, Illinois",
+        "city_name": "Palatine village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1757732",
+        "geographic_area_name": "Park Forest village, Illinois",
+        "city_name": "Park Forest village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1757875",
+        "geographic_area_name": "Park Ridge city, Illinois",
+        "city_name": "Park Ridge city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1758447",
+        "geographic_area_name": "Pekin city, Illinois",
+        "city_name": "Pekin city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1759000",
+        "geographic_area_name": "Peoria city, Illinois",
+        "city_name": "Peoria city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1760287",
+        "geographic_area_name": "Plainfield village, Illinois",
+        "city_name": "Plainfield village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1762367",
+        "geographic_area_name": "Quincy city, Illinois",
+        "city_name": "Quincy city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1765078",
+        "geographic_area_name": "Rock Island city, Illinois",
+        "city_name": "Rock Island city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1765000",
+        "geographic_area_name": "Rockford city, Illinois",
+        "city_name": "Rockford city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1765338",
+        "geographic_area_name": "Rolling Meadows city, Illinois",
+        "city_name": "Rolling Meadows city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1765442",
+        "geographic_area_name": "Romeoville village, Illinois",
+        "city_name": "Romeoville village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1765806",
+        "geographic_area_name": "Roselle village, Illinois",
+        "city_name": "Roselle village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1766040",
+        "geographic_area_name": "Round Lake Beach village, Illinois",
+        "city_name": "Round Lake Beach village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1768003",
+        "geographic_area_name": "Schaumburg village, Illinois",
+        "city_name": "Schaumburg village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1770122",
+        "geographic_area_name": "Skokie village, Illinois",
+        "city_name": "Skokie village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1770720",
+        "geographic_area_name": "South Elgin village, Illinois",
+        "city_name": "South Elgin village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1770850",
+        "geographic_area_name": "South Holland village, Illinois",
+        "city_name": "South Holland village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1772000",
+        "geographic_area_name": "Springfield city, Illinois",
+        "city_name": "Springfield city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1766703",
+        "geographic_area_name": "St. Charles city, Illinois",
+        "city_name": "St. Charles city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1773157",
+        "geographic_area_name": "Streamwood village, Illinois",
+        "city_name": "Streamwood village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1775484",
+        "geographic_area_name": "Tinley Park village, Illinois",
+        "city_name": "Tinley Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1777005",
+        "geographic_area_name": "Urbana city, Illinois",
+        "city_name": "Urbana city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1777694",
+        "geographic_area_name": "Vernon Hills village, Illinois",
+        "city_name": "Vernon Hills village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1777993",
+        "geographic_area_name": "Villa Park village, Illinois",
+        "city_name": "Villa Park village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1779293",
+        "geographic_area_name": "Waukegan city, Illinois",
+        "city_name": "Waukegan city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1780060",
+        "geographic_area_name": "West Chicago city, Illinois",
+        "city_name": "West Chicago city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1780645",
+        "geographic_area_name": "Westmont village, Illinois",
+        "city_name": "Westmont village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1781048",
+        "geographic_area_name": "Wheaton city, Illinois",
+        "city_name": "Wheaton city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1781087",
+        "geographic_area_name": "Wheeling village, Illinois",
+        "city_name": "Wheeling village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1782075",
+        "geographic_area_name": "Wilmette village, Illinois",
+        "city_name": "Wilmette village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1783245",
+        "geographic_area_name": "Woodridge village, Illinois",
+        "city_name": "Woodridge village",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1783349",
+        "geographic_area_name": "Woodstock city, Illinois",
+        "city_name": "Woodstock city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1784038",
+        "geographic_area_name": "Yorkville city, Illinois",
+        "city_name": "Yorkville city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US1784220",
+        "geographic_area_name": "Zion city, Illinois",
+        "city_name": "Zion city",
+        "state_name": "Illinois"
+      },
+      {
+        "geo_id": "1600000US3601000",
+        "geographic_area_name": "Albany city, New York",
+        "city_name": "Albany city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3603078",
+        "geographic_area_name": "Auburn city, New York",
+        "city_name": "Auburn city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3604143",
+        "geographic_area_name": "Baldwin CDP, New York",
+        "city_name": "Baldwin CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3604935",
+        "geographic_area_name": "Bay Shore CDP, New York",
+        "city_name": "Bay Shore CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3606607",
+        "geographic_area_name": "Binghamton city, New York",
+        "city_name": "Binghamton city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3608026",
+        "geographic_area_name": "Brentwood CDP, New York",
+        "city_name": "Brentwood CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3608257",
+        "geographic_area_name": "Brighton CDP, New York",
+        "city_name": "Brighton CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3611000",
+        "geographic_area_name": "Buffalo city, New York",
+        "city_name": "Buffalo city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3613376",
+        "geographic_area_name": "Centereach CDP, New York",
+        "city_name": "Centereach CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3613552",
+        "geographic_area_name": "Central Islip CDP, New York",
+        "city_name": "Central Islip CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3615000",
+        "geographic_area_name": "Cheektowaga CDP, New York",
+        "city_name": "Cheektowaga CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3617530",
+        "geographic_area_name": "Commack CDP, New York",
+        "city_name": "Commack CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3618146",
+        "geographic_area_name": "Copiague CDP, New York",
+        "city_name": "Copiague CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3618157",
+        "geographic_area_name": "Coram CDP, New York",
+        "city_name": "Coram CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3619972",
+        "geographic_area_name": "Deer Park CDP, New York",
+        "city_name": "Deer Park CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3620687",
+        "geographic_area_name": "Dix Hills CDP, New York",
+        "city_name": "Dix Hills CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3622502",
+        "geographic_area_name": "East Meadow CDP, New York",
+        "city_name": "East Meadow CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3622612",
+        "geographic_area_name": "East Northport CDP, New York",
+        "city_name": "East Northport CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3622733",
+        "geographic_area_name": "East Patchogue CDP, New York",
+        "city_name": "East Patchogue CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3621809",
+        "geographic_area_name": "Eastchester CDP, New York",
+        "city_name": "Eastchester CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3624229",
+        "geographic_area_name": "Elmira city, New York",
+        "city_name": "Elmira city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3624273",
+        "geographic_area_name": "Elmont CDP, New York",
+        "city_name": "Elmont CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3627309",
+        "geographic_area_name": "Franklin Square CDP, New York",
+        "city_name": "Franklin Square CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3627485",
+        "geographic_area_name": "Freeport village, New York",
+        "city_name": "Freeport village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3628178",
+        "geographic_area_name": "Garden City village, New York",
+        "city_name": "Garden City village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3629113",
+        "geographic_area_name": "Glen Cove city, New York",
+        "city_name": "Glen Cove city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3632402",
+        "geographic_area_name": "Harrison village, New York",
+        "city_name": "Harrison village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3633139",
+        "geographic_area_name": "Hempstead village, New York",
+        "city_name": "Hempstead village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3634374",
+        "geographic_area_name": "Hicksville CDP, New York",
+        "city_name": "Hicksville CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3635056",
+        "geographic_area_name": "Holbrook CDP, New York",
+        "city_name": "Holbrook CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3637044",
+        "geographic_area_name": "Huntington Station CDP, New York",
+        "city_name": "Huntington Station CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3637737",
+        "geographic_area_name": "Irondequoit CDP, New York",
+        "city_name": "Irondequoit CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3638077",
+        "geographic_area_name": "Ithaca city, New York",
+        "city_name": "Ithaca city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3638264",
+        "geographic_area_name": "Jamestown city, New York",
+        "city_name": "Jamestown city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3639727",
+        "geographic_area_name": "Kingston city, New York",
+        "city_name": "Kingston city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3639853",
+        "geographic_area_name": "Kiryas Joel village, New York",
+        "city_name": "Kiryas Joel village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3642081",
+        "geographic_area_name": "Levittown CDP, New York",
+        "city_name": "Levittown CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3642554",
+        "geographic_area_name": "Lindenhurst village, New York",
+        "city_name": "Lindenhurst village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3643082",
+        "geographic_area_name": "Lockport city, New York",
+        "city_name": "Lockport city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3643335",
+        "geographic_area_name": "Long Beach city, New York",
+        "city_name": "Long Beach city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3643874",
+        "geographic_area_name": "Lynbrook village, New York",
+        "city_name": "Lynbrook village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3645986",
+        "geographic_area_name": "Massapequa CDP, New York",
+        "city_name": "Massapequa CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3646404",
+        "geographic_area_name": "Medford CDP, New York",
+        "city_name": "Medford CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3646668",
+        "geographic_area_name": "Merrick CDP, New York",
+        "city_name": "Merrick CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3647042",
+        "geographic_area_name": "Middletown city, New York",
+        "city_name": "Middletown city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3647636",
+        "geographic_area_name": "Mineola village, New York",
+        "city_name": "Mineola village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3648010",
+        "geographic_area_name": "Monsey CDP, New York",
+        "city_name": "Monsey CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3649121",
+        "geographic_area_name": "Mount Vernon city, New York",
+        "city_name": "Mount Vernon city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3650100",
+        "geographic_area_name": "New City CDP, New York",
+        "city_name": "New City CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3650617",
+        "geographic_area_name": "New Rochelle city, New York",
+        "city_name": "New Rochelle city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3651000",
+        "geographic_area_name": "New York City, New York",
+        "city_name": "New York City",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3650034",
+        "geographic_area_name": "Newburgh city, New York",
+        "city_name": "Newburgh city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3651055",
+        "geographic_area_name": "Niagara Falls city, New York",
+        "city_name": "Niagara Falls city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3651262",
+        "geographic_area_name": "Niskayuna CDP, New York",
+        "city_name": "Niskayuna CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3651517",
+        "geographic_area_name": "North Bellmore CDP, New York",
+        "city_name": "North Bellmore CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3653682",
+        "geographic_area_name": "North Tonawanda city, New York",
+        "city_name": "North Tonawanda city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3654441",
+        "geographic_area_name": "Oceanside CDP, New York",
+        "city_name": "Oceanside CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3655530",
+        "geographic_area_name": "Ossining village, New York",
+        "city_name": "Ossining village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3656979",
+        "geographic_area_name": "Peekskill city, New York",
+        "city_name": "Peekskill city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3658442",
+        "geographic_area_name": "Plainview CDP, New York",
+        "city_name": "Plainview CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3659223",
+        "geographic_area_name": "Port Chester village, New York",
+        "city_name": "Port Chester village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3659641",
+        "geographic_area_name": "Poughkeepsie city, New York",
+        "city_name": "Poughkeepsie city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3663000",
+        "geographic_area_name": "Rochester city, New York",
+        "city_name": "Rochester city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3663264",
+        "geographic_area_name": "Rockville Centre village, New York",
+        "city_name": "Rockville Centre village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3663418",
+        "geographic_area_name": "Rome city, New York",
+        "city_name": "Rome city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3663924",
+        "geographic_area_name": "Rotterdam CDP, New York",
+        "city_name": "Rotterdam CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3665255",
+        "geographic_area_name": "Saratoga Springs city, New York",
+        "city_name": "Saratoga Springs city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3665508",
+        "geographic_area_name": "Schenectady city, New York",
+        "city_name": "Schenectady city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3666212",
+        "geographic_area_name": "Selden CDP, New York",
+        "city_name": "Selden CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3667070",
+        "geographic_area_name": "Shirley CDP, New York",
+        "city_name": "Shirley CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3667851",
+        "geographic_area_name": "Smithtown CDP, New York",
+        "city_name": "Smithtown CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3670420",
+        "geographic_area_name": "Spring Valley village, New York",
+        "city_name": "Spring Valley village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3673000",
+        "geographic_area_name": "Syracuse city, New York",
+        "city_name": "Syracuse city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3675021",
+        "geographic_area_name": "Tonawanda Town CDP, New York",
+        "city_name": "Tonawanda Town CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3675484",
+        "geographic_area_name": "Troy city, New York",
+        "city_name": "Troy city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3676089",
+        "geographic_area_name": "Uniondale CDP, New York",
+        "city_name": "Uniondale CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3676540",
+        "geographic_area_name": "Utica city, New York",
+        "city_name": "Utica city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3676705",
+        "geographic_area_name": "Valley Stream village, New York",
+        "city_name": "Valley Stream village",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3678608",
+        "geographic_area_name": "Watertown city, New York",
+        "city_name": "Watertown city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3679246",
+        "geographic_area_name": "West Babylon CDP, New York",
+        "city_name": "West Babylon CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3680225",
+        "geographic_area_name": "West Hempstead CDP, New York",
+        "city_name": "West Hempstead CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3680302",
+        "geographic_area_name": "West Islip CDP, New York",
+        "city_name": "West Islip CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3680907",
+        "geographic_area_name": "West Seneca CDP, New York",
+        "city_name": "West Seneca CDP",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3681677",
+        "geographic_area_name": "White Plains city, New York",
+        "city_name": "White Plains city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US3684000",
+        "geographic_area_name": "Yonkers city, New York",
+        "city_name": "Yonkers city",
+        "state_name": "New York"
+      },
+      {
+        "geo_id": "1600000US4801000",
+        "geographic_area_name": "Abilene city, Texas",
+        "city_name": "Abilene city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4801924",
+        "geographic_area_name": "Allen city, Texas",
+        "city_name": "Allen city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4802272",
+        "geographic_area_name": "Alvin city, Texas",
+        "city_name": "Alvin city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4803000",
+        "geographic_area_name": "Amarillo city, Texas",
+        "city_name": "Amarillo city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4804000",
+        "geographic_area_name": "Arlington city, Texas",
+        "city_name": "Arlington city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4804462",
+        "geographic_area_name": "Atascocita CDP, Texas",
+        "city_name": "Atascocita CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4805000",
+        "geographic_area_name": "Austin City, Texas",
+        "city_name": "Austin City",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4805372",
+        "geographic_area_name": "Balch Springs city, Texas",
+        "city_name": "Balch Springs city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4806128",
+        "geographic_area_name": "Baytown city, Texas",
+        "city_name": "Baytown city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4807000",
+        "geographic_area_name": "Beaumont city, Texas",
+        "city_name": "Beaumont city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4807132",
+        "geographic_area_name": "Bedford city, Texas",
+        "city_name": "Bedford city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4807492",
+        "geographic_area_name": "Belton city, Texas",
+        "city_name": "Belton city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4807552",
+        "geographic_area_name": "Benbrook city, Texas",
+        "city_name": "Benbrook city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4808236",
+        "geographic_area_name": "Big Spring city, Texas",
+        "city_name": "Big Spring city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4810768",
+        "geographic_area_name": "Brownsville city, Texas",
+        "city_name": "Brownsville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4810897",
+        "geographic_area_name": "Brushy Creek CDP, Texas",
+        "city_name": "Brushy Creek CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4810912",
+        "geographic_area_name": "Bryan city, Texas",
+        "city_name": "Bryan city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4811428",
+        "geographic_area_name": "Burleson city, Texas",
+        "city_name": "Burleson city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4812580",
+        "geographic_area_name": "Canyon Lake CDP, Texas",
+        "city_name": "Canyon Lake CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4813024",
+        "geographic_area_name": "Carrollton city, Texas",
+        "city_name": "Carrollton city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4813492",
+        "geographic_area_name": "Cedar Hill city, Texas",
+        "city_name": "Cedar Hill city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4813552",
+        "geographic_area_name": "Cedar Park city, Texas",
+        "city_name": "Cedar Park city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4814236",
+        "geographic_area_name": "Channelview CDP, Texas",
+        "city_name": "Channelview CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4814920",
+        "geographic_area_name": "Cibolo city, Texas",
+        "city_name": "Cibolo city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4815364",
+        "geographic_area_name": "Cleburne city, Texas",
+        "city_name": "Cleburne city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4815628",
+        "geographic_area_name": "Cloverleaf CDP, Texas",
+        "city_name": "Cloverleaf CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4815976",
+        "geographic_area_name": "College Station city, Texas",
+        "city_name": "College Station city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4815988",
+        "geographic_area_name": "Colleyville city, Texas",
+        "city_name": "Colleyville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4816432",
+        "geographic_area_name": "Conroe city, Texas",
+        "city_name": "Conroe city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4816468",
+        "geographic_area_name": "Converse city, Texas",
+        "city_name": "Converse city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4816612",
+        "geographic_area_name": "Coppell city, Texas",
+        "city_name": "Coppell city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4816624",
+        "geographic_area_name": "Copperas Cove city, Texas",
+        "city_name": "Copperas Cove city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4816696",
+        "geographic_area_name": "Corinth city, Texas",
+        "city_name": "Corinth city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4817000",
+        "geographic_area_name": "Corpus Christi city, Texas",
+        "city_name": "Corpus Christi city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4817060",
+        "geographic_area_name": "Corsicana city, Texas",
+        "city_name": "Corsicana city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4819000",
+        "geographic_area_name": "Dallas City, Texas",
+        "city_name": "Dallas City",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4820092",
+        "geographic_area_name": "DeSoto city, Texas",
+        "city_name": "DeSoto city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4819624",
+        "geographic_area_name": "Deer Park city, Texas",
+        "city_name": "Deer Park city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4819792",
+        "geographic_area_name": "Del Rio city, Texas",
+        "city_name": "Del Rio city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4819900",
+        "geographic_area_name": "Denison city, Texas",
+        "city_name": "Denison city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4819972",
+        "geographic_area_name": "Denton city, Texas",
+        "city_name": "Denton city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4820344",
+        "geographic_area_name": "Dickinson city, Texas",
+        "city_name": "Dickinson city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4821628",
+        "geographic_area_name": "Duncanville city, Texas",
+        "city_name": "Duncanville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4821892",
+        "geographic_area_name": "Eagle Pass city, Texas",
+        "city_name": "Eagle Pass city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4822660",
+        "geographic_area_name": "Edinburg city, Texas",
+        "city_name": "Edinburg city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4824000",
+        "geographic_area_name": "El Paso city, Texas",
+        "city_name": "El Paso city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4824768",
+        "geographic_area_name": "Euless city, Texas",
+        "city_name": "Euless city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4825452",
+        "geographic_area_name": "Farmers Branch city, Texas",
+        "city_name": "Farmers Branch city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4826232",
+        "geographic_area_name": "Flower Mound town, Texas",
+        "city_name": "Flower Mound town",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4826604",
+        "geographic_area_name": "Forney city, Texas",
+        "city_name": "Forney city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4827000",
+        "geographic_area_name": "Fort Worth City, Texas",
+        "city_name": "Fort Worth City",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4827540",
+        "geographic_area_name": "Fresno CDP, Texas",
+        "city_name": "Fresno CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4827648",
+        "geographic_area_name": "Friendswood city, Texas",
+        "city_name": "Friendswood city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4827684",
+        "geographic_area_name": "Frisco city, Texas",
+        "city_name": "Frisco city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4828068",
+        "geographic_area_name": "Galveston city, Texas",
+        "city_name": "Galveston city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4829000",
+        "geographic_area_name": "Garland city, Texas",
+        "city_name": "Garland city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4829336",
+        "geographic_area_name": "Georgetown city, Texas",
+        "city_name": "Georgetown city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4830464",
+        "geographic_area_name": "Grand Prairie city, Texas",
+        "city_name": "Grand Prairie city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4830644",
+        "geographic_area_name": "Grapevine city, Texas",
+        "city_name": "Grapevine city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4830920",
+        "geographic_area_name": "Greenville city, Texas",
+        "city_name": "Greenville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4831928",
+        "geographic_area_name": "Haltom City city, Texas",
+        "city_name": "Haltom City city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4832312",
+        "geographic_area_name": "Harker Heights city, Texas",
+        "city_name": "Harker Heights city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4832372",
+        "geographic_area_name": "Harlingen city, Texas",
+        "city_name": "Harlingen city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4834832",
+        "geographic_area_name": "Horizon City city, Texas",
+        "city_name": "Horizon City city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4835000",
+        "geographic_area_name": "Houston City, Texas",
+        "city_name": "Houston City",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4835528",
+        "geographic_area_name": "Huntsville city, Texas",
+        "city_name": "Huntsville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4835576",
+        "geographic_area_name": "Hurst city, Texas",
+        "city_name": "Hurst city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4835624",
+        "geographic_area_name": "Hutto city, Texas",
+        "city_name": "Hutto city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4837000",
+        "geographic_area_name": "Irving city, Texas",
+        "city_name": "Irving city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4838476",
+        "geographic_area_name": "Katy city, Texas",
+        "city_name": "Katy city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4838632",
+        "geographic_area_name": "Keller city, Texas",
+        "city_name": "Keller city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4839040",
+        "geographic_area_name": "Kerrville city, Texas",
+        "city_name": "Kerrville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4839148",
+        "geographic_area_name": "Killeen city, Texas",
+        "city_name": "Killeen city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4839352",
+        "geographic_area_name": "Kingsville city, Texas",
+        "city_name": "Kingsville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4839952",
+        "geographic_area_name": "Kyle city, Texas",
+        "city_name": "Kyle city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4841440",
+        "geographic_area_name": "La Porte city, Texas",
+        "city_name": "La Porte city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4840588",
+        "geographic_area_name": "Lake Jackson city, Texas",
+        "city_name": "Lake Jackson city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4841212",
+        "geographic_area_name": "Lancaster city, Texas",
+        "city_name": "Lancaster city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4841464",
+        "geographic_area_name": "Laredo city, Texas",
+        "city_name": "Laredo city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4841980",
+        "geographic_area_name": "League City city, Texas",
+        "city_name": "League City city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4842016",
+        "geographic_area_name": "Leander city, Texas",
+        "city_name": "Leander city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4842508",
+        "geographic_area_name": "Lewisville city, Texas",
+        "city_name": "Lewisville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4843012",
+        "geographic_area_name": "Little Elm city, Texas",
+        "city_name": "Little Elm city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4843888",
+        "geographic_area_name": "Longview city, Texas",
+        "city_name": "Longview city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4845000",
+        "geographic_area_name": "Lubbock city, Texas",
+        "city_name": "Lubbock city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4845072",
+        "geographic_area_name": "Lufkin city, Texas",
+        "city_name": "Lufkin city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4846452",
+        "geographic_area_name": "Mansfield city, Texas",
+        "city_name": "Mansfield city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4846776",
+        "geographic_area_name": "Marshall city, Texas",
+        "city_name": "Marshall city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4845384",
+        "geographic_area_name": "McAllen city, Texas",
+        "city_name": "McAllen city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4845744",
+        "geographic_area_name": "McKinney city, Texas",
+        "city_name": "McKinney city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4847892",
+        "geographic_area_name": "Mesquite city, Texas",
+        "city_name": "Mesquite city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4848072",
+        "geographic_area_name": "Midland city, Texas",
+        "city_name": "Midland city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4848096",
+        "geographic_area_name": "Midlothian city, Texas",
+        "city_name": "Midlothian city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4848772",
+        "geographic_area_name": "Mission Bend CDP, Texas",
+        "city_name": "Mission Bend CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4848768",
+        "geographic_area_name": "Mission city, Texas",
+        "city_name": "Mission city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4848804",
+        "geographic_area_name": "Missouri City city, Texas",
+        "city_name": "Missouri City city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4850100",
+        "geographic_area_name": "Murphy city, Texas",
+        "city_name": "Murphy city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4850256",
+        "geographic_area_name": "Nacogdoches city, Texas",
+        "city_name": "Nacogdoches city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4850820",
+        "geographic_area_name": "New Braunfels city, Texas",
+        "city_name": "New Braunfels city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4852356",
+        "geographic_area_name": "North Richland Hills city, Texas",
+        "city_name": "North Richland Hills city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4853388",
+        "geographic_area_name": "Odessa city, Texas",
+        "city_name": "Odessa city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4855080",
+        "geographic_area_name": "Paris city, Texas",
+        "city_name": "Paris city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4856000",
+        "geographic_area_name": "Pasadena city, Texas",
+        "city_name": "Pasadena city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4856348",
+        "geographic_area_name": "Pearland city, Texas",
+        "city_name": "Pearland city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4857176",
+        "geographic_area_name": "Pflugerville city, Texas",
+        "city_name": "Pflugerville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4857200",
+        "geographic_area_name": "Pharr city, Texas",
+        "city_name": "Pharr city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4857980",
+        "geographic_area_name": "Plainview city, Texas",
+        "city_name": "Plainview city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4858016",
+        "geographic_area_name": "Plano city, Texas",
+        "city_name": "Plano city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4858820",
+        "geographic_area_name": "Port Arthur city, Texas",
+        "city_name": "Port Arthur city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4859696",
+        "geographic_area_name": "Prosper town, Texas",
+        "city_name": "Prosper town",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4861796",
+        "geographic_area_name": "Richardson city, Texas",
+        "city_name": "Richardson city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4862828",
+        "geographic_area_name": "Rockwall city, Texas",
+        "city_name": "Rockwall city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4863284",
+        "geographic_area_name": "Rosenberg city, Texas",
+        "city_name": "Rosenberg city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4863500",
+        "geographic_area_name": "Round Rock city, Texas",
+        "city_name": "Round Rock city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4863572",
+        "geographic_area_name": "Rowlett city, Texas",
+        "city_name": "Rowlett city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4864064",
+        "geographic_area_name": "Sachse city, Texas",
+        "city_name": "Sachse city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4864112",
+        "geographic_area_name": "Saginaw city, Texas",
+        "city_name": "Saginaw city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4865000",
+        "geographic_area_name": "San Antonio City, Texas",
+        "city_name": "San Antonio City",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4864472",
+        "geographic_area_name": "San Angelo city, Texas",
+        "city_name": "San Angelo city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4865036",
+        "geographic_area_name": "San Benito city, Texas",
+        "city_name": "San Benito city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4865516",
+        "geographic_area_name": "San Juan city, Texas",
+        "city_name": "San Juan city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4865600",
+        "geographic_area_name": "San Marcos city, Texas",
+        "city_name": "San Marcos city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4866128",
+        "geographic_area_name": "Schertz city, Texas",
+        "city_name": "Schertz city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4866644",
+        "geographic_area_name": "Seguin city, Texas",
+        "city_name": "Seguin city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4867496",
+        "geographic_area_name": "Sherman city, Texas",
+        "city_name": "Sherman city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4867763",
+        "geographic_area_name": "Sienna CDP, Texas",
+        "city_name": "Sienna CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4868636",
+        "geographic_area_name": "Socorro city, Texas",
+        "city_name": "Socorro city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4869032",
+        "geographic_area_name": "Southlake city, Texas",
+        "city_name": "Southlake city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4869596",
+        "geographic_area_name": "Spring CDP, Texas",
+        "city_name": "Spring CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4870208",
+        "geographic_area_name": "Stephenville city, Texas",
+        "city_name": "Stephenville city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4870808",
+        "geographic_area_name": "Sugar Land city, Texas",
+        "city_name": "Sugar Land city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4872176",
+        "geographic_area_name": "Temple city, Texas",
+        "city_name": "Temple city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4872368",
+        "geographic_area_name": "Texarkana city, Texas",
+        "city_name": "Texarkana city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4872392",
+        "geographic_area_name": "Texas City city, Texas",
+        "city_name": "Texas City city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4872530",
+        "geographic_area_name": "The Colony city, Texas",
+        "city_name": "The Colony city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4872656",
+        "geographic_area_name": "The Woodlands CDP, Texas",
+        "city_name": "The Woodlands CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4873057",
+        "geographic_area_name": "Timberwood Park CDP, Texas",
+        "city_name": "Timberwood Park CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4874144",
+        "geographic_area_name": "Tyler city, Texas",
+        "city_name": "Tyler city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4874492",
+        "geographic_area_name": "University Park city, Texas",
+        "city_name": "University Park city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4875428",
+        "geographic_area_name": "Victoria city, Texas",
+        "city_name": "Victoria city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4876000",
+        "geographic_area_name": "Waco city, Texas",
+        "city_name": "Waco city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4876672",
+        "geographic_area_name": "Watauga city, Texas",
+        "city_name": "Watauga city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4876816",
+        "geographic_area_name": "Waxahachie city, Texas",
+        "city_name": "Waxahachie city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4876864",
+        "geographic_area_name": "Weatherford city, Texas",
+        "city_name": "Weatherford city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4877272",
+        "geographic_area_name": "Weslaco city, Texas",
+        "city_name": "Weslaco city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4877728",
+        "geographic_area_name": "West Odessa CDP, Texas",
+        "city_name": "West Odessa CDP",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4879000",
+        "geographic_area_name": "Wichita Falls city, Texas",
+        "city_name": "Wichita Falls city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4880356",
+        "geographic_area_name": "Wylie city, Texas",
+        "city_name": "Wylie city",
+        "state_name": "Texas"
+      },
+      {
+        "geo_id": "1600000US4901310",
+        "geographic_area_name": "American Fork city, Utah",
+        "city_name": "American Fork city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4907690",
+        "geographic_area_name": "Bountiful city, Utah",
+        "city_name": "Bountiful city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4911320",
+        "geographic_area_name": "Cedar City city, Utah",
+        "city_name": "Cedar City city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4913850",
+        "geographic_area_name": "Clearfield city, Utah",
+        "city_name": "Clearfield city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4914290",
+        "geographic_area_name": "Clinton city, Utah",
+        "city_name": "Clinton city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4916270",
+        "geographic_area_name": "Cottonwood Heights city, Utah",
+        "city_name": "Cottonwood Heights city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4920120",
+        "geographic_area_name": "Draper city, Utah",
+        "city_name": "Draper city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4920810",
+        "geographic_area_name": "Eagle Mountain city, Utah",
+        "city_name": "Eagle Mountain city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4924740",
+        "geographic_area_name": "Farmington city, Utah",
+        "city_name": "Farmington city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4934970",
+        "geographic_area_name": "Herriman city, Utah",
+        "city_name": "Herriman city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4936070",
+        "geographic_area_name": "Holladay city, Utah",
+        "city_name": "Holladay city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4940360",
+        "geographic_area_name": "Kaysville city, Utah",
+        "city_name": "Kaysville city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4940470",
+        "geographic_area_name": "Kearns metro township, Utah",
+        "city_name": "Kearns metro township",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4943660",
+        "geographic_area_name": "Layton city, Utah",
+        "city_name": "Layton city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4944320",
+        "geographic_area_name": "Lehi city, Utah",
+        "city_name": "Lehi city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4945860",
+        "geographic_area_name": "Logan city, Utah",
+        "city_name": "Logan city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4947290",
+        "geographic_area_name": "Magna metro township, Utah",
+        "city_name": "Magna metro township",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4949710",
+        "geographic_area_name": "Midvale city, Utah",
+        "city_name": "Midvale city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4950150",
+        "geographic_area_name": "Millcreek city, Utah",
+        "city_name": "Millcreek city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4953230",
+        "geographic_area_name": "Murray city, Utah",
+        "city_name": "Murray city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4955100",
+        "geographic_area_name": "North Ogden city, Utah",
+        "city_name": "North Ogden city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4955210",
+        "geographic_area_name": "North Salt Lake city, Utah",
+        "city_name": "North Salt Lake city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4955980",
+        "geographic_area_name": "Ogden city, Utah",
+        "city_name": "Ogden city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4957300",
+        "geographic_area_name": "Orem city, Utah",
+        "city_name": "Orem city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4958730",
+        "geographic_area_name": "Payson city, Utah",
+        "city_name": "Payson city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4960930",
+        "geographic_area_name": "Pleasant Grove city, Utah",
+        "city_name": "Pleasant Grove city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4962470",
+        "geographic_area_name": "Provo city, Utah",
+        "city_name": "Provo city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4964340",
+        "geographic_area_name": "Riverton city, Utah",
+        "city_name": "Riverton city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4965110",
+        "geographic_area_name": "Roy city, Utah",
+        "city_name": "Roy city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4967000",
+        "geographic_area_name": "Salt Lake City city, Utah",
+        "city_name": "Salt Lake City city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4967440",
+        "geographic_area_name": "Sandy city, Utah",
+        "city_name": "Sandy city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4967825",
+        "geographic_area_name": "Saratoga Springs city, Utah",
+        "city_name": "Saratoga Springs city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4970850",
+        "geographic_area_name": "South Jordan city, Utah",
+        "city_name": "South Jordan city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4971070",
+        "geographic_area_name": "South Salt Lake city, Utah",
+        "city_name": "South Salt Lake city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4971290",
+        "geographic_area_name": "Spanish Fork city, Utah",
+        "city_name": "Spanish Fork city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4972280",
+        "geographic_area_name": "Springville city, Utah",
+        "city_name": "Springville city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4965330",
+        "geographic_area_name": "St. George city, Utah",
+        "city_name": "St. George city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4974810",
+        "geographic_area_name": "Syracuse city, Utah",
+        "city_name": "Syracuse city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4975360",
+        "geographic_area_name": "Taylorsville city, Utah",
+        "city_name": "Taylorsville city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4976680",
+        "geographic_area_name": "Tooele city, Utah",
+        "city_name": "Tooele city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4981960",
+        "geographic_area_name": "Washington city, Utah",
+        "city_name": "Washington city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4982950",
+        "geographic_area_name": "West Jordan city, Utah",
+        "city_name": "West Jordan city",
+        "state_name": "Utah"
+      },
+      {
+        "geo_id": "1600000US4983470",
+        "geographic_area_name": "West Valley City city, Utah",
+        "city_name": "West Valley City city",
+        "state_name": "Utah"
+      }
+    ]
+  }
+}

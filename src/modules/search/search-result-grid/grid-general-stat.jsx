@@ -1,16 +1,15 @@
 import * as React from "react";
 import {
-  blankTableCell,
   itemTableDataCellStyle,
   tableCell,
   tableHeader,
   tableRow,
 } from "app";
-import { Box, Stack, Tooltip, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import TooltipHelp from "shared/utils/tooltip/tooltip-help";
 
 export const GeneralStat = ({ rows }) => {
-  const { data, label } = rows;
+  const { data } = rows;
   return (
     <Box>
       <Stack sx={tableRow}>

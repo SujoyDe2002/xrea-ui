@@ -1,38 +1,22 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
-import { Stack } from '@mui/material';
-import CheckIcon from '@mui/icons-material/Check';
-import PageHeading1 from 'shared/utils/page-headings/page-heading1';
+import {
+    Box,
+    Button,
+    Card,
+    CardContent,
+    CardHeader,
+    Typography,
+    CssBaseline,
+    Grid,
+    GlobalStyles,
+    Link,
+    Container,
+    Stack
+} from "@mui/material";
 import { AppStyle } from 'app';
 import ContentWrapper from 'shared/utils/layout/content-wrapper';
 import ScrollToTop from 'shared/utils/scroll-to/scroll-to-top';
 
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const tiers = [
     {
@@ -75,31 +59,8 @@ const tiers = [
         priceTitle: 'Premium'
     },
 ];
-const footers = [
-    {
-        title: 'Company',
-        description: ['Team', 'History', 'Contact us', 'Locations'],
-    },
-    {
-        title: 'Features',
-        description: [
-            'Cool stuff',
-            'Random feature',
-            'Team feature',
-            'Developer stuff',
-            'Another one',
-        ],
-    },
-    {
-        title: 'Resources',
-        description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    },
-    {
-        title: 'Legal',
-        description: ['Privacy policy', 'Terms of use'],
-    },
-];
- const PricingContent = () => {
+
+const PricingContent = () => {
 
 
     return (
@@ -108,10 +69,7 @@ const footers = [
             <CssBaseline />
 
             <Box sx={{
-                // background: 'antiquewhite',
                 height: 'calc(100% - 100px)',
-                // position: 'absolute',
-                // top: '87px',
                 width: "100%",
                 paddingBottom: "32px",
                 backgroundColor: AppStyle.palette.common.white
@@ -133,7 +91,7 @@ const footers = [
                             Upgrade your XREA Experience
 
                         </Typography>
-                        <Typography variant="h5" align="center" color="text.secondary" component="p" sx={{ width: '70%', margin: 'auto', fontSize: {xs:".95rem", md:"1.158vw"} }}>
+                        <Typography variant="h5" align="center" color="text.secondary" component="p" sx={{ width: '70%', margin: 'auto', fontSize: { xs: ".95rem", md: "1.158vw" } }}>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                         </Typography>
                     </Container>
@@ -146,9 +104,6 @@ const footers = [
                                     item
                                     key={tier.title}
                                     xs={12}
-                                    // sm={tier.title === 'Enterprise' ? 12 : 6}
-                                    // md={tier.title === 'Most popular' ? 5 : 3.5}
-                                    // sm={tier.title === 'Enterprise' ? 12 : 6}
                                     md={tier.title === 'Most popular' ? 5 : 3.5}
                                     sx={{
                                         bottom: '16px'
@@ -163,7 +118,7 @@ const footers = [
                                         <CardHeader
                                             title={tier.title}
                                             // subheader={tier.subheader}
-                                            titleTypographyProps={{ align: 'center', fontWeight: '700', color: 'white', fontSize: { md:"1.2vw"} }}
+                                            titleTypographyProps={{ align: 'center', fontWeight: '700', color: 'white', fontSize: { md: "1.2vw" } }}
                                             action={tier.title === 'Most popular'}
                                             subheaderTypographyProps={{
                                                 align: 'center',
@@ -194,12 +149,12 @@ const footers = [
                                                 }}
                                             >
                                                 <Stack>
-                                                    <Typography component="h2" variant="h3" sx={{ fontWeight: '700', fontSize:  {xs:"3.78vw", md: tier.title === 'Most popular' ? '2.78vw' : '1.86vw'}, textAlign: "center" }} color="text.primary">
+                                                    <Typography component="h2" variant="h3" sx={{ fontWeight: '700', fontSize: { xs: "3.78vw", md: tier.title === 'Most popular' ? '2.78vw' : '1.86vw' }, textAlign: "center" }} color="text.primary">
                                                         {tier.priceTitle}
                                                     </Typography>
-                                                    <Typography component="h2" variant="h3" sx={{ fontSize: {xs: "4vw", md: tier.title === 'Most popular' ? '4.65vw' : '2.78vw'} , fontWeight: '700' }} color="text.primary">
+                                                    <Typography component="h2" variant="h3" sx={{ fontSize: { xs: "4vw", md: tier.title === 'Most popular' ? '4.65vw' : '2.78vw' }, fontWeight: '700' }} color="text.primary">
                                                         ${tier.price + " "}
-                                                        <Typography variant="span" sx={{ fontSize: {xs:'4vw', md: "1.5rem"}, fontWeight: '400' }} color="text.secondary">
+                                                        <Typography variant="span" sx={{ fontSize: { xs: '4vw', md: "1.5rem" }, fontWeight: '400' }} color="text.secondary">
                                                             /month
                                                         </Typography>
                                                     </Typography>
@@ -225,11 +180,7 @@ const footers = [
                                                         <Stack sx={{ flexDirection: 'row' }}>
 
                                                             <Box sx={{ display: 'flex', ml: 1 }}>
-                                                                <img className='image' sx={{
-                                                                    position: 'relative',
-                                                                    top: '16%',
-                                                                    scale: '2'
-                                                                }} src='/playground_assets/pricing_check.svg' />
+                                                                <img className='image' src='/playground_assets/pricing_check.svg' />
                                                             </Box>
 
 
@@ -238,7 +189,7 @@ const footers = [
                                                                 variant="subtitle1"
                                                                 align="center"
                                                                 key={line}
-                                                                sx={{ lineHeight: { xs: '1.75', lg: '2.75' }, fontSize: {xs:".95rem", md:"1.18vw"}, textAlign: 'left', marginLeft: '1rem' }}
+                                                                sx={{ lineHeight: { xs: '1.75', lg: '2.75' }, fontSize: { xs: ".95rem", md: "1.18vw" }, textAlign: 'left', marginLeft: '1rem' }}
                                                             >
                                                                 {line}
                                                             </Typography>
@@ -257,7 +208,7 @@ const footers = [
                                                         marginTop: '1rem',
                                                         background: tier.title === 'Most popular' ? '#3478D6' : 'rgba(129, 144, 187, 0.2)',
                                                         borderRadius: '8px',
-                                                        fontSize: { xs:"0.875rem",  md:".9vw"}
+                                                        fontSize: { xs: "0.875rem", md: ".9vw" }
                                                     }}
                                                 >
                                                     {tier.buttonText}
@@ -274,8 +225,6 @@ const footers = [
 
             </Box>
 
-
-         
         </React.Fragment >
     );
 }

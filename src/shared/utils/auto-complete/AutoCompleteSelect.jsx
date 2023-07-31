@@ -121,6 +121,7 @@ const AutoCompleteTabList = ({
   );
 };
 export const AutoCompleteSelect = ({ props }) => {
+  
   let {
     headerName,
     multiSelectInputList,
@@ -129,6 +130,7 @@ export const AutoCompleteSelect = ({ props }) => {
     selectedList,
     list,
   } = props;
+
   let {
 
     getRootProps,
@@ -146,7 +148,7 @@ export const AutoCompleteSelect = ({ props }) => {
     filterSelectedOptions: true,
     onChange: (e, option, reason, details) => {
       if (reason === "selectOption") {
-        let isValueExists = selectedList.find(({ id }) => {
+        let isValueExists = selectedList && selectedList.length >0 && selectedList.find(({ id }) => {
           if (id === details.option.id) {
             return id
           }
@@ -157,11 +159,11 @@ export const AutoCompleteSelect = ({ props }) => {
           return false
         }
       } else {
-        const updatedList = selectedList.filter(({ id }) => id !== details.option.id);
+        const updatedList = selectedList && selectedList.length >0 &&  selectedList.filter(({ id }) => id !== details.option.id);
         setSelectedList(updatedList)
       }
     },
-    options: multiSelectInputList && multiSelectInputList,
+    options: multiSelectInputList &&  multiSelectInputList,
     value: selectedList || [],
     //defaultValue:selectedList||[],
     getOptionLabel: ({ name }) => name
@@ -178,7 +180,7 @@ export const AutoCompleteSelect = ({ props }) => {
           className={focused ? "focused" : ""}
 
         >
-          {selectedList && selectedList.length > 0 && selectedList.map(({ color, name, id }, index) => (
+          {selectedList && selectedList?.length > 0 && selectedList.map(({ color, name, id }, index) => (
             <StyledTag
               color={color}
               label={name}
@@ -191,7 +193,7 @@ export const AutoCompleteSelect = ({ props }) => {
             {...getInputProps()}
           />
         </InputWrapper>
-        {groupedOptions && groupedOptions.length > 0 && (
+        {groupedOptions && groupedOptions?.length > 0 && (
 
           <Listbox {...getListboxProps()}>
             {list ?

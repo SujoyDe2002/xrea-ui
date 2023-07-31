@@ -1,33 +1,11 @@
 import { makeStyles } from "@mui/styles";
-import { Box, darken, lighten, Stack, TableCell, TableRow, Typography } from '@mui/material'
-import { AppStyle, blankTableCell, itemTableDataCellStyle, itemTableDataCellStyleBold, maxIndexValue, stickyHeaderCell, tableCell, tableCellValue, tableHeader, tableHeaderCell } from 'app'
+import { lighten, Stack, TableCell, TableRow, Typography } from '@mui/material'
+import { AppStyle, itemTableDataCellStyleBold, itemTablePercentileStyle, itemTableStatusStyle, tableHeader, tableUseStyle } from 'app'
 import React from 'react'
 
 
-const useStyles = makeStyles({
-    table: {
-        minWidth: 650
-    },
-    sticky: {
-        position: "sticky",
-        left: 0
-    },
-    tabcol: {
-        borderRadius: "5px 5px 0px 0px",
-        boxShadow: "2px 0px 10px 0px #eeeeee",
-        margin: "0px 5px 0px 5px"
-    },
-    tabcol1: {
-        borderRadius: "5px 5px 0px 0px",
-        boxShadow: "2px 0px 10px 0px #eeeeee"
-    },
-    tabcol3: {
-        backgroundColor: "#1ca2aa"
-    }
-});
-
-
-export const SegmentUsecaseTableRow = ({ rowData }) => {
+export const SegmentUsecaseTableRow = ({ rowData, currentDropdown }) => {
+    const useStyles = makeStyles(tableUseStyle);
     const classes = useStyles();
     return (
         <>
@@ -45,23 +23,43 @@ export const SegmentUsecaseTableRow = ({ rowData }) => {
                                 {use_case_group_desc}
                             </Typography>
                         </TableCell>
-                        {groupData && groupData.map(({ value, isMax }, index) => {
+                        {groupData && groupData.map(({ value, isMax }, mapIndex) => {
                             let bgcolor = isMax ? lighten(use_case_color, .90) : AppStyle.palette.common.white;
-                            return (
-                                <TableCell key={index} align="center" >
-                                    <Stack flexDirection={"row"} justifyContent={"center"}>
+                            const {index, percentile, grade, percentileChipBgcolor, statusChipBgcolor} = value;
 
-                                        <Typography
-                                            sx={{
-                                                ...itemTableDataCellStyleBold,
-                                                color: use_case_color,
-                                                // width: "200px",
-                                                padding: "10px 50px",
-                                                borderRadius: "25px",
-                                                backgroundColor: bgcolor
-                                            }}>
-                                            {value}
-                                        </Typography>
+                            let chipBgColor = statusChipBgcolor;
+                            let chipValue = grade;
+                            let sx = itemTableStatusStyle
+                            if (currentDropdown === "P") {
+                                chipBgColor = percentileChipBgcolor;
+                                chipValue = `${percentile}%`;
+                                sx = itemTablePercentileStyle;
+                            }
+                            return (
+                                <TableCell key={mapIndex} align="center" >
+                                    <Stack >
+
+                                        <Stack flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
+
+                                            <Stack
+                                                flexDirection={"row"} justifyContent={"center"} alignItems={"center"}
+                                                sx={{
+                                                    ...itemTableDataCellStyleBold,
+                                                    color: use_case_color,
+                                                    padding: "10px 50px",
+                                                    borderRadius: "25px",
+                                                    backgroundColor: bgcolor
+                                                }}>
+                                                {index}
+                                                <Stack
+                                                 sx={{...sx,
+                                                  bgcolor: chipBgColor
+                                                }}
+                                                  >
+                                                    {chipValue}
+                                                </Stack>
+                                            </Stack>
+                                        </Stack>
                                     </Stack>
                                 </TableCell>
                             )

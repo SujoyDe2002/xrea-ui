@@ -244,6 +244,29 @@ export const button3 = {
     bgcolor: "#F43D4F",
   },
 };
+export const button4 = {
+  padding: '5px 10px', // Customize the padding to decrease the button size
+  fontSize: '12px', // Customize the font size to decrease the button size
+  height: 20,
+  textTransform: 'none',
+  borderRadius: "10px",
+  height: '10',
+  background: '#E8F3FD',
+  color: 'black',
+  flexGrow: 1,
+  "&: hover": {
+    background: '#E8F3FD'
+  }
+
+}
+export const secondarybtn = {
+  height: "fit-content",
+  textTransform: "none",
+  bgcolor: AppStyle.palette.secondary.main,
+  fontWeight: 700,
+  fontSize: "1.125rem",
+  lineHeight: "107.5%"
+};
 // Button type end
 
 // description types start
@@ -645,7 +668,6 @@ export const card2style = {
   ...cardCommonStyle,
   borderRadius: "20px",
   position: "relative"
-  // height: "27.6vh",
 };
 export const card2BuronContainer = {
   flexDirection: "row",
@@ -665,7 +687,6 @@ export const card3Style = {
   flexDirection: "column",
   justifyContent: "flex-start",
   backgroundColor: "rgba(255, 255, 255, 1)"
-  // backgroundColor: "#000"
 };
 // Card Style end
 
@@ -673,7 +694,6 @@ export const card3Style = {
 
 export const cellSize = {
   width: "300px"
-  //width:  {xs:"250px" , md: "350px"} 
 };
 const headerCellSize = {
   ...cellSize
@@ -685,10 +705,8 @@ export const blankTableCell = {
 const tablecellCommon = {
   ...blankTableCell,
   fontWeight: 700,
-  //display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  // width:"350px"
 };
 
 export const stickyHeaderCell = {
@@ -734,7 +752,6 @@ export const tabRight = {
 };
 export const tabStyle = {
   ...blankTab,
-  // boxShadow: "0px -3px 17px -3px rgba(0, 0, 0, 0.1)",
   boxShadow: "0px -3px 17px -3px rgba(0, 0, 0, 0.1)",
   borderRadius: "10px 10px 0px 0px",
   fontWeight: 700,
@@ -775,6 +792,33 @@ export const tableCellValue = {
   ...centerAbsoluteItem,
   zIndex: 3,
 };
+export const tableUseStyle = {
+  table: {
+    minWidth: 650
+  },
+  sticky: {
+    position: "sticky",
+    left: 0
+  },
+  tabcol: {
+    borderRadius: "5px 5px 0px 0px",
+    boxShadow: "2px 0px 10px 0px #eeeeee",
+    margin: "0px 5px 0px 5px"
+  },
+  tabcol1: {
+    borderRadius: "5px 5px 0px 0px",
+    boxShadow: "2px 0px 10px 0px #eeeeee"
+  },
+  tabcol3: {
+    backgroundColor: "#1ca2aa"
+  }
+}
+export const tableHeaderTooltipContainer = {
+  justifyContent: "right",
+  alignItems: "center",
+  ml: 1,
+  flexDirection: "row"
+}
 // Table style end
 
 // Info card start
@@ -874,5 +918,101 @@ export const imageBoxStackContainers = {
   flexDirection: "row",
   alignItems: "end",
   height: "194px",
-  justifyContent: {xs:"center", md:"end"},
+  justifyContent: { xs: "center", md: "end" },
 };
+const itemTableStyle = {
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  maxHeight: "34px",
+  fontSize: "2rem",
+  marginLeft: '.8rem',
+  color: "#fff",
+  borderRadius: "7px"
+}
+export const itemTableStatusStyle = {
+  ...itemTableStyle,
+  height: "5vh",
+  width: "7vh"
+}
+export const itemTablePercentileStyle = {
+  ...itemTableStyle,
+  height: "5vh",
+  width: "9.8vh"
+}
+export const searchResultText = {
+  color: '#000',
+  textAlign: 'center',
+  fontFamily: 'IBM Plex Mono',
+  fontSize: '14px',
+  fontStyle: 'italic',
+  fontWeight: 500,
+  lineHeight: '107.5%',
+  letterSpacing: '-0.5px',
+  marginRight: '10px'
+};
+
+export const customStyleForXREAText = {
+  color: '#000',
+  textAlign: 'center',
+  fontFamily: 'IBM Plex Mono',
+  fontSize: '14px',
+  fontStyle: 'italic',
+  fontWeight: 700,
+  lineHeight: '107.5%',
+  letterSpacing: '-0.5px',
+};
+
+export const showRadioItemStyle = {
+  fontStyle: 'italic',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '12px'
+}
+export const radioStyle = {
+  p: 0,
+  marginLeft: "9px"
+}
+
+export const radioDisablabel = {
+  fontSize: '12px',
+  fontStyle: 'italic',
+  marginTop: '10px'
+}
+
+export const logoContainter = {
+  width: "187px",
+  height: "40px",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  flexDirection: "row",
+  padding: 0,
+  position: "relative",
+  alignSelf: "auto",
+  boxSizing: "border-box",
+  flexShrink: 1,
+  borderColor: "transparent",
+  borderStyle: "none",
+  borderWidth: 0,
+  borderRadius: "0px 0px 0px 0px",
+  backgroundColor: "transparent"
+}
+
+export const logoImageContainer = {
+  top: "0px",
+  left: "0px",
+  width: "96px",
+  height: "40px",
+  padding: "0",
+  flexDirection: "row",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  boxSizing: "border-box",
+  flexShrink: 1,
+  borderColor: "transparent",
+  borderStyle: "none",
+  borderWidth: 0,
+  borderRadius: "0px 0px 0px 0px",
+  backgroundColor: "transparent",
+  cursor: "pointer"
+}

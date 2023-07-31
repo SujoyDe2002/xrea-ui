@@ -14,13 +14,24 @@ import {
   searchButtonStyle,
   searchContainter,
 } from "app";
-import { getCityList } from "server/api/get-citylist";
 import { getUseCaseList } from "server/api/get-usecase-list";
 import Button1 from "shared/utils/button/button1";
 import { LoadingContext } from "store2/loading-context-provider";
 import { SectionCard } from "shared/components";
 import { useLocation } from "react-router-dom";
 import isLogin from "shared/utils/associate/is-login";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+  SignIn,
+  SignUp,
+  UserButton,
+  useSignIn,
+  useUser,
+} from "@clerk/clerk-react";
+import cityWithGeoId from "./v1-states.json";
 
 const SearchSection = () => {
   const {
@@ -48,7 +59,7 @@ const SearchSection = () => {
     setUseCaseNameList
   } = useContext(LoadingContext);
   const { searchTitle, setSearchTitle } = searchTitleGetterSetter;
-  const { user } = userGetterSetter;
+  // const { user } = userGetterSetter;
 
   const [useCaseList, setUseCaseList] = useState([]);
   const [disabled, setDisabled] = useState(false);
@@ -61,6 +72,8 @@ const SearchSection = () => {
   const SearchCriteria = {
     searchId: id,
   };
+  const { isSignedIn, user, isLoaded } = useUser();
+  const nameList = cityWithGeoId.data.city_view_2021;
 
   useEffect(() => {
     if (SearchCriteria?.searchId) {
@@ -77,7 +90,7 @@ const SearchSection = () => {
   useEffect(() => {
     let isMounted = true;
     (async () => {
-      const { data } = await getUseCaseList();
+      const data  = await getUseCaseList();
       if (isMounted) setUseCaseList(data);
       if (searchCriteria?.city) {
         setSelectedCityList(searchCriteria?.city);
@@ -100,17 +113,12 @@ const SearchSection = () => {
   }, [selectedCityList]);
   useEffect(() => {
     //todo
-    // if (user) {
-    const userId = isLogin();
-    setUserId(userId);
-    setDisabled(!userId);
-    if (userId) {
+    if(isLoaded && isSignedIn) {
       enableAutoComplete();
     } else {
       disableAutoComplete();
     }
-
-  }, [])
+  }, [isLoaded, isSignedIn, user])
 
 
   const handleClear = () => {
@@ -134,11 +142,28 @@ const SearchSection = () => {
   const handleChangeCity = async (e) => {
     const { value } = e.currentTarget;
     if (value.length >= 2) {
-      const { data } = await getCityList(value);
-      setCityList(data);
-    }
+      const currentFilteredOptions = nameList.filter(
+        (city) =>
+            city.city_name.toLowerCase().indexOf(value.toLowerCase()) > -1 && filterStateIfApplicable(city)
+    );
+    const data = currentFilteredOptions.map((city) => {
+        return {
+            name: city.city_name + ", " + city.state_name,
+            id: city.geo_id,
+        };
+    });
 
+    setCityList(data);
+    }
   };
+
+  const filterStateIfApplicable = (city) => {
+    if(selectedCityList.length > 0) {
+      const selectedState = selectedCityList[0].name;
+      return selectedState.includes(city.state_name);
+    }
+    return true;
+  }
   let autoCompleteSelectPropsCity = {
     headerName: "Location (city, state)",
     tableActive,
@@ -190,8 +215,8 @@ const SearchSection = () => {
                 {
                   hasResult &&
                   <Box variant="contained"
-                    onClick={() => userId && handleClear()}
-                    sx={userId ? clearLinkStyle : { ...clearLinkStyle, ...disable }}>
+                    onClick={() => isSignedIn && handleClear()}
+                    sx={isSignedIn ? clearLinkStyle : { ...clearLinkStyle, ...disable }}>
                     Clear search
                   </Box>
                 }
