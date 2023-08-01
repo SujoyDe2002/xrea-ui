@@ -9,6 +9,13 @@ import CircularIndeterminate from "shared/utils/loader/circularIndeterminate";
 import ResponseMessage from "shared/utils/response-message/response-message";
 export const LoadingContext = createContext();
 
+
+
+const getSearchedElement = (array, id) => {
+  return array.find(({ geo_id }) => {
+    return geo_id === id
+  })
+}
 const LoadingContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState(null);
@@ -145,8 +152,7 @@ const LoadingContextProvider = ({ children }) => {
       location,
       usecase: useCase
     };
-    const  data  = await getSearchedResult(payLoad);
-
+    const data = await getSearchedResult(payLoad);
     if (data) {
 
       const cityNameList = selectedCityList.map(({ name }) => {
@@ -161,13 +167,22 @@ const LoadingContextProvider = ({ children }) => {
       setSearchedReasult(data);
       history.push("/search_result")
       const { general_stat, usecase, marketSegment } = data;
-      setCityNameResultList(selectedCityList);
+      let arrangedUsecase = { data: [], label: usecase.label };
+      let arrangedMarketSegment = { data: [] };
+      let arrangedGeneral_stat = { data: [] };
 
+      selectedCityList.map(({ id }) => {
+        arrangedUsecase.data = [...arrangedUsecase.data, getSearchedElement(usecase.data, id)]
+        arrangedMarketSegment.data = [...arrangedMarketSegment.data, getSearchedElement(marketSegment.data, id)]
+        arrangedGeneral_stat.data = [...arrangedGeneral_stat.data, getSearchedElement(general_stat.data, id)]
+      }, marketSegment.data, usecase.data, general_stat.data)
+
+      setCityNameResultList(selectedCityList);
       const searchResultRowData = ArrangeSearchData({
         CityData: [selectedCityList],
-        GeneralStat: [general_stat],
-        UseCases: [usecase],
-        MarketSegmentData: [marketSegment.data]
+        GeneralStat: [arrangedGeneral_stat],
+        UseCases: [arrangedUsecase],
+        MarketSegmentData: [arrangedMarketSegment.data]
       })
       setXreaTableRows(searchResultRowData)
     }
