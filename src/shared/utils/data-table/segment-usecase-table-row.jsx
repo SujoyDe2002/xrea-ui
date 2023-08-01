@@ -32,7 +32,7 @@ export const SegmentUsecaseTableRow = ({ rowData, currentDropdown }) => {
                             let sx = itemTableStatusStyle
                             if (currentDropdown === "P") {
                                 chipBgColor = percentileChipBgcolor;
-                                chipValue = `${percentile}%`;
+                                chipValue = `${percentile}`;
                                 sx = itemTablePercentileStyle;
                             }
                             return (
