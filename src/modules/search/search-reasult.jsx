@@ -192,6 +192,7 @@ const SearchReasult = () => {
         closeDialog();
         handleResponseMessage(message);
         let noOfSavedSearch = data.saveSearchCount;
+        
         const noOfSearch = Number(noOfSavedSearch);
         setLocalStorageItem("xrea", { ...xreaData, noOfsearch });
         setNoOfsearch(noOfSearch);
@@ -279,7 +280,6 @@ const SearchReasult = () => {
                               } />
                             )
                           }
-
                         </RadioGroup>
                       </FormControl>
                     )}
@@ -312,7 +312,6 @@ const SearchReasult = () => {
             ) :
               null
           }
-
           <Box sx={tablesContainter}>
             <ScrollContainer >
               <XreaTable rows={xreaTableRows} getCityIndex={getCityIndex} currentDropdown={selectedValue} />

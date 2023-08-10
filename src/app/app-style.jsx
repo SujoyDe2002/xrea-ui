@@ -889,7 +889,7 @@ export const marketsegmenttypography = {
 export const boxStyle = {
   width: "61px",
   height: "61px",
-  background: "#D9D9D9",
+  // background: "#D9D9D9",
   margin: "auto",
   cursor: "pointer",
 };

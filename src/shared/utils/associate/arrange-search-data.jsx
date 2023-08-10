@@ -23,8 +23,11 @@ export const ArrangeSearchData = (data) => {
             type: 2,
             cols: []
         }
-        const coldata = marketData[0].map((m) => {
-            return m['clusterName']
+        const coldata = marketData[0].map(({ clusterName, cluster_code }) => {
+            return {
+                clusterName: clusterName,
+                clusterCode: cluster_code
+            }
         })
         row['cols'] = ["Market Segment", ...coldata]
         finalData = [...finalData, row]
@@ -68,10 +71,10 @@ export const ArrangeSearchData = (data) => {
             let useCaseRow = { use_case_group, use_case_group_desc, use_case_color }
             const groupData = data.map((element) => {
                 const isMax = use_case_group === element.max;
-                return { 
-                    isMax, 
+                return {
+                    isMax,
                     value: {
-                        ...element[use_case_group], 
+                        ...element[use_case_group],
                         statusChipBgcolor: useCaseChipValue[element[use_case_group].grade],
                         percentileChipBgcolor: useCaseChipValue["PE"]
                     }

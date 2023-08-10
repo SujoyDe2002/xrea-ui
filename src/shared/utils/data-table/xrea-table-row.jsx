@@ -5,6 +5,7 @@ import { TableHeading } from "modules/search";
 import { SegmentUsecaseTableRow } from "./segment-usecase-table-row";
 import { GetAttribute } from "..";
 import TooltipHelp from "../tooltip/tooltip-help";
+import { getClusterImage } from "../associate/get-clusterImage";
 
 
 
@@ -49,6 +50,20 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex, currentDropdown }
                     <TableRow className={classes.sticky} sx={stickyHeaderCell} key={rowData.type} >
                         {
                             colRow.map((v, i) => {
+                                let marketSegmenetTextSx = marketSegmentHeading;
+                                let cellTitle;
+                                let clusterImageName;
+                                let imageUrl;
+                                if (i === 0) {
+                                    marketSegmenetTextSx = marketSegmentHeaderStyle;
+                                    cellTitle = rowData.cols[i];
+                                }else{
+                                    const {clusterName, clusterCode} = rowData.cols[i];
+                                    cellTitle = clusterName;
+                                    clusterImageName = getClusterImage(clusterCode);
+                                    imageUrl = `/playground_assets/clusterImages/${clusterImageName}`
+                                }
+                                
                                 return (
 
                                     <TableCell
@@ -57,12 +72,13 @@ export const XreaTableRow = ({ rowData, noOfCol, getCityIndex, currentDropdown }
                                         className={i === 0 && classes.sticky}
                                         style={{ paddingLeft: 0, backgroundColor: "#fff" }}
                                     >
-                                        {i > 0 && <Box sx={boxStyle} indexid={i - 1} onClick={getCityIndex}></Box>}
-
-                                        <Typography sx={(i === 0) ? marketSegmentHeaderStyle : marketSegmentHeading}>
-                                            {rowData.cols[i]}
+                                        {i > 0 &&
+                                            <Box sx={boxStyle} indexid={i - 1} onClick={getCityIndex}>
+                                                <img src={imageUrl} alt={clusterImageName} />
+                                            </Box>}
+                                        <Typography sx={marketSegmenetTextSx}>
+                                            {cellTitle}
                                         </Typography>
-
                                     </TableCell>
                                 )
                             })
