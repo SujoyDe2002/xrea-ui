@@ -600,8 +600,17 @@ export const cityContainer = {
 
 export const searchResultSection = {
   lineHeight: "2.68rem",
-  fontSize: "2.5rem"
+  fontSize:  {xs: "1.5rem", md: "2.5rem"}
 };
+
+export const searchTitleContainerStyle = {
+flexDirection: {xs: "col", md: "row"}
+}
+export const showDropDownContainerStyle = {
+  justifyContent: "end",
+  ml:{xs:0, md:1}
+}
+
 
 export const maxIndexValue = {
   borderRadius: "15px",

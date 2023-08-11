@@ -6,7 +6,7 @@ import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "shared/utils";
-import { Box, Button, TextField, Typography, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio } from "@mui/material";
+import { Box, Button, TextField, Typography, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio, Stack } from "@mui/material";
 import {
   button4,
   customStyleForXREAText,
@@ -15,7 +15,9 @@ import {
   radioStyle,
   searchResultSection,
   searchResultText,
+  searchTitleContainerStyle,
   secondarybtn,
+  showDropDownContainerStyle,
   showRadioItemStyle,
   tablesContainter,
 } from "app";
@@ -248,10 +250,11 @@ const SearchReasult = () => {
           {
             xreaTableRows && xreaTableRows.length > 0 ? (
               <SearchSectionHeading>
+                <Stack sx={searchTitleContainerStyle} >
                 <Typography variant="h2" sx={searchResultSection}>
                   {searchTitle ? searchTitle : "Search results"}
                 </Typography>
-                <Box flexGrow={1} position={"relative"} top={18} left={10} display={'inline'}>
+                <Stack sx={showDropDownContainerStyle}>
                   <FormControl>
                     <Button sx={button4} variant="contained" onClick={handleDropdownClick}
                       disableElevation>
@@ -284,7 +287,8 @@ const SearchReasult = () => {
                       </FormControl>
                     )}
                   </FormControl>
-                </Box>
+                </Stack>
+                </Stack>
                 {xreSearchDisable && isSignedIn ? (
                   <BrightTooltip title={xreaTooltipTitle} placement="bottom" arrow>
                     <span>
